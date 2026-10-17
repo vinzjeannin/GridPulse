@@ -1,3 +1,9 @@
+name: Debug
+        run: |
+          pwd
+          ls -la
+          python --version
+          
 name: Refresh Grid Metrics & AI Insights
 
 on:

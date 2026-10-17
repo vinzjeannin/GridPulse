@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-17 23:08:12 UTC",
+  "timestamp": "2026-10-17 23:42:17 UTC",
   "total_generation_gw": 28.4,
   "scot_total_generation_gw": 6.8,
-  "uk_carbon_intensity": 55,
+  "uk_carbon_intensity": 58,
   "scottish_carbon_intensity": 32,
   "total_wind_gw": 4.4,
   "generation_mix": {

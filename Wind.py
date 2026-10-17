@@ -46,8 +46,6 @@ def fetch_grid_data():
         print(f"Notice: Using fallback UK intensity: {e}")
 
     wind_mw = 4350.8
-    solar_mw = 180.5
-    nuclear_mw = 1500.0
     total_wasted = 221.1
 
     metrics = {
@@ -87,7 +85,9 @@ def fetch_grid_data():
             "nuclear": {"mwh": 0.0, "cost_gbp": 0.0, "homes_powered": 0}
         },
 
+        # Included both keys to support all frontend variations
         "whisky_pure_alcohol_litres_total": 30455600,
+        "whisky_litres": 30455600,
 
         "fossil_displacement": {
             "gas_burned_m3": 42009.0,

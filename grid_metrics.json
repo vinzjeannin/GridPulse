@@ -1,137 +1,14 @@
 {
-    "timestamp": "2026-10-17T19:23:46.514952+00:00",
-    "records_analyzed": 46,
-    "total_wasted_mwh": 6900.0,
-    "whisky_pure_alcohol_litres_total": 985714,
-    "fossil_displacement": {
-        "gas_burned_m3": 1311000,
-        "co2_tonnes": 2415.0
-    },
-    "bess_storage": {
-        "megapacks_needed": 1769,
-        "total_gwh": 6.9
-    },
-    "fuel_breakdown": {
-        "wind": {
-            "mwh": 6900.0,
-            "cost_gbp": 931500,
-            "homes_powered": 766666
-        },
-        "solar": {
-            "mwh": 0.0,
-            "cost_gbp": 0,
-            "homes_powered": 0
-        },
-        "nuclear": {
-            "mwh": 0.0,
-            "cost_gbp": 0,
-            "homes_powered": 0
-        }
-    },
-    "generation_mix": {
-        "biomass": 9.1,
-        "coal": 0,
-        "imports": 19.1,
-        "gas": 16.1,
-        "nuclear": 14.9,
-        "other": 3.3,
-        "hydro": 4.5,
-        "solar": 0,
-        "wind": 33
-    },
-    "scottish_generation_mix": {
-        "wind": 78.5,
-        "nuclear": 14.0,
-        "hydro": 5.5,
-        "gas": 1.5,
-        "solar": 0.5
-    },
-    "total_generation_gw": 30.2,
-    "scot_total_generation_gw": 7.72,
-    "uk_carbon_intensity": 105,
-    "scottish_carbon_intensity": 35,
-    "total_wind_gw": 9.97,
-    "wind_country_split": {
-        "Scotland": 62.0,
-        "England & Wales": 38.0
-    },
-    "wind_capacity": {
-        "gb_total": {
-            "capacity_gw": 33.0,
-            "gen_gw": 9.97,
-            "usage_perc": 30.2
-        },
-        "scotland": {
-            "capacity_gw": 18.0,
-            "gen_gw": 6.18,
-            "usage_perc": 34.3
-        },
-        "england_wales": {
-            "capacity_gw": 15.0,
-            "gen_gw": 3.79,
-            "usage_perc": 25.3
-        }
-    },
-    "scottish_balance": {
-        "demand_gw": 4.02,
-        "generation_gw": 7.72,
-        "net_export_gw": 3.7,
-        "is_exporter": true
-    },
-    "ai_summary": "Real-time telemetry across the Scottish transmission system reveals acute structural congestion along the critical B6 boundary, where southward exports have reached a bottlenecked limit of 3.7 GW. Despite vast renewable yield across northern assets, inadequate inter-regional gateway capacity forces the system operator to artificially throttle clean power to protect system stability. During this operating window, localized infrastructure limits have triggered the severe curtailment of 6,900 MWh of zero-carbon wind energy. Enforcing these mandatory cutbacks has required \u00a3931,500 in constraint payouts disbursed directly to Scottish generators to switch off, exposing the compounding fiscal friction and operational inefficiencies of an under-reinforced transmission corridor.\n\nThis enforced northern deficit precipitates a stark operational and environmental irony south of the border. To maintain grid frequency and satisfy southern demand centers, the system operator has ramped up fossil-fueled generation, burning 1,311,000 cubic meters of natural gas across replacement combined cycle gas turbines. Consequently, this transmission failure has generated 2,415.0 tonnes of entirely avoidable CO2 emissions. British consumers face a perverse double penalty: funding the suppression of abundant green power while simultaneously financing expensive, carbon-intensive thermal generation that actively undermines national net-zero decarbonization trajectories.",
-    "interconnectors": [
-        {
-            "name": "B6 Transmission Gateway (Scotland to England)",
-            "path": [
-                [
-                    55.95,
-                    -3.18
-                ],
-                [
-                    55.35,
-                    -3.61
-                ],
-                [
-                    55.05,
-                    -2.85
-                ],
-                [
-                    54.9,
-                    -2.93
-                ]
-            ]
-        }
-    ],
-    "substations": [
-        {
-            "name": "Beauly Substation (Highlands)",
-            "lat": 57.48,
-            "lon": -4.46
-        },
-        {
-            "name": "Denny North (Central Belt)",
-            "lat": 56.02,
-            "lon": -3.88
-        },
-        {
-            "name": "Wishaw Substation (Lanarkshire)",
-            "lat": 55.77,
-            "lon": -3.91
-        },
-        {
-            "name": "Harker Substation (Border / Carlisle)",
-            "lat": 54.94,
-            "lon": -2.98
-        }
-    ],
-    "locations": [
-        {
-            "name": "General Scottish Transmission Boundary",
-            "lat": 55.4,
-            "lon": -3.2,
-            "fuel": "wind",
-            "wasted_mwh": 6900.0,
-            "cost_gbp": 931500
-        }
-    ]
+  "timestamp": "2026-10-17 21:57:52 UTC",
+  "scotland_wind_mw": 4350.8,
+  "scotland_carbon_intensity": 32,
+  "constraint_cost_factor": 135,
+  "bess_offset_mwh": 142.5,
+  "fuel_mix": {
+    "wind": 64.2,
+    "nuclear": 22.1,
+    "ccgt": 8.5,
+    "hydro": 5.2
+  },
+  "ai_synthesis": "AI Live Synthesis temporarily refreshing. Scotland's wind assets continue to deliver exceptional clean generation outputs, driving regional carbon intensity down significantly. However, localized transmission capacity bottlenecks between northern generation hubs and high-demand southern centers persist, requiring strategic curtailment and active BGS/BSUoS balancing interventions."
 }

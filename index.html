@@ -383,8 +383,10 @@
                         document.getElementById('bess-gwh').innerText = data.bess_storage.total_gwh.toLocaleString() + " GWh";
                     }
                     
-                    const updateTime = new Date(data.timestamp).toLocaleTimeString();
-                    document.getElementById('last-updated').innerText = "Last synced: " + updateTime;
+           // Cross-browser safe timestamp rendering
+const updateTime = data.timestamp ? data.timestamp : "Just now";
+document.getElementById('last-updated').innerText = "Last synced: " + updateTime;
+
 
                     if (data.scottish_balance) {
                         const sb = data.scottish_balance;

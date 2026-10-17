@@ -2,8 +2,8 @@ name: Refresh Grid Metrics & AI Insights
 
 on:
   schedule:
-    - cron: '*/30 * * * *' # Runs automatically every 30 minutes
-  workflow_dispatch: # Allows manual trigger anytime from GitHub UI
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -25,7 +25,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests urllib3 google-genai
 
-     - name: Debug
+      - name: Debug
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: |
@@ -38,7 +38,7 @@ jobs:
       - name: Run GridPulse update script
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python Wind.py
+        run: python -u Wind.py
 
       - name: Commit and push updated metrics
         run: |

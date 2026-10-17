@@ -1,25 +1,25 @@
 {
-  "timestamp": "2026-10-17T22:45:53Z",
+  "timestamp": "2026-10-17 23:08:12 UTC",
   "total_generation_gw": 28.4,
   "scot_total_generation_gw": 6.8,
-  "uk_carbon_intensity": 72,
+  "uk_carbon_intensity": 55,
   "scottish_carbon_intensity": 32,
   "total_wind_gw": 4.4,
   "generation_mix": {
-    "wind": 42.5,
-    "gas": 24.1,
-    "nuclear": 15.2,
+    "wind": 45.0,
+    "gas": 25.1,
+    "nuclear": 16.2,
     "biomass": 6.1,
     "hydro": 5.0,
-    "solar": 4.5,
+    "solar": 0.0,
     "imports": 2.6
   },
   "scottish_generation_mix": {
-    "wind": 64.2,
+    "wind": 68.2,
     "nuclear": 22.1,
     "gas": 4.5,
     "hydro": 5.2,
-    "solar": 4.0
+    "solar": 0.0
   },
   "wind_country_split": {
     "Scotland": 68.5,
@@ -48,7 +48,7 @@
     "net_export_gw": 2.7,
     "is_exporter": true
   },
-  "total_wasted_mwh": 221.1,
+  "total_wasted_mwh": 217.5,
   "fuel_breakdown": {
     "wind": {
       "mwh": 217.5,
@@ -56,9 +56,9 @@
       "homes_powered": 58000
     },
     "solar": {
-      "mwh": 3.6,
-      "cost_gbp": 486.0,
-      "homes_powered": 960
+      "mwh": 0.0,
+      "cost_gbp": 0.0,
+      "homes_powered": 0
     },
     "nuclear": {
       "mwh": 0.0,
@@ -69,11 +69,11 @@
   "whisky_pure_alcohol_litres_total": 30455600,
   "whisky_litres": 30455600,
   "fossil_displacement": {
-    "gas_burned_m3": 42009.0,
-    "co2_tonnes": 77.4
+    "gas_burned_m3": 41325.0,
+    "co2_tonnes": 76.1
   },
   "bess_storage": {
-    "megapacks_needed": 57,
+    "megapacks_needed": 55,
     "total_gwh": 0.22
   },
   "interconnectors": [
@@ -152,5 +152,5 @@
       "cost_gbp": 12487
     }
   ],
-  "ai_summary": "Scottish renewable generation continues to demonstrate robust operational capacity, with real-time wind output surging to 4.4 GW across northern nodes. This substantial clean generation volume has driven regional carbon intensity down to an exceptional 32 gCO2/kWh. However, this localized low-carbon dividend is severely hindered by structural deficits in cross-border transmission infrastructure. Severe thermal and voltage constraints across the critical Cheviot boundary (B6 interface) currently restrict bulk power transfers south toward major English demand centers.\n\nConsequently, system operators have been forced to intervene, logging 221.1 MWh of wasted zero-carbon energy through active curtailment during the current window. This physical bottleneck generates acute market distortions and compounding financial pressures. To maintain system stability, the operator must execute costly dual-sided balancing actions: issuing constraint payments to turn down Scottish wind generators while simultaneously contracting more expensive fossil-fuel units south of the Cheviot boundary. The resulting escalation in operational expenditure feeds directly into Balancing Services Use of System (BSUoS) charges, shifting the economic burden of network bottlenecks directly onto end-use consumer bills. Accelerating strategic transmission reinforcements remains urgent to prevent clean generation from driving unnecessary tariff inflation."
+  "ai_summary": "Scotland\u2019s renewable fleet is exhibiting robust operational performance, driving regional carbon intensity down to an exceptional 32 gCO2/kWh. However, this localized abundance continues to expose Britain\u2019s structural transmission imbalances. Export flows are pressing against thermal and voltage transfer limits across the critical Cheviot boundary (B6). Because physical transmission bottlenecks prevent this low-carbon power from transferring freely into high-demand centers across England, National Grid ESO is actively intervening in the Balancing Mechanism, creating financial friction socialized through BSUoS charges."
 }

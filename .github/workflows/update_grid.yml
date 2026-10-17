@@ -12,10 +12,11 @@ jobs:
   update-data:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository via native git
+      - name: Configure Git Credentials & Remote
         run: |
-          git init
-          git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git fetch origin main
           git checkout main
 
@@ -31,8 +32,6 @@ jobs:
 
       - name: Commit and push updated metrics
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add grid_metrics.json
           git status
           git diff-index --quiet HEAD || (git commit -m "Auto-update live grid metrics and AI summary [skip ci]" && git push origin main)

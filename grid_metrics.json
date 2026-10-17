@@ -1,32 +1,155 @@
 {
-  "timestamp": "2026-10-17 22:10:16 UTC",
-  "scotland_wind_mw": 4350.8,
-  "scotland_carbon_intensity": 32,
-  "constraint_cost_factor": 135,
-  "bess_offset_mwh": 142.5,
-  "fuel_mix": {
+  "timestamp": "2026-10-17 22:15:39 UTC",
+  "total_generation_gw": 28.4,
+  "scot_total_generation_gw": 6.8,
+  "uk_carbon_intensity": 67,
+  "scottish_carbon_intensity": 32,
+  "total_wind_gw": 4.4,
+  "generation_mix": {
+    "wind": 42.5,
+    "gas": 24.1,
+    "nuclear": 15.2,
+    "biomass": 6.1,
+    "hydro": 5.0,
+    "solar": 4.5,
+    "imports": 2.6
+  },
+  "scottish_generation_mix": {
     "wind": 64.2,
     "nuclear": 22.1,
-    "ccgt": 8.5,
-    "hydro": 5.2
+    "gas": 4.5,
+    "hydro": 5.2,
+    "solar": 4.0
   },
-  "wasted_energy_mwh": {
-    "wind": 217.5,
-    "solar": 3.6,
-    "nuclear": 0.0,
-    "total": 221.1
+  "wind_country_split": {
+    "Scotland": 68.5,
+    "England & Wales": 31.5
   },
-  "constraint_cost_gbp": {
-    "wind": 29362.5,
-    "solar": 486.0,
-    "nuclear": 0.0,
-    "total": 29848.5
+  "wind_capacity": {
+    "gb_total": {
+      "gen_gw": 18.2,
+      "capacity_gw": 33.0,
+      "usage_perc": 55.1
+    },
+    "scotland": {
+      "gen_gw": 12.5,
+      "capacity_gw": 18.0,
+      "usage_perc": 69.4
+    },
+    "england_wales": {
+      "gen_gw": 5.7,
+      "capacity_gw": 15.0,
+      "usage_perc": 38.0
+    }
   },
-  "homes_powered": 11602,
-  "whisky_litres": 30455600,
+  "scottish_balance": {
+    "demand_gw": 4.1,
+    "generation_gw": 6.8,
+    "net_export_gw": 2.7,
+    "is_exporter": true
+  },
+  "total_wasted_mwh": 221.1,
+  "fuel_breakdown": {
+    "wind": {
+      "mwh": 217.5,
+      "cost_gbp": 29362.5,
+      "homes_powered": 58000
+    },
+    "solar": {
+      "mwh": 3.6,
+      "cost_gbp": 486.0,
+      "homes_powered": 960
+    },
+    "nuclear": {
+      "mwh": 0.0,
+      "cost_gbp": 0.0,
+      "homes_powered": 0
+    }
+  },
+  "whisky_pure_alcohol_litres_total": 30455600,
   "fossil_displacement": {
-    "natural_gas_m3": 42009.0,
-    "carbon_offset_tonnes": 77.4
+    "gas_burned_m3": 42009.0,
+    "co2_tonnes": 77.4
   },
-  "ai_synthesis": "### Live Synthesis: Transmission Congestion & Market Dynamics\n\nNorthern nodes are demonstrating robust clean generation, with Scottish wind output surging to 4,350.8 MW and depressing regional carbon intensity to an optimal 32 gCO2/kWh. While this highlights Scotland\u2019s essential contribution to national decarbonisation, the high volume exacerbates acute structural imbalances across the wider GB transmission network.\n\nExport capability across the Cheviot boundary (B6) remains saturated. Physical thermal limitations prevent this northern surplus from evacuating south toward high-demand load centres in England. Consequently, the National Energy System Operator (NESO) is forced to resolve the bottleneck via the Balancing Mechanism\u2014paying northern wind assets to curtail generation while simultaneously compensating thermal plants south of the constraint to ramp up.\n\nThis structural friction has driven instantaneous constraint costs to \u00a329,848.5. These operational interventions are not absorbed by generators; they are recovered through Balancing Services Use of System (BSUoS) charges and ultimately passed directly onto consumer electricity bills. Until planned grid reinforcement projects\u2014notably the Eastern Green Link HVDC conduits\u2014come online, periods of peak northern wind will continue to expose this costly friction between renewable generation capacity and physical transmission infrastructure."
+  "bess_storage": {
+    "megapacks_needed": 57,
+    "total_gwh": 0.22
+  },
+  "interconnectors": [
+    {
+      "name": "Western HVDC Link (Hunterston to Deeside)",
+      "path": [
+        [
+          55.73,
+          -4.88
+        ],
+        [
+          54.5,
+          -3.5
+        ],
+        [
+          53.22,
+          -3.05
+        ]
+      ]
+    },
+    {
+      "name": "Eastern Green Link 1 (Torness to Hawthorn Pit)",
+      "path": [
+        [
+          56.0,
+          -2.4
+        ],
+        [
+          55.3,
+          -1.8
+        ],
+        [
+          54.8,
+          -1.3
+        ]
+      ]
+    }
+  ],
+  "substations": [
+    {
+      "name": "Beauly Substation (Highlands)",
+      "lat": 57.48,
+      "lon": -4.42
+    },
+    {
+      "name": "Denny North (Central Belt)",
+      "lat": 56.02,
+      "lon": -3.88
+    },
+    {
+      "name": "Wishaw Substation (Lanarkshire)",
+      "lat": 55.77,
+      "lon": -3.92
+    },
+    {
+      "name": "Harker Substation (Border/Carlisle)",
+      "lat": 54.93,
+      "lon": -2.98
+    }
+  ],
+  "locations": [
+    {
+      "name": "Whitelee Wind Farm",
+      "lat": 55.68,
+      "lon": -4.22,
+      "fuel": "wind",
+      "wasted_mwh": 125.0,
+      "cost_gbp": 16875
+    },
+    {
+      "name": "Beatrice Offshore",
+      "lat": 58.12,
+      "lon": -3.08,
+      "fuel": "wind",
+      "wasted_mwh": 92.5,
+      "cost_gbp": 12487
+    }
+  ],
+  "ai_summary": "**LIVE SYNTHESIS | AI GRID INSIGHTS**\n\nScottish wind generation is demonstrating exceptional performance at 4.4 GW, suppressing regional grid carbon intensity to an ultra-low 32 gCO\u2082/kWh. However, this northern generation surplus exposes severe cross-border transmission limits across the B6 Cheviot boundary. The existing network architecture is unable to evacuate these volumes southward to high-demand centres in England, resulting in 221.1 MWh of curtailed, wasted clean electricity during the current monitoring window.\n\nTo maintain transient and thermal stability across constrained interconnectors, the system operator must intervene via the Balancing Mechanism\u2014paying northern wind assets to power down while simultaneously paying carbon-intensive generators south of the constraint to fire up. This redispatch protocol carries significant market friction; the associated constraint payments inevitably inflate Balancing Services Use of System (BSUoS) charges, transferring the economic cost of structural bottlenecks directly onto British consumers. \n\nWhile Scotland\u2019s generation fleet proves its capacity to drive decarbonisation, real-time efficiency remains hindered by physical boundary bottlenecks. Until strategic grid upgrades and subsea HVDC bypass links achieve operational status, consumer exposure to curtailment-driven balancing costs will remain intimately correlated with high northern wind yields."
 }

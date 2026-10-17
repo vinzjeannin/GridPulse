@@ -56,8 +56,9 @@ def generate_ai_insights(metrics):
             "pressures on consumers through BSUoS charges. Keep it concise, engaging, and strictly factual without action buttons."
         )
         
+        # Updated to gemini-3.8-flash as required by the API
         response = client.models.generate_content(
-            model="gemini-2.5-flash",
+            model="gemini-3.8-flash",
             contents=prompt,
         )
         return response.text.strip()

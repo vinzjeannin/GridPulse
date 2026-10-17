@@ -340,6 +340,9 @@
         }
 
         function updateDashboard() {
+                                // Ensure mobile map container renders tiles correctly
+                    setTimeout(() => { map.invalidateSize(); }, 250);
+
             fetch('grid_metrics.json?' + new Date().getTime())
                 .then(response => response.json())
                 .then(data => {

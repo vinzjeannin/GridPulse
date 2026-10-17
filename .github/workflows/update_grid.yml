@@ -12,26 +12,28 @@ jobs:
   update-data:
     runs-on: ubuntu-latest
     steps:
-      - name: Configure Git Credentials & Remote
-        run: |
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git pull origin $(git branch --show-current 2>/dev/null || echo "main")
+      - name: Checkout Repository
+        uses: actions/checkout@v4
 
-      - name: Set up Python and install packages
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
         run: |
-          python3 -m pip install --upgrade pip
-          pip3 install requests urllib3 google-genai
+          python -m pip install --upgrade pip
+          pip install requests urllib3 google-genai
 
       - name: Run GridPulse update script
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python3 Wind.py
+        run: python Wind.py
 
       - name: Commit and push updated metrics
         run: |
-          CURRENT_BRANCH=$(git branch --show-current 2>/dev/null || echo "main")
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add grid_metrics.json
           git status
-          git diff-index --quiet HEAD || (git commit -m "Auto-update live grid metrics and AI summary [skip ci]" && git push origin $CURRENT_BRANCH)
+          git diff-index --quiet HEAD || (git commit -m "Auto-update live grid metrics and AI summary [skip ci]" && git push)

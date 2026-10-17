@@ -49,7 +49,8 @@ def fetch_grid_data():
     total_wasted = 221.1
 
     metrics = {
-        "timestamp": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC"),
+        # Standard ISO 8601 format for mobile browser compatibility
+        "timestamp": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "total_generation_gw": 28.4,
         "scot_total_generation_gw": 6.8,
         "uk_carbon_intensity": uk_intensity,
@@ -85,7 +86,6 @@ def fetch_grid_data():
             "nuclear": {"mwh": 0.0, "cost_gbp": 0.0, "homes_powered": 0}
         },
 
-        # Included both keys to support all frontend variations
         "whisky_pure_alcohol_litres_total": 30455600,
         "whisky_litres": 30455600,
 
@@ -134,13 +134,15 @@ def generate_ai_insights(metrics):
     try:
         client = genai.Client(api_key=api_key)
         prompt = (
-            "Write a professional, analytical ~200-word 'Live Synthesis' / 'AI Grid Insights' block "
-            "for the GridPulse Scotland renewable energy and bottleneck monitor dashboard. "
+            "Write a professional, analytical ~200-word executive brief for the GridPulse Scotland "
+            "renewable energy and bottleneck monitor dashboard. "
             f"Current telemetry: Scotland wind generation is strong at {metrics['total_wind_gw']} GW, "
             f"Scottish carbon intensity is at {metrics['scottish_carbon_intensity']} gCO2/kWh, and total wasted "
-            f"energy stands at {metrics['total_wasted_mwh']} MWh. Discuss the balance between high renewable wind output "
-            "in northern nodes, transmission congestion across the Cheviot boundary, and the resulting economic "
-            "pressures on consumers through BSUoS charges. Keep it concise, engaging, and strictly factual without action buttons."
+            f"energy stands at {metrics['total_wasted_mwh']} MWh. "
+            "CRITICAL FORMATTING INSTRUCTION: Do not include any title headers, bold prefixes (like '**LIVE SYNTHESIS**'), "
+            "or labels at the beginning. Start writing the analytical text directly from the very first word. "
+            "Discuss the balance between high renewable wind output in northern nodes, transmission congestion across the "
+            "Cheviot boundary, and the resulting economic pressures on consumers through BSUoS charges."
         )
         
         response = client.models.generate_content(

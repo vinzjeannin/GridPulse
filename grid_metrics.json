@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-17 22:15:39 UTC",
+  "timestamp": "2026-10-17 22:20:00 UTC",
   "total_generation_gw": 28.4,
   "scot_total_generation_gw": 6.8,
   "uk_carbon_intensity": 67,
@@ -67,6 +67,7 @@
     }
   },
   "whisky_pure_alcohol_litres_total": 30455600,
+  "whisky_litres": 30455600,
   "fossil_displacement": {
     "gas_burned_m3": 42009.0,
     "co2_tonnes": 77.4
@@ -151,5 +152,5 @@
       "cost_gbp": 12487
     }
   ],
-  "ai_summary": "**LIVE SYNTHESIS | AI GRID INSIGHTS**\n\nScottish wind generation is demonstrating exceptional performance at 4.4 GW, suppressing regional grid carbon intensity to an ultra-low 32 gCO\u2082/kWh. However, this northern generation surplus exposes severe cross-border transmission limits across the B6 Cheviot boundary. The existing network architecture is unable to evacuate these volumes southward to high-demand centres in England, resulting in 221.1 MWh of curtailed, wasted clean electricity during the current monitoring window.\n\nTo maintain transient and thermal stability across constrained interconnectors, the system operator must intervene via the Balancing Mechanism\u2014paying northern wind assets to power down while simultaneously paying carbon-intensive generators south of the constraint to fire up. This redispatch protocol carries significant market friction; the associated constraint payments inevitably inflate Balancing Services Use of System (BSUoS) charges, transferring the economic cost of structural bottlenecks directly onto British consumers. \n\nWhile Scotland\u2019s generation fleet proves its capacity to drive decarbonisation, real-time efficiency remains hindered by physical boundary bottlenecks. Until strategic grid upgrades and subsea HVDC bypass links achieve operational status, consumer exposure to curtailment-driven balancing costs will remain intimately correlated with high northern wind yields."
+  "ai_summary": "### Live Synthesis | GridPulse Scotland\n\nScottish generation nodes are currently delivering a robust 4.4 GW of wind output, suppressing regional grid carbon intensity to a clean 32 gCO2/kWh. However, this northern generation surplus starkly illustrates the enduring physical limitations of Great Britain\u2019s transmission architecture. The Cheviot boundary (B6) is operating at near-capacity, severely restricting bulk power transfers southward into England\u2019s primary demand centers.\n\nTo maintain dynamic system stability, the Electricity System Operator (ESO) must aggressively intervene. With 221.1 MWh of wind generation already curtailed within this settlement window, zero-marginal-cost clean electrons in the north are actively turned down, while synchronized fossil-fueled generation is constrained on south of the boundary to meet unmet demand. \n\nThis localized saturation delivers significant economic headwinds. The twin costs of compensating curtailed northern wind farms and dispatching expensive, out-of-merit downstream generation directly inflate Balancing Services Use of System (BSUoS) charges. Until major inter-regional subsea links and high-voltage transmission reinforcements across the Anglo-Scottish border are commissioned, high-yield generation events will continue to present this operational paradox: exceptional green output decoupled from southern load, resulting in stranded energy and heightened systemic costs borne by consumers."
 }

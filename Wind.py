@@ -6,24 +6,54 @@ from google import genai
 
 def fetch_grid_data():
     """Fetches regional grid metrics, carbon intensity, and fuel mix for Scotland."""
+    current_utc = datetime.now(timezone.utc)
+    current_hour = current_utc.hour
+    is_night = current_hour >= 20 or current_hour < 6
+
     scotland_intensity = 32
     uk_intensity = 115
-    fuel_mix = {
-        "wind": 42.5,
-        "gas": 24.1,
-        "nuclear": 15.2,
-        "biomass": 6.1,
-        "hydro": 5.0,
-        "solar": 4.5,
-        "imports": 2.6
-    }
-    scot_fuel_mix = {
-        "wind": 64.2,
-        "nuclear": 22.1,
-        "gas": 4.5,
-        "hydro": 5.2,
-        "solar": 4.0
-    }
+
+    # Day vs Night baseline fuel mix
+    if is_night:
+        solar_perc = 0.0
+        scot_solar_perc = 0.0
+        wasted_solar = 0.0
+        fuel_mix = {
+            "wind": 45.0,
+            "gas": 25.1,
+            "nuclear": 16.2,
+            "biomass": 6.1,
+            "hydro": 5.0,
+            "solar": 0.0,
+            "imports": 2.6
+        }
+        scot_fuel_mix = {
+            "wind": 68.2,
+            "nuclear": 22.1,
+            "gas": 4.5,
+            "hydro": 5.2,
+            "solar": 0.0
+        }
+    else:
+        solar_perc = 4.5
+        scot_solar_perc = 4.0
+        wasted_solar = 3.6
+        fuel_mix = {
+            "wind": 42.5,
+            "gas": 24.1,
+            "nuclear": 15.2,
+            "biomass": 6.1,
+            "hydro": 5.0,
+            "solar": solar_perc,
+            "imports": 2.6
+        }
+        scot_fuel_mix = {
+            "wind": 64.2,
+            "nuclear": 22.1,
+            "gas": 4.5,
+            "hydro": 5.2,
+            "solar": scot_solar_perc
+        }
     
     try:
         r = requests.get("https://api.carbonintensity.org.uk/regional/intensity/gb/regionid/1", timeout=10)
@@ -33,7 +63,7 @@ def fetch_grid_data():
             scotland_intensity = region_data.get("intensity", {}).get("forecast", 32)
             mix_data = region_data.get("generationmix", [])
             if mix_data:
-                scot_fuel_mix = {item["fuel"]: item["perc"] for item in mix_data}
+                scot_fuel_mix = {item["fuel"]: (0.0 if is_night and item["fuel"] == "solar" else item["perc"]) for item in mix_data}
     except Exception as e:
         print(f"Notice: Using fallback regional telemetry: {e}")
 
@@ -46,11 +76,11 @@ def fetch_grid_data():
         print(f"Notice: Using fallback UK intensity: {e}")
 
     wind_mw = 4350.8
-    total_wasted = 221.1
+    wasted_wind = 217.5
+    total_wasted = round(wasted_wind + wasted_solar, 1)
 
     metrics = {
-        # Standard ISO 8601 format for mobile browser compatibility
-        "timestamp": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "timestamp": current_utc.strftime("%Y-%m-%d %H:%M:%S UTC"),
         "total_generation_gw": 28.4,
         "scot_total_generation_gw": 6.8,
         "uk_carbon_intensity": uk_intensity,
@@ -81,8 +111,8 @@ def fetch_grid_data():
         "total_wasted_mwh": total_wasted,
         
         "fuel_breakdown": {
-            "wind": {"mwh": 217.5, "cost_gbp": 29362.5, "homes_powered": 58000},
-            "solar": {"mwh": 3.6, "cost_gbp": 486.0, "homes_powered": 960},
+            "wind": {"mwh": wasted_wind, "cost_gbp": round(wasted_wind * 135, 2), "homes_powered": 58000},
+            "solar": {"mwh": wasted_solar, "cost_gbp": round(wasted_solar * 135, 2), "homes_powered": 0 if is_night else 960},
             "nuclear": {"mwh": 0.0, "cost_gbp": 0.0, "homes_powered": 0}
         },
 
@@ -90,13 +120,13 @@ def fetch_grid_data():
         "whisky_litres": 30455600,
 
         "fossil_displacement": {
-            "gas_burned_m3": 42009.0,
-            "co2_tonnes": 77.4
+            "gas_burned_m3": round(total_wasted * 190, 1),
+            "co2_tonnes": round(total_wasted * 0.35, 1)
         },
 
         "bess_storage": {
-            "megapacks_needed": 57,
-            "total_gwh": 0.22
+            "megapacks_needed": int(total_wasted / 3.9),
+            "total_gwh": round(total_wasted / 1000, 2)
         },
 
         "interconnectors": [
@@ -125,7 +155,7 @@ def fetch_grid_data():
     return metrics
 
 def generate_ai_insights(metrics):
-    """Generates the ~200-word AI Live Synthesis block securely using GitHub Secrets."""
+    """Generates pure analytical summary with no titles or headers."""
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
         print("Error: GEMINI_API_KEY environment variable is missing.")
@@ -134,22 +164,22 @@ def generate_ai_insights(metrics):
     try:
         client = genai.Client(api_key=api_key)
         prompt = (
-            "Write a professional, analytical ~200-word executive brief for the GridPulse Scotland "
-            "renewable energy and bottleneck monitor dashboard. "
-            f"Current telemetry: Scotland wind generation is strong at {metrics['total_wind_gw']} GW, "
+            "Write a clean ~200-word executive analysis for the GridPulse Scotland dashboard. "
+            f"Current telemetry: Scotland wind generation is at {metrics['total_wind_gw']} GW, "
             f"Scottish carbon intensity is at {metrics['scottish_carbon_intensity']} gCO2/kWh, and total wasted "
             f"energy stands at {metrics['total_wasted_mwh']} MWh. "
-            "CRITICAL FORMATTING INSTRUCTION: Do not include any title headers, bold prefixes (like '**LIVE SYNTHESIS**'), "
-            "or labels at the beginning. Start writing the analytical text directly from the very first word. "
-            "Discuss the balance between high renewable wind output in northern nodes, transmission congestion across the "
-            "Cheviot boundary, and the resulting economic pressures on consumers through BSUoS charges."
+            "STRICT RULES: Do NOT include any markdown headers (like ### or **Title**), title prefixes, or labels. "
+            "Start directly with the narrative analysis from the first word."
         )
         
         response = client.models.generate_content(
             model="gemini-3.8-flash",
             contents=prompt,
         )
-        return response.text.strip()
+        # Strip out any unexpected leading markdown headers
+        text = response.text.strip()
+        lines = [line for line in text.splitlines() if not line.strip().startswith('#') and not line.strip().startswith('**LIVE')]
+        return "\n".join(lines).strip()
     except Exception as e:
         print(f"Error communicating with Google GenAI: {e}")
         return (
@@ -172,7 +202,7 @@ def main():
     with open("grid_metrics.json", "w", encoding="utf-8") as f:
         json.dump(metrics, f, indent=2)
         
-    print("Successfully updated grid_metrics.json with full schema!")
+    print("Successfully updated grid_metrics.json!")
 
 if __name__ == "__main__":
     main()

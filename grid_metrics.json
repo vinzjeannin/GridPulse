@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-17 21:57:52 UTC",
+  "timestamp": "2026-10-17 22:01:31 UTC",
   "scotland_wind_mw": 4350.8,
   "scotland_carbon_intensity": 32,
   "constraint_cost_factor": 135,
@@ -10,5 +10,5 @@
     "ccgt": 8.5,
     "hydro": 5.2
   },
-  "ai_synthesis": "AI Live Synthesis temporarily refreshing. Scotland's wind assets continue to deliver exceptional clean generation outputs, driving regional carbon intensity down significantly. However, localized transmission capacity bottlenecks between northern generation hubs and high-demand southern centers persist, requiring strategic curtailment and active BGS/BSUoS balancing interventions."
+  "ai_synthesis": "### **Live Synthesis | GridPulse AI Insights**\n\nScotland\u2019s transmission network is currently exhibiting the classic tension between high-yield renewable generation and structural grid architecture. Regional wind generation has surged to an exceptional **4,350.8 MW**, driving regional carbon intensity down to an ultra-clean **32 gCO2/kWh**. \n\nHowever, this clean power surge is severely testing the transmission limits of the **Cheviot boundary (B6 interface)**. Physical cross-border thermal transfer capacity is actively saturated, preventing surplus zero-marginal-cost generation from flowing south to primary English demand centres. To preserve network frequency and thermal safety, the Electricity System Operator (ESO) is enforcing bid-offer curtailment on northern assets while redispatching more expensive, flexible generation south of the constraint.\n\nWith constraint cost factors currently elevated at **\u00a3135/MWh**, this locational imbalance carries steep financial consequences. The friction of paying generators both to ramp down in the north and ramp up in the south flows directly into **Balancing Services Use of System (BSUoS)** charges. Ultimately, these network inefficiencies create acute economic pressures on end-consumers, translating high wind yields into elevated systemic retail levies until planned cross-border subsea links and inland transmission reinforcements reach commissioning."
 }

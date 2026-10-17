@@ -17,8 +17,7 @@ jobs:
           git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git fetch origin main
-          git checkout main
+          git pull origin $(git branch --show-current 2>/dev/null || echo "main")
 
       - name: Set up Python and install packages
         run: |
@@ -32,6 +31,7 @@ jobs:
 
       - name: Commit and push updated metrics
         run: |
+          CURRENT_BRANCH=$(git branch --show-current 2>/dev/null || echo "main")
           git add grid_metrics.json
           git status
-          git diff-index --quiet HEAD || (git commit -m "Auto-update live grid metrics and AI summary [skip ci]" && git push origin main)
+          git diff-index --quiet HEAD || (git commit -m "Auto-update live grid metrics and AI summary [skip ci]" && git push origin $CURRENT_BRANCH)

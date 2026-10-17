@@ -350,7 +350,11 @@
                     
                     if (data.ai_summary) {
                         document.getElementById('ai-summary-text').innerText = data.ai_summary;
-                    }
+                    }if (data.ai_summary) {
+    const cleanSummary = data.ai_summary.replace(/^(#|\*\*).*?(\n|$)/g, '').trim();
+    document.getElementById('ai-summary-text').innerText = cleanSummary || data.ai_summary;
+}
+
 
                     if (fb) {
                         document.getElementById('total-mwh').innerText = data.total_wasted_mwh.toLocaleString() + " MWh";

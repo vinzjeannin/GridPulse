@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-17 22:01:31 UTC",
+  "timestamp": "2026-10-17 22:06:02 UTC",
   "scotland_wind_mw": 4350.8,
   "scotland_carbon_intensity": 32,
   "constraint_cost_factor": 135,
@@ -10,5 +10,23 @@
     "ccgt": 8.5,
     "hydro": 5.2
   },
-  "ai_synthesis": "### **Live Synthesis | GridPulse AI Insights**\n\nScotland\u2019s transmission network is currently exhibiting the classic tension between high-yield renewable generation and structural grid architecture. Regional wind generation has surged to an exceptional **4,350.8 MW**, driving regional carbon intensity down to an ultra-clean **32 gCO2/kWh**. \n\nHowever, this clean power surge is severely testing the transmission limits of the **Cheviot boundary (B6 interface)**. Physical cross-border thermal transfer capacity is actively saturated, preventing surplus zero-marginal-cost generation from flowing south to primary English demand centres. To preserve network frequency and thermal safety, the Electricity System Operator (ESO) is enforcing bid-offer curtailment on northern assets while redispatching more expensive, flexible generation south of the constraint.\n\nWith constraint cost factors currently elevated at **\u00a3135/MWh**, this locational imbalance carries steep financial consequences. The friction of paying generators both to ramp down in the north and ramp up in the south flows directly into **Balancing Services Use of System (BSUoS)** charges. Ultimately, these network inefficiencies create acute economic pressures on end-consumers, translating high wind yields into elevated systemic retail levies until planned cross-border subsea links and inland transmission reinforcements reach commissioning."
+  "wasted_energy_mwh": {
+    "wind": 217.5,
+    "solar": 3.6,
+    "nuclear": 0.0,
+    "total": 221.1
+  },
+  "constraint_cost_gbp": {
+    "wind": 29362.5,
+    "solar": 486.0,
+    "nuclear": 0.0,
+    "total": 29848.5
+  },
+  "homes_powered": 11602,
+  "whisky_litres": 30455600,
+  "fossil_displacement": {
+    "natural_gas_m3": 42009.0,
+    "carbon_offset_tonnes": 77.4
+  },
+  "ai_synthesis": "**Live Synthesis | Transmission Dynamics & Market Impact**\n\nScotland\u2019s renewable fleet is exhibiting robust operational performance, with active wind generation dispatching 4,350.8 MW and driving regional carbon intensity down to an exceptional 32 gCO2/kWh. However, this localized abundance continues to expose Britain\u2019s structural transmission imbalances. \n\nExport flows are currently pressing against thermal and voltage transfer limits across the critical Cheviot boundary (B6). Because physical transmission bottlenecks prevent this low-carbon power from transferring freely into high-demand centers across England, National Grid ESO is actively intervening in the Balancing Mechanism. The operator must pay Scottish generators to curtail zero-marginal-cost wind while simultaneously paying fossil-fueled units south of the boundary to fire up. \n\nThe immediate financial friction of this redispatch is evident, with current period constraint costs standing at \u00a329,848.5. These operational balancing premiums are socialized directly through Balancing Services Use of System (BSUoS) charges, imposing ongoing economic pressure on retail suppliers and end consumers. \n\nThe real-time telemetry reinforces an enduring grid paradox: without accelerated boundary reinforcements and subsea HVDC capacity, northern generation surpluses will continue to trigger compensatory curtailment, converting Scotland\u2019s clean energy potential into avoidable consumer cost."
 }

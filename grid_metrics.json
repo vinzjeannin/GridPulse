@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-18 10:50:11 UTC",
+  "timestamp": "2026-10-18 11:12:09 UTC",
   "total_generation_gw": 28.4,
   "scot_total_generation_gw": 6.8,
-  "uk_carbon_intensity": 62,
+  "uk_carbon_intensity": 60,
   "scottish_carbon_intensity": 32,
   "total_wind_gw": 4.4,
   "generation_mix": {
@@ -152,5 +152,5 @@
       "cost_gbp": 12487
     }
   ],
-  "ai_summary": "Scotland's power grid is currently demonstrating exceptional renewable performance, with regional wind generation standing at a robust 4.4 GW. This surge in zero-carbon supply is driving Scottish carbon intensity down to an impressive 32 gCO2/kWh, reflecting an operational state where fossil-fueled generation has been almost entirely displaced across the regional transmission network. Such low emissions intensity reinforces Scotland\u2019s critical role as the anchor of the broader British clean energy transition.\n\nDespite these strong output indicators, cross-border transmission constraints continue to exert friction on overall system efficiency. Current operational telemetry registers 221.1 MWh of wasted energy, predominantly resulting from curtailment orders deployed to protect the B6 transmission boundary between Scotland and England. While localized thermal saturation forces these dispatch interventions, they highlight a persistent mismatch between peak generation capacity and cross-boundary export infrastructure.\n\nTo reduce the economic impact of stranded clean power, grid operators should prioritize dynamic line rating utilization alongside regional battery storage absorption. Incentivizing industrial demand flexibility during these high-wind intervals will also prove vital in curtailing system balancing costs and ensuring Scotland\u2019s low-carbon potential is fully captured rather than throttled."
+  "ai_summary": "Scotland\u2019s electrical grid is demonstrating formidable renewable performance, with wind generation reaching a robust 4.4 GW. This clean surge has compressed regional carbon intensity to an impressive 32 gCO2/kWh, underscoring the territory\u2019s pivotal role in broader decarbonization targets and delivering an ultra-clean operational profile.\n\nHowever, this volume of non-synchronous generation highlights ongoing infrastructure bottlenecks, as evidenced by 221.1 MWh of wasted energy logged via curtailment. Transmission friction along critical export boundaries\u2014notably across the Scottish-English interconnectors\u2014continues to prevent surplus green electricity from flowing smoothly into southern demand centers. While the environmental metrics remain exceptionally favorable, discarding over two hundred megawatt-hours underscores the persistent physical limitations of the network during peak resource windows.\n\nAddressing this disparity requires sustained capital intervention and network agility. Accelerating reinforcement across high-voltage transmission pathways, alongside the rapid integration of utility-scale battery storage and dynamic demand-side response, will be essential to capturing this suppressed volume. Eliminating these structural constraints will ensure that peak wind outputs reliably translate into realized system value, minimizing curtailment costs while maintaining system security and low emissions across the broader network."
 }

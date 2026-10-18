@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-18 04:54:22 UTC",
+  "timestamp": "2026-10-18 05:15:15 UTC",
   "total_generation_gw": 28.4,
   "scot_total_generation_gw": 6.8,
-  "uk_carbon_intensity": 72,
+  "uk_carbon_intensity": 64,
   "scottish_carbon_intensity": 32,
   "total_wind_gw": 4.4,
   "generation_mix": {
@@ -152,5 +152,5 @@
       "cost_gbp": 12487
     }
   ],
-  "ai_summary": "Scotland\u2019s renewable fleet is exhibiting robust operational performance, driving regional carbon intensity down to an exceptional 32 gCO2/kWh. However, this localized abundance continues to expose Britain\u2019s structural transmission imbalances. Export flows are pressing against thermal and voltage transfer limits across the critical Cheviot boundary (B6). Because physical transmission bottlenecks prevent this low-carbon power from transferring freely into high-demand centers across England, National Grid ESO is actively intervening in the Balancing Mechanism, creating financial friction socialized through BSUoS charges."
+  "ai_summary": "Scotland's renewable energy fleet is operating at exceptionally high output, with wind generation delivering a robust 4.4 GW across the network. This substantial clean generation has pushed regional carbon intensity down to a remarkable 32 gCO2/kWh, effectively marginalizing fossil-fueled thermal generation and positioning the Scottish grid at the vanguard of national decarbonization benchmarks.\n\nDespite these favorable yield metrics, transmission bottlenecks continue to limit the grid's full utilization potential. The telemetry reflects 217.5 MWh of wasted energy via localized curtailment, exposing enduring capacity restrictions along key north-to-south export boundaries, notably the B6 boundary. High localized generation without commensurate localized load or immediate export capacity inevitably leads to these commercial and physical system losses.\n\nTo permanently recapture this stranded generation and protect asset economics, strategic capital allocation must prioritize the acceleration of high-voltage direct current (HVDC) subsea links alongside co-located grid-scale battery energy storage systems. Integrating flexible commercial offtakers and hydrogen electrolysis clusters directly within constrained network zones will provide supplementary balancing support. Ultimately, while current telemetry confirms superior clean-power yields, solving the 217.5 MWh curtailment challenge remains essential to fully unlocking the commercial and environmental value of Scotland's wind capacity."
 }

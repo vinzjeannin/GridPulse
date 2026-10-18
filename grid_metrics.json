@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-18 05:15:15 UTC",
+  "timestamp": "2026-10-18 05:51:21 UTC",
   "total_generation_gw": 28.4,
   "scot_total_generation_gw": 6.8,
-  "uk_carbon_intensity": 64,
+  "uk_carbon_intensity": 78,
   "scottish_carbon_intensity": 32,
   "total_wind_gw": 4.4,
   "generation_mix": {
@@ -152,5 +152,5 @@
       "cost_gbp": 12487
     }
   ],
-  "ai_summary": "Scotland's renewable energy fleet is operating at exceptionally high output, with wind generation delivering a robust 4.4 GW across the network. This substantial clean generation has pushed regional carbon intensity down to a remarkable 32 gCO2/kWh, effectively marginalizing fossil-fueled thermal generation and positioning the Scottish grid at the vanguard of national decarbonization benchmarks.\n\nDespite these favorable yield metrics, transmission bottlenecks continue to limit the grid's full utilization potential. The telemetry reflects 217.5 MWh of wasted energy via localized curtailment, exposing enduring capacity restrictions along key north-to-south export boundaries, notably the B6 boundary. High localized generation without commensurate localized load or immediate export capacity inevitably leads to these commercial and physical system losses.\n\nTo permanently recapture this stranded generation and protect asset economics, strategic capital allocation must prioritize the acceleration of high-voltage direct current (HVDC) subsea links alongside co-located grid-scale battery energy storage systems. Integrating flexible commercial offtakers and hydrogen electrolysis clusters directly within constrained network zones will provide supplementary balancing support. Ultimately, while current telemetry confirms superior clean-power yields, solving the 217.5 MWh curtailment challenge remains essential to fully unlocking the commercial and environmental value of Scotland's wind capacity."
+  "ai_summary": "Scotland\u2019s renewable fleet is performing near peak operational capacity, with wind assets currently delivering a robust 4.4 GW into the transmission network. This immense green output has driven regional carbon intensity down to an exceptional 32 gCO2/kWh, underscoring Scotland\u2019s role as the primary engine for Great Britain\u2019s clean power delivery during favorable meteorological conditions. \n\nHowever, enduring transmission boundary bottlenecks\u2014notably along the B6 cross-border corridor\u2014continue to restrict optimal power evacuation toward high-demand southern load centers. Consequently, the system has logged 217.5 MWh of wasted energy, driven by active curtailment directives through the Balancing Mechanism to protect local network stability. While these actions preserve grid integrity, the curtailment of zero-marginal-cost electricity exposes ongoing economic friction in the form of constraint costs and network congestion. \n\nTo alleviate this recurring dispatch paradox, system planners must accelerate cross-border interconnector reinforcements while scaling up co-located battery energy storage systems (BESS) and dynamic industrial demand response north of the border. Although the current telemetry demonstrates world-class decarbonization performance, capturing the full economic and operational value of future generation peaks depends on unlocking this trapped renewable capacity."
 }

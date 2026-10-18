@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-18 20:08:41 UTC",
+  "timestamp": "2026-10-18 20:48:46 UTC",
   "total_generation_gw": 28.4,
   "scot_total_generation_gw": 6.8,
-  "uk_carbon_intensity": 150,
+  "uk_carbon_intensity": 144,
   "scottish_carbon_intensity": 32,
   "total_wind_gw": 4.4,
   "generation_mix": {
@@ -152,5 +152,5 @@
       "cost_gbp": 12487
     }
   ],
-  "ai_summary": "Scotland\u2019s renewable fleet is exhibiting robust operational performance, driving regional carbon intensity down to an exceptional 32 gCO2/kWh. However, this localized abundance continues to expose Britain\u2019s structural transmission imbalances. Export flows are pressing against thermal and voltage transfer limits across the critical Cheviot boundary (B6). Because physical transmission bottlenecks prevent this low-carbon power from transferring freely into high-demand centers across England, National Grid ESO is actively intervening in the Balancing Mechanism, creating financial friction socialized through BSUoS charges."
+  "ai_summary": "Scotland\u2019s power system is demonstrating exceptional renewable performance, anchored by 4.4 GW of active wind generation. This immense output has driven Scottish carbon intensity down to a remarkable 32 gCO2/kWh, underscoring near-complete operational decarbonization during current peak conditions. High wind yields continue to effectively displace conventional thermal generation, delivering exceptionally clean power across the regional network.\n\nNevertheless, this surge exposes ongoing infrastructure constraints, reflected in 217.5 MWh of wasted energy via system curtailment. Network capacity limits\u2014primarily along critical export corridors such as the B6 boundary to England\u2014prevent the total evacuation of low-cost generation to major demand centers. While environmental indicators remain exemplary, this volume of lost output represents stranded commercial value and operational inefficiency.\n\nTo eliminate these recurring bottlenecks, grid operators must prioritize strategic flexibility solutions. Accelerating battery energy storage deployment, advancing dynamic line ratings, and incentivizing localized demand-side response can bridge the transmission gap. Coupling high-wind events with regional green hydrogen production and accelerated interconnector enhancements will ensure future surpluses are monetized rather than curtailed, preserving economic returns while sustaining overall grid reliability."
 }

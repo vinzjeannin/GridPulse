@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-18 22:10:56 UTC",
+  "timestamp": "2026-10-18 22:47:26 UTC",
   "total_generation_gw": 28.4,
   "scot_total_generation_gw": 6.8,
-  "uk_carbon_intensity": 126,
+  "uk_carbon_intensity": 114,
   "scottish_carbon_intensity": 32,
   "total_wind_gw": 4.4,
   "generation_mix": {
@@ -152,5 +152,5 @@
       "cost_gbp": 12487
     }
   ],
-  "ai_summary": "Scotland\u2019s energy system is currently operating at exceptional renewable capacity, anchored by wind generation delivering an impressive 4.4 GW to the regional grid. This robust generation profile has driven Scottish carbon intensity down to an enviable 32 gCO2/kWh, underscoring the dominance of clean power and minimal reliance on thermal baseload assets across the country.\n\nHowever, this surge in renewable output continues to highlight severe structural bottlenecks along key transmission corridors. Total wasted energy has reached 217.5 MWh, reflecting curtailment enforced by network constraints on north-to-south power transfers across the B6 boundary into England. While current asset productivity remains historically high, the volume of discarded megawatt-hours directly illustrates the pressing need for enhanced grid flexibility. \n\nTo fully capitalize on these high-wind conditions and mitigate recurring curtailment costs, system operators and market participants must accelerate the deployment of long-duration battery storage, co-located electrolyzers, and dynamic line rating systems. In the immediate term, flexible commercial demand-response programs should be incentivized to absorb excess local supply before structural bottlenecks enforce further network-directed throttling. Overall, the system demonstrates peak clean generation, but transmission integration remains the primary hurdle to zero-waste operational efficiency."
+  "ai_summary": "Scotland\u2019s renewable fleet is exhibiting robust operational performance, driving regional carbon intensity down to an exceptional 32 gCO2/kWh. However, this localized abundance continues to expose Britain\u2019s structural transmission imbalances. Export flows are pressing against thermal and voltage transfer limits across the critical Cheviot boundary (B6). Because physical transmission bottlenecks prevent this low-carbon power from transferring freely into high-demand centers across England, National Grid ESO is actively intervening in the Balancing Mechanism, creating financial friction socialized through BSUoS charges."
 }

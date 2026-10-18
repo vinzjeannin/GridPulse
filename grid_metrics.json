@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-18 17:46:03 UTC",
+  "timestamp": "2026-10-18 18:10:04 UTC",
   "total_generation_gw": 28.4,
   "scot_total_generation_gw": 6.8,
-  "uk_carbon_intensity": 145,
+  "uk_carbon_intensity": 146,
   "scottish_carbon_intensity": 32,
   "total_wind_gw": 4.4,
   "generation_mix": {
@@ -152,5 +152,5 @@
       "cost_gbp": 12487
     }
   ],
-  "ai_summary": "Scotland\u2019s transmission system is currently operating in a high-renewables state, driven by robust wind generation standing at 4.4 GW. This clean generation surge has suppressed Scottish carbon intensity to an exceptional 32 gCO2/kWh, demonstrating the operational effectiveness of a wind-dominated generation mix. However, this heavy output profile simultaneously exposes persistent export bottlenecks across the wider national grid. Total wasted energy has reached 221.1 MWh, reflecting acute curtailment actions necessitated by physical transmission limits across critical interfaces such as the B6 Anglo-Scottish boundary. While system frequency and inertia management remain stable, the volume of discarded energy represents both lost revenue and avoidable constraint payments. To mitigate these inefficiencies during sustained peak generation windows, system operators and asset managers must prioritize flexible demand response, optimize battery energy storage system charging schedules, and accelerate dynamic line rating implementations. Sustained wind generation at this scale will continue to challenge boundary headroom throughout the operational cycle, requiring proactive balancing mechanism interventions to harmonize deep decarbonization performance with cost-effective transmission capacity management."
+  "ai_summary": "Scotland\u2019s electrical grid is currently operating under exceptionally clean operational conditions, propelled by robust onshore and offshore wind performance reaching 4.4 GW. This surge in renewable yield has driven Scottish carbon intensity down to a remarkable 32 gCO2/kWh, reinforcing the nation's critical standing as a primary clean power engine for the wider British network. \n\nNevertheless, acute transmission infrastructure limitations continue to impose severe operational friction, as evidenced by 221.1 MWh of wasted energy logged across the current telemetry window. This substantial curtailment demonstrates that peak generation is actively outpacing regional demand and exceeding the physical export capacity of the Anglo-Scottish boundary. Without adequate off-take mechanisms, zero-carbon electrons are systematically discarded, driving up system balancing costs.\n\nTo mitigate these inefficiencies, dispatch operators and asset owners must accelerate the integration of utility-scale battery energy storage systems and implement dynamic line rating technologies along high-congestion routes. In parallel, market incentives should be strengthened to mobilize flexible regional loads and commercial electrolyzers to absorb excess output at the source. Resolving these mid-stream bottlenecks through strategic grid reinforcement remains essential to converting raw wind potential into commercial and environmental value."
 }

@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-18 03:15:43 UTC",
+  "timestamp": "2026-10-18 03:55:49 UTC",
   "total_generation_gw": 28.4,
   "scot_total_generation_gw": 6.8,
-  "uk_carbon_intensity": 76,
+  "uk_carbon_intensity": 79,
   "scottish_carbon_intensity": 32,
   "total_wind_gw": 4.4,
   "generation_mix": {
@@ -152,5 +152,5 @@
       "cost_gbp": 12487
     }
   ],
-  "ai_summary": "Scotland\u2019s renewable fleet is exhibiting robust operational performance, driving regional carbon intensity down to an exceptional 32 gCO2/kWh. However, this localized abundance continues to expose Britain\u2019s structural transmission imbalances. Export flows are pressing against thermal and voltage transfer limits across the critical Cheviot boundary (B6). Because physical transmission bottlenecks prevent this low-carbon power from transferring freely into high-demand centers across England, National Grid ESO is actively intervening in the Balancing Mechanism, creating financial friction socialized through BSUoS charges."
+  "ai_summary": "Scotland\u2019s energy system is currently operating under high renewable penetration, driven by robust wind generation reaching 4.4 GW. This surge in clean power has suppressed regional carbon intensity to an exceptional 32 gCO2/kWh, positioning the Scottish grid as an essential driver of broader decarbonization goals. \n\nHowever, this substantial green output exposes persistent structural bottlenecks within the transmission infrastructure. Total wasted energy currently stands at 217.5 MWh, underscoring ongoing curtailment challenges where local generation exceeds boundary export capacities, particularly along the key Anglo-Scottish corridors. While local demand and existing export pathways absorb the vast majority of output, the volume of discarded power highlights the operational and financial friction caused by localized network congestion.\n\nTo capture the full economic and environmental value of these peak generation events, strategic priority must center on accelerating cross-border transmission reinforcements and scaling battery energy storage systems. Enhancing co-located storage and industrial demand flexibility will be critical to mitigating constraint payments, stabilizing network flows, and ensuring that Scotland\u2019s clean generation capability is fully monetized rather than curtailed during optimal weather conditions."
 }

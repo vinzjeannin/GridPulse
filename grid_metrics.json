@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-18 18:10:04 UTC",
+  "timestamp": "2026-10-18 18:53:46 UTC",
   "total_generation_gw": 28.4,
   "scot_total_generation_gw": 6.8,
-  "uk_carbon_intensity": 146,
+  "uk_carbon_intensity": 156,
   "scottish_carbon_intensity": 32,
   "total_wind_gw": 4.4,
   "generation_mix": {
@@ -152,5 +152,5 @@
       "cost_gbp": 12487
     }
   ],
-  "ai_summary": "Scotland\u2019s electrical grid is currently operating under exceptionally clean operational conditions, propelled by robust onshore and offshore wind performance reaching 4.4 GW. This surge in renewable yield has driven Scottish carbon intensity down to a remarkable 32 gCO2/kWh, reinforcing the nation's critical standing as a primary clean power engine for the wider British network. \n\nNevertheless, acute transmission infrastructure limitations continue to impose severe operational friction, as evidenced by 221.1 MWh of wasted energy logged across the current telemetry window. This substantial curtailment demonstrates that peak generation is actively outpacing regional demand and exceeding the physical export capacity of the Anglo-Scottish boundary. Without adequate off-take mechanisms, zero-carbon electrons are systematically discarded, driving up system balancing costs.\n\nTo mitigate these inefficiencies, dispatch operators and asset owners must accelerate the integration of utility-scale battery energy storage systems and implement dynamic line rating technologies along high-congestion routes. In parallel, market incentives should be strengthened to mobilize flexible regional loads and commercial electrolyzers to absorb excess output at the source. Resolving these mid-stream bottlenecks through strategic grid reinforcement remains essential to converting raw wind potential into commercial and environmental value."
+  "ai_summary": "Scotland\u2019s energy system is currently operating in an exceptional low-carbon state, anchored by 4.4 GW of active wind generation. This substantial renewable volume has driven regional carbon intensity down to a clean 32 gCO2/kWh, demonstrating the immense capability of Scotland\u2019s generation fleet to displace thermal generation. However, this operational high point simultaneously exposes persistent infrastructure bottlenecks across the wider transmission network. With total wasted energy reaching 221.1 MWh, export limitations\u2014principally across the congested B6 boundary into England\u2014are actively forcing renewable curtailment to preserve system balance and stability. \n\nWhile the near-zero carbon intensity reflects outstanding environmental performance, the volume of discarded energy represents a distinct commercial inefficiency. Mitigating this 221.1 MWh loss requires targeted grid modernization, including accelerated transmission reinforcements, utility-scale battery energy storage systems, and enhanced dynamic demand response. Without these structural flexibility upgrades, periods of high wind output will consistently generate localized surpluses that cannot reach key demand centers. Prioritizing capital deployment into boundary capacity and co-located storage is essential to monetize this stranded clean power, lower overall balancing mechanism costs, and unlock the full economic potential of Scotland\u2019s renewable assets."
 }

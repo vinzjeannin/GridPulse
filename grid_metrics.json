@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-17 23:42:17 UTC",
+  "timestamp": "2026-10-18 00:10:42 UTC",
   "total_generation_gw": 28.4,
   "scot_total_generation_gw": 6.8,
-  "uk_carbon_intensity": 58,
+  "uk_carbon_intensity": 61,
   "scottish_carbon_intensity": 32,
   "total_wind_gw": 4.4,
   "generation_mix": {
@@ -152,5 +152,5 @@
       "cost_gbp": 12487
     }
   ],
-  "ai_summary": "Scotland\u2019s renewable fleet is exhibiting robust operational performance, driving regional carbon intensity down to an exceptional 32 gCO2/kWh. However, this localized abundance continues to expose Britain\u2019s structural transmission imbalances. Export flows are pressing against thermal and voltage transfer limits across the critical Cheviot boundary (B6). Because physical transmission bottlenecks prevent this low-carbon power from transferring freely into high-demand centers across England, National Grid ESO is actively intervening in the Balancing Mechanism, creating financial friction socialized through BSUoS charges."
+  "ai_summary": "Scotland\u2019s transmission network is currently operating under exceptional green conditions, with wind generation surging to 4.4 GW. This robust output has driven Scottish carbon intensity down to a remarkable 32 gCO2/kWh, firmly positioning the region as a primary driver of broader UK grid decarbonization. Bulk renewable power is displacing fossil thermal generation at scale, stabilizing wholesale emissions metrics across the network.\n\nHowever, cross-border transmission limits between Scotland and southern load centers continue to expose structural bottlenecks. System telemetry records 217.5 MWh of wasted energy, driven by constraint-induced curtailment orders executed to maintain network stability. While a carbon intensity of 32 gCO2/kWh illustrates significant system cleanliness, the persistence of curtailed output translates into lost revenue for generators and inflated balancing costs for consumers. \n\nOperational priorities must center on maximizing localized storage absorption and accelerating flexible industrial demand response during these high-yield periods. Over the medium term, reinforcing the B6 boundary and deploying long-duration energy storage remain critical requirements. Resolving these export frictions will ensure that peak Scottish wind generation translates entirely into usable clean power rather than expensive constraint dispatch."
 }

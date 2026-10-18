@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-18 15:49:10 UTC",
+  "timestamp": "2026-10-18 16:12:25 UTC",
   "total_generation_gw": 28.4,
   "scot_total_generation_gw": 6.8,
-  "uk_carbon_intensity": 84,
+  "uk_carbon_intensity": 104,
   "scottish_carbon_intensity": 32,
   "total_wind_gw": 4.4,
   "generation_mix": {
@@ -152,5 +152,5 @@
       "cost_gbp": 12487
     }
   ],
-  "ai_summary": "Scotland\u2019s electrical grid is operating under exceptionally high renewable saturation, anchored by an impressive 4.4 GW of wind generation. This heavy influx of zero-carbon electricity has suppressed regional carbon intensity to a remarkably low 32 gCO2/kWh, underscoring Scotland\u2019s pivotal role as a clean power exporter within the broader British energy system. \n\nDespite this generation milestone, structural transmission limitations continue to impede full resource utilization. Current telemetry records 221.1 MWh of wasted energy due to active curtailment protocols, signaling severe localized network congestion, primarily along the B6 cross-border export corridor into northern England. While localized operational metrics demonstrate robust asset availability, this curtailed volume represents lost commercial yield and unnecessary balancing expenditure.\n\nTo maximize network efficiency during these high-yield wind intervals, strategic focus must remain on expanding transmission boundary capacities and expediting co-located Battery Energy Storage Systems (BESS). Developing flexible, localized demand assets\u2014such as electrolyzers and industrial heat loads\u2014will provide the domestic capacity required to absorb generation spikes. Moving forward, coordinated operational planning between system operators and commercial asset owners is essential to convert curtailed surpluses into dispatchable resilience without compromising broader grid stability."
+  "ai_summary": "Scotland\u2019s power system is currently operating under exceptional renewable saturation, anchored by wind generation reaching 4.4 GW. This high volume of clean generation has driven regional carbon intensity down to an impressive 32 gCO2/kWh, demonstrating Scotland\u2019s ongoing role as the primary decarbonization engine for the wider British electricity network.\n\nDespite this operational success, systemic transmission constraints continue to impede total asset efficiency. Wasted energy stands at 221.1 MWh, driven by localized curtailment across critical export boundaries, notably the B6 corridor into England. With generation exceeding both regional demand and the physical transfer limits of existing infrastructure, system operators must constrain zero-marginal-cost turbines to maintain frequency stability and keep lines within thermal limits.\n\nThis structural curtailment underscores the urgency of accelerated transmission reinforcements, such as the Eastern Green Link subsea cables, alongside regional battery installations and long-duration storage assets. Until network transfer capacities expand to match Scotland\u2019s growing renewable buildout, operators must rely on dynamic line ratings and commercial demand response to monetize stranded output. Fully integrating these high-yield wind events remains essential to lowering consumer balancing costs and sustaining long-term grid decarbonization."
 }

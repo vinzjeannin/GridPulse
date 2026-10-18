@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-18 17:13:37 UTC",
+  "timestamp": "2026-10-18 17:46:03 UTC",
   "total_generation_gw": 28.4,
   "scot_total_generation_gw": 6.8,
-  "uk_carbon_intensity": 138,
+  "uk_carbon_intensity": 145,
   "scottish_carbon_intensity": 32,
   "total_wind_gw": 4.4,
   "generation_mix": {
@@ -152,5 +152,5 @@
       "cost_gbp": 12487
     }
   ],
-  "ai_summary": "Scotland\u2019s renewable fleet is exhibiting robust operational performance, driving regional carbon intensity down to an exceptional 32 gCO2/kWh. However, this localized abundance continues to expose Britain\u2019s structural transmission imbalances. Export flows are pressing against thermal and voltage transfer limits across the critical Cheviot boundary (B6). Because physical transmission bottlenecks prevent this low-carbon power from transferring freely into high-demand centers across England, National Grid ESO is actively intervening in the Balancing Mechanism, creating financial friction socialized through BSUoS charges."
+  "ai_summary": "Scotland\u2019s transmission system is currently operating in a high-renewables state, driven by robust wind generation standing at 4.4 GW. This clean generation surge has suppressed Scottish carbon intensity to an exceptional 32 gCO2/kWh, demonstrating the operational effectiveness of a wind-dominated generation mix. However, this heavy output profile simultaneously exposes persistent export bottlenecks across the wider national grid. Total wasted energy has reached 221.1 MWh, reflecting acute curtailment actions necessitated by physical transmission limits across critical interfaces such as the B6 Anglo-Scottish boundary. While system frequency and inertia management remain stable, the volume of discarded energy represents both lost revenue and avoidable constraint payments. To mitigate these inefficiencies during sustained peak generation windows, system operators and asset managers must prioritize flexible demand response, optimize battery energy storage system charging schedules, and accelerate dynamic line rating implementations. Sustained wind generation at this scale will continue to challenge boundary headroom throughout the operational cycle, requiring proactive balancing mechanism interventions to harmonize deep decarbonization performance with cost-effective transmission capacity management."
 }

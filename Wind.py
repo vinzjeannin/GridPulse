@@ -76,8 +76,16 @@ def fetch_grid_data():
         print(f"Notice: Using fallback UK intensity: {e}")
 
     wind_mw = 4350.8
-    wasted_wind = 217.5
-    total_wasted = round(wasted_wind + wasted_solar, 1)
+    wasted_wind_mwh = 217.5
+    wasted_solar_mwh = wasted_solar
+    total_wasted = round(wasted_wind_mwh + wasted_solar_mwh, 1)
+
+    # Corrected proportional equivalents scaled strictly from Wasted MWh
+    wind_homes = int((wasted_wind_mwh * 1000) / 9)
+    solar_homes = int((wasted_solar_mwh * 1000) / 9) if not is_night else 0
+    
+    # 7 litres of pure alcohol equivalent per kWh of wind energy
+    whisky_litres = int(wasted_wind_mwh * 1000 * 7)
 
     metrics = {
         "timestamp": current_utc.strftime("%Y-%m-%d %H:%M:%S UTC"),
@@ -111,13 +119,13 @@ def fetch_grid_data():
         "total_wasted_mwh": total_wasted,
         
         "fuel_breakdown": {
-            "wind": {"mwh": wasted_wind, "cost_gbp": round(wasted_wind * 135, 2), "homes_powered": 58000},
-            "solar": {"mwh": wasted_solar, "cost_gbp": round(wasted_solar * 135, 2), "homes_powered": 0 if is_night else 960},
+            "wind": {"mwh": wasted_wind_mwh, "cost_gbp": round(wasted_wind_mwh * 135, 2), "homes_powered": wind_homes},
+            "solar": {"mwh": wasted_solar_mwh, "cost_gbp": round(wasted_solar_mwh * 135, 2), "homes_powered": solar_homes},
             "nuclear": {"mwh": 0.0, "cost_gbp": 0.0, "homes_powered": 0}
         },
 
-        "whisky_pure_alcohol_litres_total": 30455600,
-        "whisky_litres": 30455600,
+        "whisky_pure_alcohol_litres_total": whisky_litres,
+        "whisky_litres": whisky_litres,
 
         "fossil_displacement": {
             "gas_burned_m3": round(total_wasted * 190, 1),
@@ -176,7 +184,6 @@ def generate_ai_insights(metrics):
             model="gemini-3.8-flash",
             contents=prompt,
         )
-        # Strip out any unexpected leading markdown headers
         text = response.text.strip()
         lines = [line for line in text.splitlines() if not line.strip().startswith('#') and not line.strip().startswith('**LIVE')]
         return "\n".join(lines).strip()

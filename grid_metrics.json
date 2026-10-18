@@ -1,25 +1,25 @@
 {
-  "timestamp": "2026-10-18 19:44:43 UTC",
+  "timestamp": "2026-10-18 20:08:41 UTC",
   "total_generation_gw": 28.4,
   "scot_total_generation_gw": 6.8,
-  "uk_carbon_intensity": 146,
+  "uk_carbon_intensity": 150,
   "scottish_carbon_intensity": 32,
   "total_wind_gw": 4.4,
   "generation_mix": {
-    "wind": 42.5,
-    "gas": 24.1,
-    "nuclear": 15.2,
+    "wind": 45.0,
+    "gas": 25.1,
+    "nuclear": 16.2,
     "biomass": 6.1,
     "hydro": 5.0,
-    "solar": 4.5,
+    "solar": 0.0,
     "imports": 2.6
   },
   "scottish_generation_mix": {
-    "wind": 64.2,
+    "wind": 68.2,
     "nuclear": 22.1,
     "gas": 4.5,
     "hydro": 5.2,
-    "solar": 4.0
+    "solar": 0.0
   },
   "wind_country_split": {
     "Scotland": 68.5,
@@ -48,7 +48,7 @@
     "net_export_gw": 2.7,
     "is_exporter": true
   },
-  "total_wasted_mwh": 221.1,
+  "total_wasted_mwh": 217.5,
   "fuel_breakdown": {
     "wind": {
       "mwh": 217.5,
@@ -56,9 +56,9 @@
       "homes_powered": 24166
     },
     "solar": {
-      "mwh": 3.6,
-      "cost_gbp": 486.0,
-      "homes_powered": 400
+      "mwh": 0.0,
+      "cost_gbp": 0.0,
+      "homes_powered": 0
     },
     "nuclear": {
       "mwh": 0.0,
@@ -69,11 +69,11 @@
   "whisky_pure_alcohol_litres_total": 1522500,
   "whisky_litres": 1522500,
   "fossil_displacement": {
-    "gas_burned_m3": 42009.0,
-    "co2_tonnes": 77.4
+    "gas_burned_m3": 41325.0,
+    "co2_tonnes": 76.1
   },
   "bess_storage": {
-    "megapacks_needed": 56,
+    "megapacks_needed": 55,
     "total_gwh": 0.22
   },
   "interconnectors": [

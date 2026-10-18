@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-18 11:12:09 UTC",
+  "timestamp": "2026-10-18 11:47:46 UTC",
   "total_generation_gw": 28.4,
   "scot_total_generation_gw": 6.8,
-  "uk_carbon_intensity": 60,
+  "uk_carbon_intensity": 59,
   "scottish_carbon_intensity": 32,
   "total_wind_gw": 4.4,
   "generation_mix": {
@@ -152,5 +152,5 @@
       "cost_gbp": 12487
     }
   ],
-  "ai_summary": "Scotland\u2019s electrical grid is demonstrating formidable renewable performance, with wind generation reaching a robust 4.4 GW. This clean surge has compressed regional carbon intensity to an impressive 32 gCO2/kWh, underscoring the territory\u2019s pivotal role in broader decarbonization targets and delivering an ultra-clean operational profile.\n\nHowever, this volume of non-synchronous generation highlights ongoing infrastructure bottlenecks, as evidenced by 221.1 MWh of wasted energy logged via curtailment. Transmission friction along critical export boundaries\u2014notably across the Scottish-English interconnectors\u2014continues to prevent surplus green electricity from flowing smoothly into southern demand centers. While the environmental metrics remain exceptionally favorable, discarding over two hundred megawatt-hours underscores the persistent physical limitations of the network during peak resource windows.\n\nAddressing this disparity requires sustained capital intervention and network agility. Accelerating reinforcement across high-voltage transmission pathways, alongside the rapid integration of utility-scale battery storage and dynamic demand-side response, will be essential to capturing this suppressed volume. Eliminating these structural constraints will ensure that peak wind outputs reliably translate into realized system value, minimizing curtailment costs while maintaining system security and low emissions across the broader network."
+  "ai_summary": "Scotland\u2019s generation landscape currently reflects robust renewable displacement, anchored by 4.4 GW of wind generation feeding the national transmission system. This exceptional volume of zero-marginal-cost generation has driven regional carbon intensity down to an ultra-low 32 gCO2/kWh, demonstrating the capability of northern assets to support grid demand with virtually negligible reliance on localized thermal dispatch.\n\nHowever, transmission network bottlenecks continue to present operational friction. Telemetry indicates 221.1 MWh of wasted energy, directly reflecting severe export limitations across critical boundaries, notably the B6 link into northern England. Because localized generation significantly outstrips regional consumption and transfer capacities, system operators have been required to issue commercial curtailment directives to preserve line ratings and ensure system stability.\n\nThis dynamic presents both an efficiency gap and an infrastructure opportunity. While the low carbon footprint confirms operational effectiveness, the loss of over 220 MWh of clean energy highlights the pressing need for expanded transmission capacity, accelerated grid-scale storage activation, and dynamic industrial demand response. In the immediate term, operators should leverage flexible local balancing assets to absorb excess supply and mitigate ongoing economic losses associated with dispatch constraints."
 }

@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-18 09:13:51 UTC",
+  "timestamp": "2026-10-18 09:51:21 UTC",
   "total_generation_gw": 28.4,
   "scot_total_generation_gw": 6.8,
-  "uk_carbon_intensity": 70,
+  "uk_carbon_intensity": 66,
   "scottish_carbon_intensity": 32,
   "total_wind_gw": 4.4,
   "generation_mix": {
@@ -152,5 +152,5 @@
       "cost_gbp": 12487
     }
   ],
-  "ai_summary": "Scotland\u2019s electrical grid is operating under exceptionally high renewable saturation, driven by a robust 4.4 GW of wind generation. This strong output has depressed regional carbon intensity to just 32 gCO2/kWh, effectively displacing fossil generation and underscoring Scotland\u2019s leadership in the wider British clean energy transition. Nevertheless, transmission infrastructure continues to struggle with this volumetric influx. Current telemetry indicates 221.1 MWh of wasted energy, a direct consequence of network congestion and export limits across the Scottish-English cross-border boundary. \n\nWhile this ultra-low carbon footprint reflects an environmental triumph, the 221.1 MWh curtailment emphasizes ongoing commercial inefficiencies and constraint costs. To minimize asset spillage during these high-yield periods, immediate reliance must fall on localized demand response and dynamic transmission capacity. Looking ahead, this scenario reinforces the critical urgency of accelerated grid reinforcement, long-duration energy storage deployments, and upcoming subsea interconnectors. Without expanded transmission headroom, significant volumes of cost-competitive zero-carbon power will continue to be discarded precisely when the broader British network requires it most."
+  "ai_summary": "Scotland\u2019s transmission network is demonstrating exceptional renewable performance, with wind generation reaching a robust 4.4 GW. This surge of clean output has successfully suppressed regional carbon intensity to 32 gCO2/kWh, positioning the Scottish grid as a low-carbon powerhouse within the wider British energy system. However, this high-yield generation environment continues to test regional transmission thresholds. Total wasted energy currently stands at 221.1 MWh, driven by localized network congestion and export bottlenecks across the Anglo-Scottish boundary that require intentional curtailment. While this volume of discarded energy is modest compared to the aggregate output, it reflects ongoing commercial friction and lost decarbonization potential. System operators must prioritize near-term balancing actions, including leveraging flexible industrial demand and cycling grid-scale storage assets to absorb surplus power. Over the medium term, recurring curtailment at this scale underscores the urgency of accelerating strategic transmission reinforcements, particularly subsea HVDC links to southern load centers. Maximizing cross-border export headroom and expediting localized storage deployment remain essential to capturing Scotland\u2019s full generation capacity, reducing constraint payments, and sustaining rapid national decarbonization targets."
 }

@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-18 06:13:47 UTC",
+  "timestamp": "2026-10-18 07:04:14 UTC",
   "total_generation_gw": 28.4,
   "scot_total_generation_gw": 6.8,
-  "uk_carbon_intensity": 69,
+  "uk_carbon_intensity": 75,
   "scottish_carbon_intensity": 32,
   "total_wind_gw": 4.4,
   "generation_mix": {
@@ -152,5 +152,5 @@
       "cost_gbp": 12487
     }
   ],
-  "ai_summary": "Scotland\u2019s renewable fleet is exhibiting robust operational performance, driving regional carbon intensity down to an exceptional 32 gCO2/kWh. However, this localized abundance continues to expose Britain\u2019s structural transmission imbalances. Export flows are pressing against thermal and voltage transfer limits across the critical Cheviot boundary (B6). Because physical transmission bottlenecks prevent this low-carbon power from transferring freely into high-demand centers across England, National Grid ESO is actively intervening in the Balancing Mechanism, creating financial friction socialized through BSUoS charges."
+  "ai_summary": "Scotland\u2019s renewable energy infrastructure is currently operating at exceptional capacity, with aggregate wind generation surging to 4.4 GW. This robust clean power influx has driven regional carbon intensity down to an impressive 32 gCO2/kWh, positioning Scotland\u2019s power system well ahead of broader decarbonization milestones and effectively displacing carbon-intensive thermal assets across the wider British grid.\n\nDespite this exceptional generation profile, localized network limitations continue to impede total system efficiency. Total wasted energy currently stands at 221.1 MWh, driven by structural curtailment along constrained transmission corridors. The persistent export bottleneck across the B6 boundary prevents surplus green electricity from flowing freely toward high-demand centers in the south, leading to forced turn-downs of operational wind assets.\n\nThis operational friction highlights an increasingly urgent imperative for grid flexibility. While these generation peaks demonstrate Scotland\u2019s wind resource potential, the volume of stranded power underscores the necessity of accelerating strategic interconnector projects, expanding utility-scale battery energy storage systems, and deploying dynamic network management tools. Mitigating these curtailment volumes will be critical to lowering consumer balancing costs, preserving project economics for asset owners, and maximizing the decarbonization value of Scotland\u2019s clean energy fleet."
 }

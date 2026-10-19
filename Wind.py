@@ -84,8 +84,8 @@ def fetch_grid_data():
     wind_homes = int((wasted_wind_mwh * 1000) / 9)
     solar_homes = int((wasted_solar_mwh * 1000) / 9) if not is_night else 0
     
-    # 7 litres of pure alcohol equivalent per kWh of wind energy
-    whisky_litres = int(wasted_wind_mwh * 1000 * 7)
+    # 7kWh per litres of pure alcohol equivalent
+    whisky_litres = int(wasted_wind_mwh * 1000 / 7)
 
     metrics = {
         "timestamp": current_utc.strftime("%Y-%m-%d %H:%M:%S UTC"),

@@ -1,41 +1,39 @@
 {
-  "timestamp": "2026-10-19 14:27:15 UTC",
+  "timestamp": "2026-10-19 14:31:43 UTC",
   "settlement_date": "2026-10-19",
-  "settlement_period": 31,
-  "total_generation_gw": 31.2,
+  "settlement_period": 32,
+  "total_generation_gw": 31.4,
   "scot_total_generation_gw": 0.6,
   "uk_carbon_intensity": 158,
   "scottish_carbon_intensity": 0,
   "total_wind_gw": 7.3,
   "generation_mix": {
-    "gas": 34.3,
-    "wind": 22.7,
-    "nuclear": 13.5,
-    "solar": 12.0,
-    "biomass": 8.6,
-    "imports": 6.1,
-    "hydro": 1.9,
-    "other": 0.9
+    "gas": 34.1,
+    "wind": 22.8,
+    "nuclear": 13.8,
+    "solar": 11.9,
+    "biomass": 9.5,
+    "imports": 7.9
   },
   "scottish_generation_mix": {
-    "wind": 78.4,
-    "nuclear": 17.6,
-    "solar": 4.0
+    "wind": 80.3,
+    "nuclear": 16.6,
+    "solar": 3.1
   },
   "wind_country_split": {
-    "Scotland": 3.9,
-    "England & Wales": 96.1
+    "Scotland": 3.8,
+    "England & Wales": 96.2
   },
   "wind_capacity": {
     "gb_total": {
       "gen_gw": 7.3,
       "capacity_gw": 31.8,
-      "usage_perc": 23.1
+      "usage_perc": 23.0
     },
     "scotland": {
-      "gen_gw": 0.3,
+      "gen_gw": 0.28,
       "capacity_gw": 18.0,
-      "usage_perc": 1.7
+      "usage_perc": 1.6
     },
     "england_wales": {
       "gen_gw": 7.0,
@@ -152,5 +150,5 @@
     "scottish_total_generation": "live (Physical Notifications)",
     "curtailment": "live (Elexon accepted bids)"
   },
-  "ai_summary": "Scottish wind is currently supplying an estimated 0.3 GW into the grid, holding Scottish carbon intensity at 0 gCO2/kWh. Even so, 0.0 MWh of Scottish generation has been turned down so far today through Balancing Mechanism bids, at a constraint cost of about \u00a30. Transmission limits across the B6 boundary prevent this low-carbon power reaching English demand centres, so gas plant further south must replace it, and the cost is recovered from bill payers through BSUoS charges."
+  "ai_summary": "Scottish wind is currently supplying an estimated 0.28 GW into the grid, holding Scottish carbon intensity at 0 gCO2/kWh. Even so, 0.0 MWh of Scottish generation has been turned down so far today through Balancing Mechanism bids, at a constraint cost of about \u00a30. Transmission limits across the B6 boundary prevent this low-carbon power reaching English demand centres, so gas plant further south must replace it, and the cost is recovered from bill payers through BSUoS charges."
 }

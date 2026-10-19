@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-19 03:20:59 UTC",
+  "timestamp": "2026-10-19 04:01:37 UTC",
   "total_generation_gw": 28.4,
   "scot_total_generation_gw": 6.8,
-  "uk_carbon_intensity": 102,
+  "uk_carbon_intensity": 112,
   "scottish_carbon_intensity": 32,
   "total_wind_gw": 4.4,
   "generation_mix": {
@@ -152,5 +152,5 @@
       "cost_gbp": 12487
     }
   ],
-  "ai_summary": "Scotland\u2019s transmission network is currently experiencing an exceptional surge in renewable output, with aggregate wind generation reaching 4.4 GW. This clean power influx has driven Scottish carbon intensity down to an impressive 32 gCO2/kWh, firmly positioning the regional grid near full operational decarbonization. However, this production peak exacerbates persistent cross-border transmission constraints along the Anglo-Scottish boundary, directly contributing to 217.5 MWh of accumulated curtailment.\n\nWhile the immediate displacement of thermal generation demonstrates system efficacy, the volume of wasted energy underscores critical structural bottlenecks within the B6 transmission corridor. To mitigate financial balancing mechanisms and maximize the value of stranded zero-marginal-cost generation, system operators must prioritize rapid scaling of high-capacity interconnector infrastructure. Concurrently, localized flexibility assets\u2014specifically battery energy storage systems, pumped hydro, and responsive industrial loads\u2014must be dynamically incentivized within constrained zones. Capturing this trapped energy locally will not only curtail consumer-funded balancing costs but also safeguard investor returns across Scottish renewable portfolios during high-wind intervals."
+  "ai_summary": "Scotland\u2019s renewable fleet is exhibiting robust operational performance, driving regional carbon intensity down to an exceptional 32 gCO2/kWh. However, this localized abundance continues to expose Britain\u2019s structural transmission imbalances. Export flows are pressing against thermal and voltage transfer limits across the critical Cheviot boundary (B6). Because physical transmission bottlenecks prevent this low-carbon power from transferring freely into high-demand centers across England, National Grid ESO is actively intervening in the Balancing Mechanism, creating financial friction socialized through BSUoS charges."
 }

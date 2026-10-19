@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-10-19 21:50:38 UTC",
+  "timestamp": "2026-10-19 21:54:18 UTC",
   "settlement_date": "2026-10-19",
   "settlement_period": 46,
   "total_generation_gw": 27.0,
@@ -47,12 +47,12 @@
     "net_export_gw": 1.9,
     "is_exporter": true
   },
-  "total_wasted_mwh": 15826.6,
+  "total_wasted_mwh": 17460.8,
   "fuel_breakdown": {
     "wind": {
-      "mwh": 15826.6,
-      "cost_gbp": 613981.6,
-      "homes_powered": 1758511
+      "mwh": 17460.8,
+      "cost_gbp": 641287.29,
+      "homes_powered": 1940088
     },
     "solar": {
       "mwh": 0.0,
@@ -65,15 +65,15 @@
       "homes_powered": 0
     }
   },
-  "whisky_pure_alcohol_litres_total": 2260942,
-  "whisky_litres": 2260942,
+  "whisky_pure_alcohol_litres_total": 2494400,
+  "whisky_litres": 2494400,
   "fossil_displacement": {
-    "gas_burned_m3": 3007054.0,
-    "co2_tonnes": 5539.3
+    "gas_burned_m3": 3317552.0,
+    "co2_tonnes": 6111.3
   },
   "bess_storage": {
-    "megapacks_needed": 4058,
-    "total_gwh": 15.83
+    "megapacks_needed": 4477,
+    "total_gwh": 17.46
   },
   "interconnectors": [
     {
@@ -145,40 +145,40 @@
       "lat": 58.15,
       "lon": -2.95,
       "fuel": "wind",
-      "wasted_mwh": 8720.8,
-      "cost_gbp": 496194
+      "wasted_mwh": 9401.3,
+      "cost_gbp": 515947
     },
     {
       "name": "Seagreen Offshore",
       "lat": 56.6,
       "lon": -1.75,
       "fuel": "wind",
-      "wasted_mwh": 2720.2,
-      "cost_gbp": 41507
-    },
-    {
-      "name": "Beatrice Offshore",
-      "lat": 58.12,
-      "lon": -3.08,
-      "fuel": "wind",
-      "wasted_mwh": 1480.0,
-      "cost_gbp": 12657
+      "wasted_mwh": 3193.2,
+      "cost_gbp": 48725
     },
     {
       "name": "Neart na Gaoithe",
       "lat": 56.25,
       "lon": -2.1,
       "fuel": "wind",
-      "wasted_mwh": 1387.0,
-      "cost_gbp": 16666
+      "wasted_mwh": 1595.8,
+      "cost_gbp": 11668
+    },
+    {
+      "name": "Beatrice Offshore",
+      "lat": 58.12,
+      "lon": -3.08,
+      "fuel": "wind",
+      "wasted_mwh": 1493.8,
+      "cost_gbp": 13517
     },
     {
       "name": "Viking Wind Farm (Shetland)",
       "lat": 60.3,
       "lon": -1.27,
       "fuel": "wind",
-      "wasted_mwh": 996.2,
-      "cost_gbp": 16196
+      "wasted_mwh": 1194.2,
+      "cost_gbp": 19417
     }
   ],
   "data_quality": {
@@ -196,5 +196,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Scottish wind is currently supplying an estimated 3.8 GW into the grid, with Scottish carbon intensity at 0 gCO2/kWh. So far today 15826.6 MWh of Scottish generation has been turned down through Balancing Mechanism bids, at a constraint cost of about \u00a3613,982. Transmission limits across the B6 boundary stop this low-carbon power reaching English demand centres, so gas plant further south must replace it, and the cost is recovered from bill payers through BSUoS charges."
+  "ai_summary": "Great Britain's total wind output currently stands at 9.9 GW, with estimated Scottish wind output reaching 3.8 GW, which represents 37.6% of installed Scottish wind capacity. Driven by this renewable volume, Scottish carbon intensity has achieved an optimal 0 gCO2/kWh, demonstrating a profound contrast to the prevailing GB-wide carbon intensity of 122 gCO2/kWh. Despite this clean operational baseline, transmission limitations prevent surplus power from flowing south to demand centers, forcing significant grid interventions. So far today, Scottish generation curtailed has reached 17460.8 MWh, accumulating a constraint cost of about \u00a3641,287. To balance the wider system and replace the discarded Scottish generation, thermal generation has ramped up down south, with an estimated 3317552.0 m3 of gas burned elsewhere to replace it. This substitute generation has released an estimated 6111.3 tonnes CO2 into the atmosphere. The resulting dynamic reveals the structural inefficiencies of current grid constraints, where zero-emission Scottish wind power is restricted at considerable fiscal expense while simultaneously driving carbon-intensive generation across the rest of the network."
 }

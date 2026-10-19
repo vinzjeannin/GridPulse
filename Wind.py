@@ -191,7 +191,7 @@ def fetch_pn_levels(settlement_date, period):
 
 
 def summarise_pn(units, levels):
-    gb_wind = scot_wind = scot_other = 0.0
+    gb_wind_mw = scot_wind_mw = scot_other_mw = 0.0
     for bmu, pts in levels.items():
         u = units.get(bmu)
         if not u or not pts:
@@ -200,16 +200,19 @@ def summarise_pn(units, levels):
         if mw <= 0 or u["fuel"] in NON_GENERATION_FUELS:
             continue
         if u["fuel"] == "WIND":
-            gb_wind += mw
+            gb_wind_mw += mw
             if u["scottish"]:
-                scot_wind += mw
+                scot_wind_mw += mw
         elif u["scottish"]:
-            scot_other += mw
-    return {"gb_wind_mw": gb_wind, "scot_wind_mw": scot_wind, "scot_other_mw": scot_other}
+            scot_other_mw += mw
+    return {
+        "gb_wind_gw": round(gb_wind_mw / 1000.0, 2),
+        "scot_wind_gw": round(scot_wind_mw / 1000.0, 2),
+        "scot_other_gw": round(scot_other_mw / 1000.0, 2)
+    }
 
 
 def wind_capacity_mw(units):
-    """Dynamically sum installed active wind capacity in MW from registered BM units."""
     gb = sum(u["capacity_mw"] for u in units.values() if u["fuel"] == "WIND" and u["capacity_mw"] > 0)
     scot = sum(u["capacity_mw"] for u in units.values() if u["fuel"] == "WIND" and u["scottish"] and u["capacity_mw"] > 0)
     return gb, scot
@@ -308,24 +311,23 @@ def fetch_grid_data(prev):
     if units:
         pn_stats = attempt("scottish_wind_share", lambda: summarise_pn(units, fetch_pn_levels(settlement_date, period)), None, q, "live (Elexon Physical Notifications)")
 
-    # Dynamic Capacity Calculations from Elexon BM Units
     cap_gb_mw, cap_scot_mw = wind_capacity_mw(units) if units else (0.0, 0.0)
     
-    # Ensures units strictly evaluate to GW with correct 18.0 GW / 33.0 GW baseline guards
     cap_gb = round(cap_gb_mw / 1000.0, 1) if cap_gb_mw > 5000 else 33.0
     cap_scot = round(cap_scot_mw / 1000.0, 1) if cap_scot_mw > 2000 else 18.0
     cap_ew = round(max(cap_gb - cap_scot, 0.1), 1)
 
-    if pn_stats and pn_stats.get("gb_wind_mw", 0) > 0:
-        scot_share = pn_stats["scot_wind_mw"] / pn_stats["gb_wind_mw"]
+    if pn_stats and pn_stats.get("gb_wind_gw", 0) > 0:
+        scot_wind_gw = pn_stats["scot_wind_gw"]
     else:
         scot_share = (cap_scot / cap_gb) if cap_gb else 0.55
+        scot_wind_gw = round(gb_wind_gw * scot_share, 1)
         q["scottish_wind_share"] = "estimate: active capacity proportion"
-    scot_share = min(max(scot_share, 0.0), 1.0)
 
-    scot_wind_gw = round(gb_wind_gw * scot_share, 1)
+    scot_wind_gw = min(max(scot_wind_gw, 0.0), cap_scot)
     ew_wind_gw = round(max(gb_wind_gw - scot_wind_gw, 0.0), 1)
-    scot_other_gw = (pn_stats["scot_other_mw"] / 1000.0) if pn_stats else None
+
+    scot_other_gw = pn_stats["scot_other_gw"] if pn_stats else None
 
     if scot_other_gw is not None:
         scot_total_gw = round(scot_wind_gw + scot_other_gw, 1)
@@ -381,8 +383,8 @@ def fetch_grid_data(prev):
         "scottish_generation_mix": scot_mix,
 
         "wind_country_split": {
-            "Scotland": round(scot_share * 100, 1),
-            "England & Wales": round((1 - scot_share) * 100, 1),
+            "Scotland": round((scot_wind_gw / gb_wind_gw) * 100, 1) if gb_wind_gw > 0 else 60.0,
+            "England & Wales": round(100 - ((scot_wind_gw / gb_wind_gw) * 100 if gb_wind_gw > 0 else 60.0), 1),
         },
         "wind_capacity": {
             "gb_total": {"gen_gw": round(gb_wind_gw, 1), "capacity_gw": cap_gb, "usage_perc": usage(gb_wind_gw, cap_gb)},

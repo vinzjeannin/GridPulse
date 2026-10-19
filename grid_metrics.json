@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-19 04:01:37 UTC",
+  "timestamp": "2026-10-19 05:00:40 UTC",
   "total_generation_gw": 28.4,
   "scot_total_generation_gw": 6.8,
-  "uk_carbon_intensity": 112,
+  "uk_carbon_intensity": 122,
   "scottish_carbon_intensity": 32,
   "total_wind_gw": 4.4,
   "generation_mix": {
@@ -152,5 +152,5 @@
       "cost_gbp": 12487
     }
   ],
-  "ai_summary": "Scotland\u2019s renewable fleet is exhibiting robust operational performance, driving regional carbon intensity down to an exceptional 32 gCO2/kWh. However, this localized abundance continues to expose Britain\u2019s structural transmission imbalances. Export flows are pressing against thermal and voltage transfer limits across the critical Cheviot boundary (B6). Because physical transmission bottlenecks prevent this low-carbon power from transferring freely into high-demand centers across England, National Grid ESO is actively intervening in the Balancing Mechanism, creating financial friction socialized through BSUoS charges."
+  "ai_summary": "Scotland\u2019s renewable infrastructure is currently operating at exceptional capacity, with aggregate wind generation reaching a formidable 4.4 GW. This sustained surge in clean power has driven regional carbon intensity down to an ultra-low 32 gCO2/kWh, demonstrating the dominant role Scottish assets play in decarbonizing the broader British power architecture and displacing thermal generation across the grid.\n\nNevertheless, this strong performance exposes persistent structural friction across the network. Current telemetry logs 217.5 MWh of wasted energy, driven by transmission bottlenecks across key corridors, particularly the B6 boundary. Because instantaneous generation substantially outpaces local demand and cross-border transfer capacity, system operators have been compelled to curtail clean output to preserve frequency and network stability. This stranded power represents lost commercial value and compounds balancing mechanism expenditures.\n\nAddressing these bottlenecks requires an immediate operational focus on flexibility and physical grid reinforcement. Near-term priorities must focus on incentivizing local energy storage uptake, maximizing industrial demand-side response, and deploying dynamic line ratings to expand export limits. Over the medium term, accelerated investment in subsea high-voltage direct current links remains critical to fully monetize peak wind conditions and prevent excessive curtailment costs."
 }

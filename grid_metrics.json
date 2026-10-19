@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-19 14:31:43 UTC",
+  "timestamp": "2026-10-19 14:36:23 UTC",
   "settlement_date": "2026-10-19",
   "settlement_period": 32,
-  "total_generation_gw": 31.4,
+  "total_generation_gw": 31.5,
   "scot_total_generation_gw": 0.6,
   "uk_carbon_intensity": 158,
   "scottish_carbon_intensity": 0,
@@ -28,7 +28,7 @@
     "gb_total": {
       "gen_gw": 7.3,
       "capacity_gw": 31.8,
-      "usage_perc": 23.0
+      "usage_perc": 22.9
     },
     "scotland": {
       "gen_gw": 0.28,

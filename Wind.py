@@ -1,8 +1,10 @@
 """
-GridPulse Scotland Data Refresh Script.
+GridPulse Scotland data refresh script.
 
-Writes grid_metrics.json for index.html. Every figure is pulled live where a
-public API exists. Uses Elexon BMRS API and Carbon Intensity API.
+Writes grid_metrics.json for index.html using Elexon Insights and the Carbon
+Intensity API. If a source fails, the previous value is carried forward and
+"data_quality" in the output says so. Nothing is silently replaced by a made-up
+number. A zero is treated as a real value.
 """
 
 import json
@@ -24,18 +26,27 @@ CARBON = "https://api.carbonintensity.org.uk"
 TIMEOUT = 30
 OUTPUT_FILE = "grid_metrics.json"
 
-# Standard Conversion Factors (Equivalency Math)
-KWH_PER_HOME_PER_DAY = 9          # standard UK household daily use
-KWH_PER_LITRE_ALCOHOL = 7         # 7 kWh per litre pure alcohol in single malt production
-GAS_M3_PER_MWH = 190              # CCGT natural gas burned per MWh replaced
-CO2_T_PER_MWH = 0.35              # CCGT carbon emissions per MWh
-MEGAPACK_MWH = 3.9                # Tesla Megapack commercial unit capacity
-FALLBACK_GBP_PER_MWH = 135        # Used if live cashflows are temporarily offline
+# Equivalency assumptions (not live data)
+KWH_PER_HOME_PER_DAY = 9
+KWH_PER_LITRE_ALCOHOL = 7
+GAS_M3_PER_MWH = 190
+CO2_T_PER_MWH = 0.35
+MEGAPACK_MWH = 3.9
+FALLBACK_GBP_PER_MWH = 135        # only if Elexon cashflows are unavailable
+SCOTTISH_DEMAND_SHARE = 0.09      # ESTIMATE: no live public Scottish demand feed
 
-SCOTTISH_GSP_IDS = {"_N", "_P"}   # North Scotland (SSE) & South Scotland (SP)
-SCOTTISH_GSP_NAMES = {"southern scotland", "northern scotland"}
 CURTAILABLE_FUELS = {"WIND", "SOLAR", "NUCLEAR"}
 NON_GENERATION_FUELS = {"INTERCONNECTOR", "SUPPLIER", "VIRTUAL"}
+
+# Used ONLY for BM units whose register entry has no region at all.
+SCOTTISH_NAME_HINTS = (
+    "whitelee", "beatrice", "moray", "seagreen", "neart na gaoithe", "viking", "dunmaglass",
+    "stronelairg", "kype muir", "hywind", "aberdeen", "fallago", "black law", "hadyard",
+    "arecleoch", "dersalloch", "kilgallioch", "pogbie", "gordonbush", "strathy", "andershaw",
+    "harestanes", "crystal rig", "dun law", "longpark", "toddleburn", "clyde", "corriegarth",
+    "lochluichart", "berry burn", "rothes", "tom nan clach", "glenglass", "dorenell",
+    "edinbane", "fairburn", "achany", "torness", "hunterston",
+)
 
 WIND_FARMS = [
     ("Whitelee Wind Farm", ("whitelee",), 55.68, -4.22),
@@ -52,14 +63,14 @@ WIND_FARMS = [
     ("Aberdeen Bay Offshore", ("aberdeen",), 57.22, -2.05),
 ]
 
-DEFAULTS = {
-    "total_generation_gw": 28.4,
-    "uk_carbon_intensity": 115,
-    "scottish_carbon_intensity": 32,
-    "total_wind_gw": 8.0,
-    "generation_mix": {"wind": 40.0, "gas": 25.0, "nuclear": 15.0, "other": 20.0},
-    "scottish_generation_mix": {"wind": 60.0, "nuclear": 25.0, "hydro": 10.0, "gas": 5.0},
-    "wind_capacity_gw": {"gb": 33.0, "scotland": 18.0, "england_wales": 15.0},
+# Only used on the very first run, when there is no previous grid_metrics.json.
+FIRST_RUN = {
+    "total_generation_gw": 0.0,
+    "total_wind_gw": 0.0,
+    "uk_carbon_intensity": 0,
+    "scottish_carbon_intensity": 0,
+    "generation_mix": {},
+    "scottish_generation_mix": {},
 }
 
 
@@ -109,6 +120,9 @@ def settlement_clock(now_utc):
     return now_uk.strftime("%Y-%m-%d"), period
 
 
+# ---------------------------------------------------------------------------
+# Carbon Intensity API
+# ---------------------------------------------------------------------------
 def get_gb_mix_ci():
     items = get_json(f"{CARBON}/generation")["data"]["generationmix"]
     mix = {i["fuel"]: round(num(i["perc"]), 1) for i in items}
@@ -122,20 +136,26 @@ def get_uk_intensity():
 
 
 def get_scottish_mix_ci():
+    """Average of North Scotland (1) and South Scotland (2). Zero intensity is valid when the
+    mix is entirely wind, nuclear and solar."""
     mixes, intensities = [], []
     for region_id in (1, 2):
         period = get_json(f"{CARBON}/regional/regionid/{region_id}")["data"][0]["data"][0]
         mixes.append({i["fuel"]: num(i["perc"]) for i in period["generationmix"]})
-        intensities.append(num(period["intensity"].get("forecast")))
+        forecast = period["intensity"].get("forecast")
+        if forecast is not None:
+            intensities.append(float(forecast))
+    if not intensities:
+        raise RuntimeError("No regional intensity returned")
     fuels = set().union(*mixes)
     avg = {f: round(sum(m.get(f, 0.0) for m in mixes) / len(mixes), 1) for f in fuels}
     avg = {f: v for f, v in sorted(avg.items(), key=lambda kv: -kv[1]) if v > 0}
-    
-    valid_intensities = [i for i in intensities if i is not None]
-    avg_intensity = int(round(sum(valid_intensities) / len(valid_intensities))) if valid_intensities else 32
-    return avg, avg_intensity
+    return avg, int(round(sum(intensities) / len(intensities)))
 
 
+# ---------------------------------------------------------------------------
+# Elexon
+# ---------------------------------------------------------------------------
 def get_fuelinst(now_utc):
     params = {
         "publishDateTimeFrom": (now_utc - timedelta(minutes=45)).strftime("%Y-%m-%dT%H:%M:%SZ"),
@@ -159,43 +179,102 @@ def get_fuelinst(now_utc):
     return round(total_mw / 1000.0, 1), round(wind_mw / 1000.0, 2)
 
 
+def classify_scottish(gsp_id, gsp_name, name):
+    """Returns (is_scottish, method). Region field wins; name hints only if region is blank."""
+    gid = gsp_id.strip().upper().lstrip("_")
+    gname = gsp_name.strip().lower()
+    if gid or gname:
+        return (gid in {"N", "P"} or "scotland" in gname), "region"
+    if any(h in name for h in SCOTTISH_NAME_HINTS):
+        return True, "name_hint"
+    return False, "none"
+
+
 def load_bmu_reference():
     units = {}
     for u in rows(get_json(f"{ELEXON}/reference/bmunits/all")):
         bmu = u.get("elexonBmUnit")
         if not bmu:
             continue
-        gsp_id = str(u.get("gspGroupId") or "").strip()
-        gsp_name = str(u.get("gspGroupName") or "").strip().lower()
+        gsp_id = str(u.get("gspGroupId") or "")
+        gsp_name = str(u.get("gspGroupName") or "")
+        name = f"{u.get('bmUnitName') or ''} {u.get('leadPartyName') or ''}".lower()
+        scottish, method = classify_scottish(gsp_id, gsp_name, name)
         units[bmu] = {
+            "id": bmu,
             "fuel": str(u.get("fuelType") or "").upper(),
-            "name": f"{u.get('bmUnitName') or ''} {u.get('leadPartyName') or ''}".lower(),
+            "name": name,
             "capacity_mw": num(u.get("generationCapacity")),
-            "scottish": gsp_id in SCOTTISH_GSP_IDS or gsp_name in SCOTTISH_GSP_NAMES,
-            "has_region": bool(gsp_id or gsp_name),
+            "gsp_id": gsp_id.strip(),
+            "gsp_name": gsp_name.strip(),
+            "scottish": scottish,
+            "method": method,
         }
+    if not units:
+        raise RuntimeError("BM unit reference returned no units")
+    log_unit_diagnostics(units)
+    if not any(u["scottish"] for u in units.values()):
+        raise RuntimeError("No Scottish BM units identified")
     return units
+
+
+def log_unit_diagnostics(units):
+    """Printed in the Actions log so classification problems are visible."""
+    wind = [u for u in units.values() if u["fuel"] == "WIND"]
+    print(f"DIAG wind units: {len(wind)}, total {sum(u['capacity_mw'] for u in wind) / 1000:.1f} GW")
+
+    by_region = defaultdict(lambda: [0, 0.0])
+    by_prefix = defaultdict(lambda: [0, 0.0])
+    for u in wind:
+        key = f"{u['gsp_id'] or '-'} / {u['gsp_name'] or '-'}"
+        by_region[key][0] += 1
+        by_region[key][1] += u["capacity_mw"]
+        prefix = u["id"].split("_")[0] if "_" in u["id"] else u["id"][:2]
+        by_prefix[prefix][0] += 1
+        by_prefix[prefix][1] += u["capacity_mw"]
+    print("DIAG wind capacity by region label (units, GW):")
+    for k, (n, mw) in sorted(by_region.items(), key=lambda kv: -kv[1][1])[:12]:
+        print(f"   {k}: {n} units, {mw / 1000:.1f} GW")
+    print("DIAG wind capacity by BM unit prefix (units, GW):")
+    for k, (n, mw) in sorted(by_prefix.items(), key=lambda kv: -kv[1][1])[:6]:
+        print(f"   {k}: {n} units, {mw / 1000:.1f} GW")
+
+    via = defaultdict(float)
+    for u in wind:
+        if u["scottish"]:
+            via[u["method"]] += u["capacity_mw"]
+    print("DIAG Scottish wind GW via region field: "
+          f"{via.get('region', 0) / 1000:.1f}, via name hints: {via.get('name_hint', 0) / 1000:.1f}")
+    sample = next((u for u in units.values() if "whitelee" in u["name"]), None)
+    if sample:
+        print(f"DIAG sample Whitelee unit: {sample}")
 
 
 def fetch_pn_levels(settlement_date, period):
     params = {"settlementDate": settlement_date, "settlementPeriod": period, "format": "json"}
+    data = rows(get_json(f"{ELEXON}/datasets/PN", params))
     levels = defaultdict(list)
-    for r in rows(get_json(f"{ELEXON}/datasets/PN", params)):
+    for r in data:
         bmu = r.get("bmUnit")
         if not bmu:
             continue
         for key in ("levelFrom", "levelTo"):
             if r.get(key) is not None:
                 levels[bmu].append(num(r.get(key)))
+    if not levels:
+        raise RuntimeError("PN returned no rows")
+    print(f"DIAG PN rows: {len(data)}, BM units: {len(levels)}")
     return levels
 
 
 def summarise_pn(units, levels):
     gb_wind_mw = scot_wind_mw = 0.0
+    matched = 0
     for bmu, pts in levels.items():
         u = units.get(bmu)
         if not u or not pts:
             continue
+        matched += 1
         mw = sum(pts) / len(pts)
         if mw <= 0 or u["fuel"] in NON_GENERATION_FUELS:
             continue
@@ -203,56 +282,62 @@ def summarise_pn(units, levels):
             gb_wind_mw += mw
             if u["scottish"]:
                 scot_wind_mw += mw
-    return {
-        "gb_wind_mw": gb_wind_mw,
-        "scot_wind_mw": scot_wind_mw
-    }
+    print(f"DIAG PN matched to register: {matched}; wind MW GB {gb_wind_mw:.0f}, Scotland {scot_wind_mw:.0f}")
+    if gb_wind_mw <= 0:
+        raise RuntimeError("No wind output found in PN data")
+    return {"gb_wind_mw": gb_wind_mw, "scot_wind_mw": scot_wind_mw}
 
 
 def wind_capacity_mw(units):
-    gb = sum(u["capacity_mw"] for u in units.values() if u["fuel"] == "WIND" and u["capacity_mw"] > 0)
-    scot = sum(u["capacity_mw"] for u in units.values() if u["fuel"] == "WIND" and u["scottish"] and u["capacity_mw"] > 0)
+    gb = sum(u["capacity_mw"] for u in units.values() if u["fuel"] == "WIND")
+    scot = sum(u["capacity_mw"] for u in units.values() if u["fuel"] == "WIND" and u["scottish"])
     return gb, scot
 
 
 def fetch_curtailment(units, settlement_date):
-    if not any(u["scottish"] for u in units.values()):
-        raise RuntimeError("No Scottish BM units identified")
+    """Accepted bids (turn-downs) on Scottish wind, solar and nuclear units, UK day so far.
+    An empty result for Scottish units is a valid zero. Missing data raises instead."""
+    vol_rows = rows(get_json(f"{ELEXON}/balancing/settlement/acceptance/volumes/all/bid/{settlement_date}"))
+    if not vol_rows:
+        raise RuntimeError("Acceptance volumes returned no rows")
+    if not any("totalVolumeAccepted" in r for r in vol_rows):
+        raise RuntimeError(f"Unexpected volume fields: {list(vol_rows[0].keys())}")
 
     def eligible(row):
         u = units.get(row.get("bmUnit"))
         return u is not None and u["scottish"] and u["fuel"] in CURTAILABLE_FUELS
 
-    vol_rows = rows(get_json(f"{ELEXON}/balancing/settlement/acceptance/volumes/all/bid/{settlement_date}"))
     mwh_by_unit = defaultdict(float)
+    registered = eligible_rows = 0
     for r in vol_rows:
+        if r.get("bmUnit") in units:
+            registered += 1
         if not eligible(r):
             continue
-        volume = num(r.get("totalVolumeAccepted"))
-        if volume < 0:
-            mwh_by_unit[r["bmUnit"]] += -volume
+        eligible_rows += 1
+        # This endpoint is bids only, so magnitude is the curtailed volume whatever the sign.
+        mwh_by_unit[r["bmUnit"]] += abs(num(r.get("totalVolumeAccepted")))
+    print(f"DIAG acceptances: {len(vol_rows)} rows, {registered} match register, "
+          f"{eligible_rows} Scottish wind/solar/nuclear, {sum(mwh_by_unit.values()):.1f} MWh")
 
     cost_by_unit, cost_live = {}, False
     try:
-        cash_rows = rows(get_json(f"{ELEXON}/balancing/settlement/indicative/cashflows/all/bid/{settlement_date}"))
+        cash_rows = rows(get_json(
+            f"{ELEXON}/balancing/settlement/indicative/cashflows/all/bid/{settlement_date}"))
         tmp = defaultdict(float)
         for r in cash_rows:
             if eligible(r):
                 tmp[r["bmUnit"]] += num(r.get("totalCashflow"))
         cost_by_unit = {k: abs(v) for k, v in tmp.items()}
-        cost_live = True
+        cost_live = bool(cash_rows)
     except Exception as exc:
         print(f"WARN [curtailment_cost]: {type(exc).__name__}: {exc}")
-
     return mwh_by_unit, cost_by_unit, cost_live
 
 
 def build_curtailment_blocks(units, mwh_by_unit, cost_by_unit, cost_live):
-    fuel_mwh = defaultdict(float)
-    fuel_cost = defaultdict(float)
-    farm_mwh = defaultdict(float)
-    farm_cost = defaultdict(float)
-
+    fuel_mwh, fuel_cost = defaultdict(float), defaultdict(float)
+    farm_mwh, farm_cost = defaultdict(float), defaultdict(float)
     for bmu, mwh in mwh_by_unit.items():
         u = units[bmu]
         cost = cost_by_unit.get(bmu, 0.0) if cost_live else mwh * FALLBACK_GBP_PER_MWH
@@ -267,101 +352,106 @@ def build_curtailment_blocks(units, mwh_by_unit, cost_by_unit, cost_live):
 
     def block(fuel):
         mwh = round(fuel_mwh.get(fuel, 0.0), 1)
-        return {
-            "mwh": mwh,
-            "cost_gbp": round(fuel_cost.get(fuel, 0.0), 2),
-            "homes_powered": int(mwh * 1000 / KWH_PER_HOME_PER_DAY),
-        }
+        return {"mwh": mwh, "cost_gbp": round(fuel_cost.get(fuel, 0.0), 2),
+                "homes_powered": int(mwh * 1000 / KWH_PER_HOME_PER_DAY)}
 
     breakdown = {"wind": block("WIND"), "solar": block("SOLAR"), "nuclear": block("NUCLEAR")}
-
     coords = {name: (lat, lon) for name, _, lat, lon in WIND_FARMS}
     top = sorted(farm_mwh.items(), key=lambda kv: -kv[1])[:6]
     locations = [
-        {
-            "name": name,
-            "lat": coords[name][0],
-            "lon": coords[name][1],
-            "fuel": "wind",
-            "wasted_mwh": round(mwh, 1),
-            "cost_gbp": int(round(farm_cost[name])),
-        }
-        for name, mwh in top if mwh > 0
+        {"name": n, "lat": coords[n][0], "lon": coords[n][1], "fuel": "wind",
+         "wasted_mwh": round(m, 1), "cost_gbp": int(round(farm_cost[n]))}
+        for n, m in top if m > 0
     ]
     return breakdown, locations
 
 
+# ---------------------------------------------------------------------------
+# Assemble
+# ---------------------------------------------------------------------------
 def fetch_grid_data(prev):
     now_utc = datetime.now(timezone.utc)
     settlement_date, period = settlement_clock(now_utc)
     q = {}
 
-    gb_mix = attempt("gb_generation_mix", get_gb_mix_ci, prev.get("generation_mix", DEFAULTS["generation_mix"]), q, "live (Carbon Intensity API)")
-    uk_intensity = attempt("uk_carbon_intensity", get_uk_intensity, prev.get("uk_carbon_intensity", DEFAULTS["uk_carbon_intensity"]), q, "live (Carbon Intensity API)")
-    scot_mix, scot_intensity = attempt("scottish_mix_and_intensity", get_scottish_mix_ci, (prev.get("scottish_generation_mix", DEFAULTS["scottish_generation_mix"]), prev.get("scottish_carbon_intensity", DEFAULTS["scottish_carbon_intensity"])), q, "live (Carbon Intensity API)")
+    gb_mix = attempt("gb_generation_mix", get_gb_mix_ci,
+                     prev.get("generation_mix", FIRST_RUN["generation_mix"]), q,
+                     "live (Carbon Intensity API)")
+    uk_intensity = attempt("uk_carbon_intensity", get_uk_intensity,
+                           prev.get("uk_carbon_intensity", FIRST_RUN["uk_carbon_intensity"]), q,
+                           "live (Carbon Intensity API)")
+    scot_mix, scot_intensity = attempt(
+        "scottish_mix_and_intensity", get_scottish_mix_ci,
+        (prev.get("scottish_generation_mix", FIRST_RUN["scottish_generation_mix"]),
+         prev.get("scottish_carbon_intensity", FIRST_RUN["scottish_carbon_intensity"])),
+        q, "live (Carbon Intensity API, avg of regions 1 and 2)")
 
-    fuelinst = attempt("gb_totals", lambda: get_fuelinst(now_utc), (prev.get("total_generation_gw", DEFAULTS["total_generation_gw"]), prev.get("total_wind_gw", DEFAULTS["total_wind_gw"])), q, "live (Elexon FUELINST)")
-    gb_total_gw, gb_wind_gw = fuelinst
+    gb_total_gw, gb_wind_gw = attempt(
+        "gb_totals", lambda: get_fuelinst(now_utc),
+        (prev.get("total_generation_gw", FIRST_RUN["total_generation_gw"]),
+         prev.get("total_wind_gw", FIRST_RUN["total_wind_gw"])),
+        q, "live (Elexon FUELINST)")
 
     units = attempt("bm_unit_reference", load_bmu_reference, {}, q, "live (Elexon reference data)")
     pn_stats = None
     if units:
-        pn_stats = attempt("scottish_wind_share", lambda: summarise_pn(units, fetch_pn_levels(settlement_date, period)), None, q, "live (Elexon Physical Notifications)")
+        pn_stats = attempt("scottish_wind_share",
+                           lambda: summarise_pn(units, fetch_pn_levels(settlement_date, period)),
+                           None, q, "live (Elexon Physical Notifications)")
 
+    # Capacity comes from the register. No hardcoded replacement if it looks odd.
+    prev_cap = prev.get("wind_capacity", {})
     cap_gb_mw, cap_scot_mw = wind_capacity_mw(units) if units else (0.0, 0.0)
-    
-    cap_gb = round(cap_gb_mw / 1000.0, 1) if cap_gb_mw > 5000 else 33.0
-    cap_scot = round(cap_scot_mw / 1000.0, 1) if cap_scot_mw > 2000 else 18.0
-    cap_ew = round(max(cap_gb - cap_scot, 0.1), 1)
-
-    # Derive accurate Scottish wind share ratio from PNs or capacity ratio, then scale by live GB wind outturn
-    if pn_stats and pn_stats.get("gb_wind_mw", 0) > 0 and pn_stats.get("scot_wind_mw", 0) > 0:
-        scot_share = pn_stats["scot_wind_mw"] / pn_stats["gb_wind_mw"]
+    if cap_gb_mw > 0:
+        cap_gb, cap_scot = round(cap_gb_mw / 1000.0, 1), round(cap_scot_mw / 1000.0, 1)
+        q["wind_capacity"] = "live (BM unit register, BM-registered wind only)"
     else:
-        scot_share = (cap_scot / cap_gb) if cap_gb else 0.55
-        q["scottish_wind_share"] = "estimate: active capacity proportion"
+        cap_gb = prev_cap.get("gb_total", {}).get("capacity_gw", 0.0)
+        cap_scot = prev_cap.get("scotland", {}).get("capacity_gw", 0.0)
+        q["wind_capacity"] = "fallback: previous value carried forward"
+    cap_ew = round(max(cap_gb - cap_scot, 0.0), 1)
+
+    if pn_stats and pn_stats["scot_wind_mw"] > 0:
+        scot_share = pn_stats["scot_wind_mw"] / pn_stats["gb_wind_mw"]
+    elif cap_gb:
+        scot_share = cap_scot / cap_gb
+        q["scottish_wind_share"] = "estimate: Scottish share of installed capacity"
+    else:
+        scot_share = prev.get("wind_country_split", {}).get("Scotland", 0.0) / 100.0
+        q["scottish_wind_share"] = "fallback: previous value carried forward"
     scot_share = min(max(scot_share, 0.0), 1.0)
 
     scot_wind_gw = round(gb_wind_gw * scot_share, 1)
     ew_wind_gw = round(max(gb_wind_gw - scot_wind_gw, 0.0), 1)
 
-    # Derive total Scottish generation robustly using the regional wind mix percentage from Carbon Intensity API
     wind_pct = scot_mix.get("wind", 0.0)
     if wind_pct > 5:
         scot_total_gw = round(scot_wind_gw / (wind_pct / 100.0), 1)
-        q["scottish_total_generation"] = "live-derived: Scottish wind output divided by regional wind mix %"
+        q["scottish_total_generation"] = "derived: Scottish wind output divided by wind % of regional mix"
     else:
-        scot_total_gw = round(scot_wind_gw / 0.60, 1)
-        q["scottish_total_generation"] = "estimate: assuming wind is 60% of Scottish mix"
+        scot_total_gw = prev.get("scot_total_generation_gw", scot_wind_gw)
+        q["scottish_total_generation"] = "fallback: wind share of Scottish mix too small to derive total"
 
-    scot_demand_gw = round(gb_total_gw * 0.09, 1)
+    scot_demand_gw = round(gb_total_gw * SCOTTISH_DEMAND_SHARE, 1)
+    q["scottish_demand"] = f"ESTIMATE: {int(SCOTTISH_DEMAND_SHARE * 100)}% of GB demand (no live feed)"
     net_export = round(scot_total_gw - scot_demand_gw, 1)
 
-    boundary_status = "High Transfer Load (Congested)" if net_export > 2.0 else "Normal Operational Load"
-
-    default_breakdown = prev.get("fuel_breakdown") or {
-        "wind": {"mwh": 217.5, "cost_gbp": 29362.5, "homes_powered": 24166},
-        "solar": {"mwh": 3.6, "cost_gbp": 486.0, "homes_powered": 400},
-        "nuclear": {"mwh": 0.0, "cost_gbp": 0.0, "homes_powered": 0}
-    }
-    default_locations = prev.get("locations", [
-        {"name": "Whitelee Wind Farm", "lat": 55.68, "lon": -4.22, "fuel": "wind", "wasted_mwh": 125.0, "cost_gbp": 16875},
-        {"name": "Beatrice Offshore", "lat": 58.12, "lon": -3.08, "fuel": "wind", "wasted_mwh": 92.5, "cost_gbp": 12487}
-    ])
-
-    curtail = attempt("curtailment", lambda: fetch_curtailment(units, settlement_date), None, q, "live (Elexon accepted bids)")
+    zero = {"mwh": 0.0, "cost_gbp": 0.0, "homes_powered": 0}
+    breakdown = prev.get("fuel_breakdown") or {k: dict(zero) for k in ("wind", "solar", "nuclear")}
+    locations = prev.get("locations", [])
+    curtail = attempt("curtailment", lambda: fetch_curtailment(units, settlement_date), None, q,
+                      "live (Elexon accepted bids, Scottish units, UK day so far)")
     if curtail:
         mwh_by_unit, cost_by_unit, cost_live = curtail
         breakdown, locations = build_curtailment_blocks(units, mwh_by_unit, cost_by_unit, cost_live)
-        if not breakdown or sum(b["mwh"] for b in breakdown.values()) == 0:
-            breakdown = default_breakdown
-            locations = default_locations
-    else:
-        breakdown = default_breakdown
-        locations = default_locations
+        q["constraint_cost"] = ("live (Elexon bid cashflows)" if cost_live
+                                else f"ESTIMATE: GBP {FALLBACK_GBP_PER_MWH}/MWh flat rate")
 
     wasted_wind = breakdown["wind"]["mwh"]
     total_wasted = round(sum(b["mwh"] for b in breakdown.values()), 1)
+
+    q["substations_interconnectors_map"] = "static reference geography and labels"
+    q["gas_co2_homes_whisky_bess"] = "derived from curtailed MWh using fixed assumptions"
 
     def usage(gen, cap):
         return round(100.0 * gen / cap, 1) if cap else 0.0
@@ -373,52 +463,43 @@ def fetch_grid_data(prev):
         "total_generation_gw": gb_total_gw,
         "scot_total_generation_gw": scot_total_gw,
         "uk_carbon_intensity": uk_intensity,
-        "scottish_carbon_intensity": scot_intensity if scot_intensity is not None else 0,
+        "scottish_carbon_intensity": scot_intensity,
         "total_wind_gw": round(gb_wind_gw, 1),
-
         "generation_mix": gb_mix,
         "scottish_generation_mix": scot_mix,
-
-        "wind_country_split": {
-            "Scotland": round(scot_share * 100, 1),
-            "England & Wales": round((1 - scot_share) * 100, 1),
-        },
+        "wind_country_split": {"Scotland": round(scot_share * 100, 1),
+                               "England & Wales": round((1 - scot_share) * 100, 1)},
         "wind_capacity": {
-            "gb_total": {"gen_gw": round(gb_wind_gw, 1), "capacity_gw": cap_gb, "usage_perc": usage(gb_wind_gw, cap_gb)},
-            "scotland": {"gen_gw": scot_wind_gw, "capacity_gw": cap_scot, "usage_perc": usage(scot_wind_gw, cap_scot)},
-            "england_wales": {"gen_gw": ew_wind_gw, "capacity_gw": cap_ew, "usage_perc": usage(ew_wind_gw, cap_ew)},
+            "gb_total": {"gen_gw": round(gb_wind_gw, 1), "capacity_gw": cap_gb,
+                         "usage_perc": usage(gb_wind_gw, cap_gb)},
+            "scotland": {"gen_gw": scot_wind_gw, "capacity_gw": cap_scot,
+                         "usage_perc": usage(scot_wind_gw, cap_scot)},
+            "england_wales": {"gen_gw": ew_wind_gw, "capacity_gw": cap_ew,
+                              "usage_perc": usage(ew_wind_gw, cap_ew)},
         },
-
-        "scottish_balance": {
-            "demand_gw": scot_demand_gw,
-            "generation_gw": scot_total_gw,
-            "net_export_gw": round(abs(net_export), 1),
-            "is_exporter": net_export >= 0,
-        },
-
+        "scottish_balance": {"demand_gw": scot_demand_gw, "generation_gw": scot_total_gw,
+                             "net_export_gw": round(abs(net_export), 1),
+                             "is_exporter": net_export >= 0},
         "total_wasted_mwh": total_wasted,
         "fuel_breakdown": breakdown,
-
         "whisky_pure_alcohol_litres_total": int(wasted_wind * 1000 / KWH_PER_LITRE_ALCOHOL),
         "whisky_litres": int(wasted_wind * 1000 / KWH_PER_LITRE_ALCOHOL),
-
-        "fossil_displacement": {
-            "gas_burned_m3": round(total_wasted * GAS_M3_PER_MWH, 1),
-            "co2_tonnes": round(total_wasted * CO2_T_PER_MWH, 1),
-        },
-        "bess_storage": {
-            "megapacks_needed": int(total_wasted / MEGAPACK_MWH) if MEGAPACK_MWH else 0,
-            "total_gwh": round(total_wasted / 1000, 2),
-        },
-
+        "fossil_displacement": {"gas_burned_m3": round(total_wasted * GAS_M3_PER_MWH, 1),
+                                "co2_tonnes": round(total_wasted * CO2_T_PER_MWH, 1)},
+        "bess_storage": {"megapacks_needed": int(total_wasted / MEGAPACK_MWH),
+                         "total_gwh": round(total_wasted / 1000, 2)},
         "interconnectors": [
-            {"name": "Western HVDC Link (Hunterston to Deeside)", "path": [[55.73, -4.88], [54.5, -3.5], [53.22, -3.05]], "status": boundary_status},
-            {"name": "Eastern Green Link 1 (Torness to Hawthorn Pit)", "path": [[56.0, -2.4], [55.3, -1.8], [54.8, -1.3]], "status": "Under Construction / Boundary Corridor"},
+            {"name": "Western HVDC Link (Hunterston to Deeside)",
+             "path": [[55.73, -4.88], [54.5, -3.5], [53.22, -3.05]],
+             "status": "HVDC corridor"},
+            {"name": "Eastern Green Link 1 (Torness to Hawthorn Pit)",
+             "path": [[56.0, -2.4], [55.3, -1.8], [54.8, -1.3]],
+             "status": "Planned corridor (not yet operational)"},
         ],
         "substations": [
-            {"name": "Beauly Substation (Highlands)", "lat": 57.48, "lon": -4.42, "status": "Operational (132/400kV)"},
-            {"name": "Denny North (Central Belt)", "lat": 56.02, "lon": -3.88, "status": boundary_status},
-            {"name": "Wishaw Substation (Lanarkshire)", "lat": 55.77, "lon": -3.92, "status": "Operational"},
+            {"name": "Beauly Substation (Highlands)", "lat": 57.48, "lon": -4.42, "status": "Highlands export node"},
+            {"name": "Denny North (Central Belt)", "lat": 56.02, "lon": -3.88, "status": "Central Belt node"},
+            {"name": "Wishaw Substation (Lanarkshire)", "lat": 55.77, "lon": -3.92, "status": "Lanarkshire node"},
             {"name": "Harker Substation (Border/Carlisle)", "lat": 54.93, "lon": -2.98, "status": "B6 Gateway Node"},
         ],
         "locations": locations,
@@ -427,21 +508,21 @@ def fetch_grid_data(prev):
 
 
 def fallback_summary(m):
+    cost = sum(b["cost_gbp"] for b in m["fuel_breakdown"].values())
     return (
         f"Scottish wind is currently supplying an estimated {m['wind_capacity']['scotland']['gen_gw']} GW "
-        f"into the grid, holding Scottish carbon intensity at {m['scottish_carbon_intensity']} gCO2/kWh. "
-        f"Even so, {m['total_wasted_mwh']} MWh of Scottish generation has been turned down so far today "
-        f"through Balancing Mechanism bids, at a constraint cost of about "
-        f"£{sum(b['cost_gbp'] for b in m['fuel_breakdown'].values()):,.0f}. "
-        "Transmission limits across the B6 boundary prevent this low-carbon power reaching English demand "
-        "centres, so gas plant further south must replace it, and the cost is recovered from bill payers "
-        "through BSUoS charges."
+        f"into the grid, with Scottish carbon intensity at {m['scottish_carbon_intensity']} gCO2/kWh. "
+        f"So far today {m['total_wasted_mwh']} MWh of Scottish generation has been turned down through "
+        f"Balancing Mechanism bids, at a constraint cost of about £{cost:,.0f}. Transmission limits across "
+        "the B6 boundary stop this low-carbon power reaching English demand centres, so gas plant further "
+        "south must replace it, and the cost is recovered from bill payers through BSUoS charges."
     )
 
 
 def generate_ai_insights(m):
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
+        print("WARN [ai_summary]: GEMINI_API_KEY missing, using fallback text.")
         return fallback_summary(m)
 
     cost = sum(b["cost_gbp"] for b in m["fuel_breakdown"].values())
@@ -459,16 +540,15 @@ def generate_ai_insights(m):
         "STRICT RULES: no markdown headers, no titles or labels, no bullet points. "
         "Start directly with the narrative analysis from the first word."
     )
-
     client = genai.Client(api_key=api_key)
-    candidates = [c for c in (os.environ.get("GEMINI_MODEL"), "gemini-flash-latest", "gemini-2.5-flash") if c]
-    for model in candidates:
+    for model in [c for c in (os.environ.get("GEMINI_MODEL"), "gemini-flash-latest", "gemini-2.5-flash") if c]:
         try:
-            response = client.models.generate_content(model=model, contents=prompt)
-            text = (response.text or "").strip()
-            lines = [ln for ln in text.splitlines() if not ln.strip().startswith("#") and not ln.strip().startswith("**LIVE")]
+            text = (client.models.generate_content(model=model, contents=prompt).text or "").strip()
+            lines = [ln for ln in text.splitlines()
+                     if not ln.strip().startswith("#") and not ln.strip().startswith("**LIVE")]
             cleaned = "\n".join(lines).strip()
             if cleaned:
+                print(f"AI summary generated with model: {model}")
                 return cleaned
         except Exception as exc:
             print(f"WARN [ai_summary] model {model} failed: {type(exc).__name__}: {exc}")
@@ -478,10 +558,11 @@ def generate_ai_insights(m):
 def main():
     print("Fetching live grid metrics...")
     metrics = fetch_grid_data(load_previous())
-
+    print("Data quality report:")
+    for key, status in metrics["data_quality"].items():
+        print(f"  - {key}: {status}")
     print("Generating AI insight block...")
     metrics["ai_summary"] = generate_ai_insights(metrics)
-
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
         json.dump(metrics, f, indent=2)
     print(f"Successfully updated {OUTPUT_FILE} at {metrics['timestamp']}")

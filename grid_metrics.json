@@ -1,24 +1,24 @@
 {
-  "timestamp": "2026-10-19 13:06:51 UTC",
+  "timestamp": "2026-10-19 13:33:46 UTC",
   "settlement_date": "2026-10-19",
-  "settlement_period": 29,
-  "total_generation_gw": 30.7,
+  "settlement_period": 30,
+  "total_generation_gw": 30.8,
   "scot_total_generation_gw": 0.5,
-  "uk_carbon_intensity": 155,
+  "uk_carbon_intensity": 157,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 6.8,
+  "total_wind_gw": 6.9,
   "generation_mix": {
-    "gas": 31.4,
-    "wind": 22.5,
-    "solar": 14.5,
-    "nuclear": 13.8,
-    "imports": 9.0,
-    "biomass": 8.8
+    "gas": 33.0,
+    "wind": 21.8,
+    "nuclear": 14.0,
+    "solar": 13.9,
+    "biomass": 8.7,
+    "imports": 8.6
   },
   "scottish_generation_mix": {
-    "wind": 76.6,
-    "nuclear": 18.9,
-    "solar": 4.6
+    "wind": 78.2,
+    "nuclear": 17.5,
+    "solar": 4.3
   },
   "wind_country_split": {
     "Scotland": 4.0,
@@ -26,19 +26,19 @@
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 6.8,
+      "gen_gw": 6.9,
       "capacity_gw": 31.8,
-      "usage_perc": 21.5
+      "usage_perc": 21.7
     },
     "scotland": {
       "gen_gw": 0.3,
       "capacity_gw": 1.8,
-      "usage_perc": 15.0
+      "usage_perc": 15.6
     },
     "england_wales": {
       "gen_gw": 6.6,
       "capacity_gw": 30.0,
-      "usage_perc": 21.9
+      "usage_perc": 22.0
     }
   },
   "scottish_balance": {
@@ -150,5 +150,5 @@
     "scottish_total_generation": "live (Physical Notifications)",
     "curtailment": "live (Elexon accepted bids)"
   },
-  "ai_summary": "Scottish electricity generation continues to demonstrate exceptional decarbonisation, recording a local carbon intensity of 0 gCO2/kWh. This stands in stark contrast to the GB-wide figure of 155 gCO2/kWh, highlighting Scotland\u2019s structural environmental advantage even during periods of subdued wind generation across the north. Across the broader network, GB wind output stands at 6.8 GW, while estimated Scottish wind output contributes 0.3 GW. This local yield represents 15.0% of installed Scottish wind capacity, reflecting lighter weather conditions over regional wind assets. \n\nDespite these lighter wind volumes, transmission efficiency remains optimal with complete system stability and frictionless cross-border integration. Scottish generation curtailed so far today registers at 0.0 MWh, incurring a constraint cost of about \u00a30. Consequently, there has been no requirement for out-of-merit thermal redispatch, leading to an estimated 0.0 m3 of gas burned elsewhere to replace curtailed energy, which corresponds directly to 0.0 tonnes CO2 in consequential emissions. The operational picture reflects an unconstrained transmission network that seamlessly absorbs all available indigenous renewable production. While higher capacity factors will ultimately be required to displace broader national thermal assets, current dispatch delivers uncompromised local cleanliness and complete fiscal efficiency for consumers across the electricity system."
+  "ai_summary": "Scotland is currently demonstrating an exceptionally clean local generation profile, recording a Scottish carbon intensity of 0 gCO2/kWh, in stark contrast to the GB-wide figure of 157 gCO2/kWh. Despite this local decarbonization, wind production remains subdued across the region. Estimated Scottish wind output stands at 0.3 GW, representing 15.6% of installed Scottish wind capacity. Across the broader network, GB wind output has reached 6.9 GW, indicating that renewable resources elsewhere are carrying a larger share of the total generation mix. Because northern generation remains low, regional transmission corridors are operating smoothly within capacity limits. Consequently, system balancing interventions have not been required: Scottish generation curtailed so far today sits at 0.0 MWh, incurring a constraint cost of about \u00a30. With no curtailment-driven redispatch required, the estimated gas burned elsewhere to replace it is 0.0 m3, resulting in 0.0 tonnes CO2 of replacement emissions. This quiet operating environment provides the system operator with an unconstrained network state, allowing all available low-carbon power in Scotland to flow directly onto the transmission network without generating financial penalties or displacement emissions down south."
 }

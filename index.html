@@ -50,3 +50,62 @@
         <div class="bg-slate-600 border border-slate-500 p-5 rounded-xl shadow-lg space-y-2">
             <h3 class="text-sm font-semibold text-emerald-300 uppercase tracking-wide">Live Grid Insights</h3>
             <p id="ai-summary-text" class="text-sm text-slate-100 leading-relaxed font-normal">
+                Connecting to Gemini API to analyze current Scottish grid flows, fossil displacement, and constraint costs...
+            </p>
+        </div>
+
+        <!-- Top Metrics Cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            <!-- 1. Wasted MWh -->
+            <div class="bg-slate-600 border border-slate-500 p-5 rounded-xl shadow-lg space-y-2">
+                <h3 class="text-sm font-medium text-slate-200">⚡️ Wasted Energy (MWh)</h3>
+                <p id="total-mwh" class="text-2xl font-bold text-amber-300">Loading...</p>
+                <div class="text-xs space-y-0.5 border-t border-slate-500 pt-2 text-slate-200">
+                    <p>Wind: <b id="mwh-wind" class="text-sky-300">--</b></p>
+                    <p>Solar: <b id="mwh-solar" class="text-yellow-300">--</b></p>
+                    <p>Nuclear: <b id="mwh-nuclear" class="text-purple-300">--</b></p>
+                </div>
+            </div>
+
+            <!-- 2. Constraint Cost -->
+            <div class="bg-slate-600 border border-slate-500 p-5 rounded-xl shadow-lg space-y-2">
+                <h3 class="text-sm font-medium text-slate-200">💸 Constraint Cost (£)</h3>
+                <p id="total-cost" class="text-2xl font-bold text-rose-300">Loading...</p>
+                <div class="text-xs space-y-0.5 border-t border-slate-500 pt-2 text-slate-200">
+                    <p>Wind: <b id="cost-wind" class="text-sky-300">--</b></p>
+                    <p>Solar: <b id="cost-solar" class="text-yellow-300">--</b></p>
+                    <p>Nuclear: <b id="cost-nuclear" class="text-purple-300">--</b></p>
+                </div>
+            </div>
+
+            <!-- 3. Homes Powered -->
+            <div class="bg-slate-600 border border-slate-500 p-5 rounded-xl shadow-lg space-y-2">
+                <h3 class="text-sm font-medium text-slate-200">🏠 Homes Powered Equiv.</h3>
+                <p id="total-homes" class="text-2xl font-bold text-sky-300">Loading...</p>
+                <div class="text-xs space-y-0.5 border-t border-slate-500 pt-2 text-slate-200">
+                    <p>Wind: <b id="homes-wind" class="text-sky-300">--</b></p>
+                    <p>Solar: <b id="homes-solar" class="text-yellow-300">--</b></p>
+                    <p>Nuclear: <b id="homes-nuclear" class="text-purple-300">--</b></p>
+                </div>
+                <p class="text-xs text-slate-200 pt-1">Based on standard UK household daily average use (~9 kWh)</p>
+            </div>
+
+            <!-- 4. Single Malt Whisky Equiv. -->
+            <div class="bg-slate-600 border border-slate-500 p-5 rounded-xl shadow-lg space-y-2">
+                <h3 class="text-sm font-medium text-slate-200">🥃 Single Malt Whisky Equiv.</h3>
+                <p id="total-whisky" class="text-2xl font-bold text-purple-300">Loading...</p>
+                <p class="text-xs text-slate-200 mt-1">Litres of pure alcohol for Single Malt Scotch Whisky production</p>
+            </div>
+        </div>
+
+        <!-- Fossil Fuel Displacement & Carbon Impact Section -->
+        <div class="bg-slate-600 border border-slate-500 p-5 rounded-xl shadow-lg space-y-3">
+            <h3 class="text-base font-semibold text-slate-100">🔥 Fossil Fuel Displacement & Carbon Impact (Down South)</h3>
+            <p class="text-xs text-slate-200 italic">When grid bottlenecks force Scottish wind turbines off, fossil-fuel power plants down south must step in to meet electricity demand.</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-1">
+                <div class="bg-slate-500 border border-slate-400 p-4 rounded-lg flex items-center justify-between">
+                    <div>
+                        <p class="text-xs text-slate-100">Equivalent Natural Gas Burned (CCGT)</p>
+                        <p id="gas-burned" class="text-xl font-bold text-amber-300 mt-1">Loading...</p>
+                    </div>
+                    <span

@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-19 02:19:41 UTC",
+  "timestamp": "2026-10-19 02:56:21 UTC",
   "total_generation_gw": 28.4,
   "scot_total_generation_gw": 6.8,
-  "uk_carbon_intensity": 87,
+  "uk_carbon_intensity": 95,
   "scottish_carbon_intensity": 32,
   "total_wind_gw": 4.4,
   "generation_mix": {
@@ -152,5 +152,5 @@
       "cost_gbp": 12487
     }
   ],
-  "ai_summary": "Scotland\u2019s generation profile is currently demonstrating exceptional renewable strength, propelled by 4.4 GW of active wind output that anchors the nation\u2019s role as a vital clean power exporter. Driven by this wind volume, Scottish carbon intensity has plunged to an admirable 32 gCO2/kWh. This underscores an operational window where renewable penetration successfully suppresses thermal generation, delivering near-complete regional decarbonization.\n\nHowever, physical infrastructure bottlenecks continue to challenge overall system efficiency. Total wasted energy currently stands at 217.5 MWh, reflecting acute localized curtailment primarily driven by export limits across the B6 transmission boundary. While generation capability remains robust, the inability to transport surplus power south to demand centers incurs both economic costs through balancing mechanism actions and environmental loss via spilled clean energy.\n\nTo capture this latent value, strategic focus must pivot toward expanding flexible asset deployment, including utility-scale battery energy storage systems strategically sited north of key pinch points. In the long term, expediting planned high-voltage direct current subsea links remains critical to eliminating these 217.5 MWh friction points. Aligning high-capacity wind output with upgraded grid infrastructure will protect generator margins and maximize whole-system decarbonization without costly operational throttling."
+  "ai_summary": "Scotland\u2019s energy system is currently operating at near-peak renewable throughput, with wind generation delivering a robust 4.4 GW into the transmission network. This immense volume of zero-marginal-cost generation has driven regional carbon intensity down to an exceptional 32 gCO2/kWh, reinforcing Scotland\u2019s critical role as a primary green power exporter within the wider British electricity market. \n\nHowever, network friction remains a tangible operational challenge. Transmission bottlenecks, particularly across the critical B6 export boundary, have forced 217.5 MWh of generation into curtailment. While this wasted volume reflects a system operating near physical thermal limits, it underscores the persistent structural mismatch between localized bulk generation and cross-border transport capacity. \n\nTo maximize the economic and environmental yield of this 4.4 GW output, system operators must accelerate the integration of flexible assets. Addressing the current 217.5 MWh loss requires prioritizing co-located battery storage, long-duration storage technologies, and dynamic demand-side response in constraint zones. Sustaining these ultra-low emission levels without incurring recurring balancing costs depends entirely on synchronized transmission upgrades alongside localized commercial flexibility."
 }

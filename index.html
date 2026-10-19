@@ -108,4 +108,440 @@
                         <p class="text-xs text-slate-100">Equivalent Natural Gas Burned (CCGT)</p>
                         <p id="gas-burned" class="text-xl font-bold text-amber-300 mt-1">Loading...</p>
                     </div>
-                    <span
+                    <span class="text-2xl">⛽</span>
+                </div>
+                <div class="bg-slate-500 border border-slate-400 p-4 rounded-lg flex items-center justify-between">
+                    <div>
+                        <p class="text-xs text-slate-100">Additional Carbon Emissions Generated</p>
+                        <p id="co2-emissions" class="text-xl font-bold text-rose-300 mt-1">Loading...</p>
+                    </div>
+                    <span class="text-2xl">🏭</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scottish Power Balance (Demand vs Production) -->
+        <div class="bg-slate-600 border border-slate-500 p-5 rounded-xl shadow-lg space-y-3">
+            <div class="flex justify-between items-center">
+                <h3 class="text-base font-semibold text-slate-100">Scottish Power Balance (Demand vs. Production)</h3>
+                <span id="export-badge" class="px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Calculating...</span>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-1">
+                <div class="space-y-1">
+                    <div class="flex justify-between text-xs">
+                        <span class="text-slate-200">Scottish Local Electricity Demand</span>
+                        <b id="scot-demand-val" class="text-sky-300">-- GW</b>
+                    </div>
+                    <div class="w-full h-3.5 bg-slate-700 rounded-full overflow-hidden">
+                        <div id="scot-demand-bar" class="h-full bg-sky-400 transition-all duration-500" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <div class="space-y-1">
+                    <div class="flex justify-between text-xs">
+                        <span class="text-slate-200">Scottish Generation Output</span>
+                        <b id="scot-gen-val" class="text-emerald-300">-- GW</b>
+                    </div>
+                    <div class="w-full h-3.5 bg-slate-700 rounded-full overflow-hidden">
+                        <div id="scot-gen-bar" class="h-full bg-emerald-400 transition-all duration-500" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Generation Mixes Section -->
+        <div class="space-y-4">
+            <!-- 1. UK Generation Mix -->
+            <div class="bg-slate-600 border border-slate-500 p-5 rounded-xl shadow-lg space-y-3">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-sm font-medium text-slate-200">UK Grid Generation Mix</h3>
+                    <div class="space-x-3">
+                        <span id="total-gw" class="text-sm font-bold text-emerald-300">-- GW Total Load</span>
+                        <span id="uk-carbon-tag" class="text-xs font-semibold px-2 py-0.5 bg-slate-500 rounded text-amber-200 border border-slate-400">-- gCO2/kWh</span>
+                    </div>
+                </div>
+                <div id="mix-bar" class="w-full h-4 bg-slate-700 rounded-full overflow-hidden flex"></div>
+                <div id="mix-legend" class="flex flex-wrap gap-4 text-xs text-slate-200"></div>
+            </div>
+
+            <!-- 2. Scottish Generation Mix -->
+            <div class="bg-slate-600 border border-slate-500 p-5 rounded-xl shadow-lg space-y-3">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-sm font-medium text-slate-200">Scottish Power Generation Mix</h3>
+                    <div class="space-x-3">
+                        <span id="scot-total-gw" class="text-sm font-bold text-emerald-300">-- GW Total Load</span>
+                        <span id="scot-carbon-tag" class="text-xs font-semibold px-2 py-0.5 bg-slate-500 rounded text-amber-200 border border-slate-400">-- gCO2/kWh</span>
+                    </div>
+                </div>
+                <div id="scot-mix-bar" class="w-full h-4 bg-slate-700 rounded-full overflow-hidden flex"></div>
+                <div id="scot-mix-legend" class="flex flex-wrap gap-4 text-xs text-slate-200"></div>
+            </div>
+
+            <!-- 3. Wind Generation Share (GB Regional Split) -->
+            <div class="bg-slate-600 border border-slate-500 p-5 rounded-xl shadow-lg space-y-3">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-sm font-medium text-slate-200">Wind Generation Share (GB Regional Split)</h3>
+                    <span id="wind-gw-tag" class="text-xs text-sky-300 font-semibold">-- GW Wind Active</span>
+                </div>
+                <div id="wind-split-bar" class="w-full h-4 bg-slate-700 rounded-full overflow-hidden flex"></div>
+                <div id="wind-split-legend" class="flex flex-wrap gap-4 text-xs text-slate-200"></div>
+            </div>
+
+            <!-- 4. Installed Wind Capacity vs Live Output -->
+            <div class="bg-slate-600 border border-slate-500 p-5 rounded-xl shadow-lg space-y-4">
+                <h3 class="text-sm font-medium text-slate-200">Installed Wind Capacity vs. Live Output</h3>
+                
+                <div class="space-y-1">
+                    <div class="flex justify-between text-xs">
+                        <span class="text-slate-100 font-semibold">Great Britain (Total Wind)</span>
+                        <span id="cap-gb-label" class="text-slate-200">-- / 33.0 GW (--%)</span>
+                    </div>
+                    <div class="w-full h-3 bg-slate-700 rounded-full overflow-hidden">
+                        <div id="cap-gb-bar" class="h-full bg-sky-400 transition-all duration-500" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <div class="space-y-1">
+                    <div class="flex justify-between text-xs">
+                        <span class="text-slate-100 font-semibold">Scotland Wind Fleet</span>
+                        <span id="cap-scot-label" class="text-slate-200">-- / 18.0 GW (--%)</span>
+                    </div>
+                    <div class="w-full h-3 bg-slate-700 rounded-full overflow-hidden">
+                        <div id="cap-scot-bar" class="h-full bg-emerald-400 transition-all duration-500" style="width: 0%"></div>
+                    </div>
+                </div>
+
+                <div class="space-y-1">
+                    <div class="flex justify-between text-xs">
+                        <span class="text-slate-100 font-semibold">England & Wales Wind Fleet</span>
+                        <span id="cap-eng-label" class="text-slate-200">-- / 15.0 GW (--%)</span>
+                    </div>
+                    <div class="w-full h-3 bg-slate-700 rounded-full overflow-hidden">
+                        <div id="cap-eng-bar" class="h-full bg-amber-400 transition-all duration-500" style="width: 0%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="bg-slate-600 border border-slate-500 p-5 rounded-xl shadow-lg space-y-4">
+            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                <h2 class="text-xl font-semibold text-slate-100">📍 Active Grid Constraints & Interconnector Flow Corridors</h2>
+                <div class="flex items-center gap-3 text-xs text-slate-200">
+                    <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-amber-500 inline-block"></span> Wind</span>
+                    <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-yellow-400 inline-block"></span> Solar</span>
+                    <span class="flex items-center gap-1"><span class="w-3 h-3 rounded-full bg-purple-500 inline-block"></span> Nuclear</span>
+                    <span class="flex items-center gap-1"><span class="w-4 h-1.5 bg-sky-400 inline-block rounded"></span> B6 Corridor</span>
+                </div>
+            </div>
+            <div id="map"></div>
+        </div>
+
+        <!-- Transmission Substations & BESS Flexibility Boxes -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Transmission Nodes / Substations -->
+            <div class="bg-slate-600 border border-slate-500 p-5 rounded-xl shadow-lg space-y-3">
+                <h3 class="text-base font-semibold text-slate-100">High-Voltage Transmission Nodes</h3>
+                <p class="text-xs text-slate-200">Key Scottish-English grid boundary transition substations:</p>
+                <div class="space-y-2 text-xs">
+                    <div class="flex justify-between bg-slate-500 p-2.5 rounded border border-slate-400">
+                        <span class="text-slate-100 font-medium">Beauly Substation (Highlands)</span>
+                        <span class="text-emerald-300 font-semibold">Operational (132/400kV)</span>
+                    </div>
+                    <div class="flex justify-between bg-slate-500 p-2.5 rounded border border-slate-400">
+                        <span class="text-slate-100 font-medium">Denny North (Central Belt)</span>
+                        <span class="text-amber-300 font-semibold">High Thermal Load</span>
+                    </div>
+                    <div class="flex justify-between bg-slate-500 p-2.5 rounded border border-slate-400">
+                        <span class="text-slate-100 font-medium">Wishaw Substation (Lanarkshire)</span>
+                        <span class="text-emerald-300 font-semibold">Operational</span>
+                    </div>
+                    <div class="flex justify-between bg-slate-500 p-2.5 rounded border border-slate-400">
+                        <span class="text-slate-100 font-medium">Harker (Border / Carlisle)</span>
+                        <span class="text-sky-300 font-semibold">B6 Gateway Node</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BESS Storage Flexibility Box -->
+            <div class="bg-slate-600 border border-slate-500 p-5 rounded-xl shadow-lg space-y-3">
+                <h3 class="text-base font-semibold text-slate-100">Battery Storage (BESS) Absorption Offset</h3>
+                <p class="text-xs text-slate-200">Equivalent storage required to absorb current wasted MWh instead of curtailing:</p>
+                <div class="grid grid-cols-2 gap-3 pt-1">
+                    <div class="bg-slate-500 border border-slate-400 p-3 rounded-lg text-center">
+                        <p class="text-xs text-slate-200">Tesla Megapacks Needed</p>
+                        <p id="bess-megapacks" class="text-xl font-bold text-sky-300 mt-1">--</p>
+                    </div>
+                    <div class="bg-slate-500 border border-slate-400 p-3 rounded-lg text-center">
+                        <p class="text-xs text-slate-200">Total BESS Capacity</p>
+                        <p id="bess-gwh" class="text-xl font-bold text-emerald-300 mt-1">-- GWh</p>
+                    </div>
+                </div>
+                <p class="text-xs text-slate-200 pt-1">Assuming standard 3.9 MWh commercial battery units.</p>
+            </div>
+        </div>
+
+        <!-- Static BSUoS & Consumer Double Whammy Explanation Box (Bottom of Page, ~200 Words) -->
+        <div class="bg-slate-600 border border-slate-500 p-6 rounded-xl shadow-lg space-y-3">
+            <h3 class="text-base font-semibold text-emerald-300">How Constraint Costs and BSUoS Charges Impact Your Energy Bill</h3>
+            <div class="text-sm text-slate-100 leading-relaxed space-y-3">
+                <p>
+                    Many consumers assume that multi-million-pound constraint payments made to wind farms are funded directly by government income taxes or corporate subsidies. In reality, these costs are recovered entirely through electricity bills via the <strong>Balancing Services Use of System (BSUoS)</strong> charges. Grid operators bill these expenses directly to energy suppliers and large industrial users, who pass them on to everyday households through higher unit electricity rates and standing charges.
+                </p>
+                <p>
+                    This creates a financial and environmental <strong>double whammy</strong> for bill-payers. First, consumers fund the constraint payouts required to switch off clean Scottish wind generation when transmission lines are congested. Second, because local renewable power is blocked from reaching major demand centers, expensive fossil-fuel power plants (CCGT) down south must ramp up to fill the deficit. This drives up wholesale energy prices further and generates preventable carbon emissions, meaning consumers pay more out of pocket while achieving lower carbon reductions.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const map = L.map('map').setView([55.8, -3.5], 6);
+
+        // Switched to reliable OpenStreetMap standard tiles for full mobile compatibility
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        let mapLayers = [];
+
+        function renderMixBar(mixData, barId, legendId, totalWindGw = null) {
+            const bar = document.getElementById(barId);
+            const legend = document.getElementById(legendId);
+            if (!bar || !legend || !mixData) return;
+
+            bar.innerHTML = '';
+            legend.innerHTML = '';
+
+            const colors = { wind: '#38bdf8', gas: '#f43f5e', nuclear: '#a855f7', solar: '#eab308', coal: '#64748b', biomass: '#10b981', hydro: '#06b6d4', imports: '#6366f1', other: '#94a3b8' };
+
+            for (const [fuel, perc] of Object.entries(mixData)) {
+                if (perc > 0) {
+                    const barSegment = document.createElement('div');
+                    barSegment.style.width = perc + '%';
+                    barSegment.style.backgroundColor = colors[fuel] || '#94a3b8';
+                    bar.appendChild(barSegment);
+
+                    const legendItem = document.createElement('div');
+                    const formattedFuel = fuel.charAt(0).toUpperCase() + fuel.slice(1);
+                    let labelText = `${formattedFuel}: <b>${perc}%</b>`;
+                    if (fuel === 'wind' && totalWindGw) {
+                        labelText += ` (${totalWindGw} GW)`;
+                    }
+                    legendItem.innerHTML = `<span class="inline-block w-2.5 h-2.5 rounded-full mr-1.5" style="background-color: ${colors[fuel] || '#94a3b8'}"></span>${labelText}`;
+                    legend.appendChild(legendItem);
+                }
+            }
+        }
+
+        function updateDashboard() {
+            // Ensure mobile map container renders tiles correctly
+            setTimeout(() => { map.invalidateSize(); }, 250);
+
+            fetch('grid_metrics.json?' + new Date().getTime())
+                .then(response => response.json())
+                .then(data => {
+                    const fb = data.fuel_breakdown;
+                    
+                    if (data.ai_summary) {
+                        const cleanSummary = data.ai_summary.replace(/^(#|\*\*).*?(\n|$)/g, '').trim();
+                        document.getElementById('ai-summary-text').innerText = cleanSummary || data.ai_summary;
+                    }
+
+                    if (fb) {
+                        document.getElementById('total-mwh').innerText = data.total_wasted_mwh.toLocaleString() + " MWh";
+                        document.getElementById('mwh-wind').innerText = fb.wind.mwh.toLocaleString() + " MWh";
+                        document.getElementById('mwh-solar').innerText = fb.solar.mwh.toLocaleString() + " MWh";
+                        document.getElementById('mwh-nuclear').innerText = fb.nuclear.mwh.toLocaleString() + " MWh";
+
+                        const totalCost = fb.wind.cost_gbp + fb.solar.cost_gbp + fb.nuclear.cost_gbp;
+                        document.getElementById('total-cost').innerText = "£" + totalCost.toLocaleString();
+                        document.getElementById('cost-wind').innerText = "£" + fb.wind.cost_gbp.toLocaleString();
+                        document.getElementById('cost-solar').innerText = "£" + fb.solar.cost_gbp.toLocaleString();
+                        document.getElementById('cost-nuclear').innerText = "£" + fb.nuclear.cost_gbp.toLocaleString();
+
+                        const totalHomes = fb.wind.homes_powered + fb.solar.homes_powered + fb.nuclear.homes_powered;
+                        document.getElementById('total-homes').innerText = totalHomes.toLocaleString();
+                        document.getElementById('homes-wind').innerText = fb.wind.homes_powered.toLocaleString();
+                        document.getElementById('homes-solar').innerText = fb.solar.homes_powered.toLocaleString();
+                        document.getElementById('homes-nuclear').innerText = fb.nuclear.homes_powered.toLocaleString();
+                    }
+
+                    document.getElementById('total-whisky').innerText = data.whisky_pure_alcohol_litres_total.toLocaleString() + " L";
+
+                    if (data.fossil_displacement) {
+                        document.getElementById('gas-burned').innerText = data.fossil_displacement.gas_burned_m3.toLocaleString() + " m³";
+                        document.getElementById('co2-emissions').innerText = data.fossil_displacement.co2_tonnes.toLocaleString() + " Tonnes CO₂";
+                    }
+
+                    if (data.bess_storage) {
+                        document.getElementById('bess-megapacks').innerText = data.bess_storage.megapacks_needed.toLocaleString();
+                        document.getElementById('bess-gwh').innerText = data.bess_storage.total_gwh.toLocaleString() + " GWh";
+                    }
+                    
+                    // Cross-browser clean local time and date rendering
+                    let formattedTime = "Just now";
+                    if (data.timestamp) {
+                        const parsedDate = new Date(data.timestamp);
+                        if (!isNaN(parsedDate)) {
+                            formattedTime = parsedDate.toLocaleDateString(undefined, { 
+                                day: 'numeric', 
+                                month: 'short', 
+                                year: 'numeric' 
+                            }) + ' at ' + parsedDate.toLocaleTimeString(undefined, { 
+                                hour: '2-digit', 
+                                minute: '2-digit', 
+                                second: '2-digit',
+                                hour12: false 
+                            });
+                        } else {
+                            formattedTime = data.timestamp;
+                        }
+                    }
+                    document.getElementById('last-updated').innerText = "Last synced: " + formattedTime;
+
+                    if (data.scottish_balance) {
+                        const sb = data.scottish_balance;
+                        document.getElementById('scot-demand-val').innerText = sb.demand_gw + " GW";
+                        document.getElementById('scot-gen-val').innerText = sb.generation_gw + " GW";
+                        
+                        document.getElementById('scot-demand-bar').style.width = Math.min(100, (sb.demand_gw / 12) * 100) + '%';
+                        document.getElementById('scot-gen-bar').style.width = Math.min(100, (sb.generation_gw / 12) * 100) + '%';
+
+                        const badge = document.getElementById('export-badge');
+                        if (sb.is_exporter) {
+                            badge.innerText = `⬆️ Net Exporter (+${sb.net_export_gw} GW South)`;
+                            badge.className = "px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-500/20 text-emerald-300 border border-emerald-500/30";
+                        } else {
+                            badge.innerText = `⬇️ Net Importer (${sb.net_export_gw} GW)`;
+                            badge.className = "px-2.5 py-1 rounded-full text-xs font-bold bg-rose-500/20 text-rose-300 border border-rose-500/30";
+                        }
+                    }
+
+                    if (data.total_generation_gw) {
+                        document.getElementById('total-gw').innerText = data.total_generation_gw + " GW Total Load";
+                    }
+                    if (data.scot_total_generation_gw) {
+                        document.getElementById('scot-total-gw').innerText = data.scot_total_generation_gw + " GW Total Load";
+                    }
+                    if (data.uk_carbon_intensity) {
+                        document.getElementById('uk-carbon-tag').innerText = data.uk_carbon_intensity + " gCO2/kWh";
+                    }
+                    if (data.scottish_carbon_intensity) {
+                        document.getElementById('scot-carbon-tag').innerText = data.scottish_carbon_intensity + " gCO2/kWh";
+                    }
+
+                    if (data.total_wind_gw) {
+                        document.getElementById('wind-gw-tag').innerText = "💨 " + data.total_wind_gw + " GW Wind Output";
+                    }
+
+                    renderMixBar(data.generation_mix, 'mix-bar', 'mix-legend', data.total_wind_gw);
+                    renderMixBar(data.scottish_generation_mix, 'scot-mix-bar', 'scot-mix-legend');
+
+                    if (data.wind_country_split) {
+                        const splitBar = document.getElementById('wind-split-bar');
+                        const splitLegend = document.getElementById('wind-split-legend');
+                        splitBar.innerHTML = '';
+                        splitLegend.innerHTML = '';
+
+                        const splitColors = { 'Scotland': '#38bdf8', 'England & Wales': '#f59e0b' };
+
+                        for (const [region, perc] of Object.entries(data.wind_country_split)) {
+                            const barSegment = document.createElement('div');
+                            barSegment.style.width = perc + '%';
+                            barSegment.style.backgroundColor = splitColors[region] || '#38bdf8';
+                            splitBar.appendChild(barSegment);
+
+                            const legendItem = document.createElement('div');
+                            legendItem.innerHTML = `<span class="inline-block w-2.5 h-2.5 rounded-full mr-1.5" style="background-color: ${splitColors[region] || '#38bdf8'}"></span>${region}: <b>${perc}%</b>`;
+                            splitLegend.appendChild(legendItem);
+                        }
+                    }
+
+                    if (data.wind_capacity) {
+                        const cap = data.wind_capacity;
+                        
+                        document.getElementById('cap-gb-label').innerText = `${cap.gb_total.gen_gw} / ${cap.gb_total.capacity_gw} GW (${cap.gb_total.usage_perc}%)`;
+                        document.getElementById('cap-gb-bar').style.width = cap.gb_total.usage_perc + '%';
+
+                        document.getElementById('cap-scot-label').innerText = `${cap.scotland.gen_gw} / ${cap.scotland.capacity_gw} GW (${cap.scotland.usage_perc}%)`;
+                        document.getElementById('cap-scot-bar').style.width = cap.scotland.usage_perc + '%';
+
+                        document.getElementById('cap-eng-label').innerText = `${cap.england_wales.gen_gw} / ${cap.england_wales.capacity_gw} GW (${cap.england_wales.usage_perc}%)`;
+                        document.getElementById('cap-eng-bar').style.width = cap.england_wales.usage_perc + '%';
+                    }
+
+                    mapLayers.forEach(layer => map.removeLayer(layer));
+                    mapLayers = [];
+
+                    if (data.interconnectors) {
+                        data.interconnectors.forEach(ic => {
+                            const line = L.polyline(ic.path, {
+                                className: 'interconnector-line'
+                            }).addTo(map);
+
+                            line.bindTooltip(`⚡ <b>${ic.name}</b><br>Active Power Flow Corridor`, { direction: 'top' });
+                            mapLayers.push(line);
+                        });
+                    }
+
+                    if (data.substations) {
+                        data.substations.forEach(sub => {
+                            const subMarker = L.circleMarker([sub.lat, sub.lon], {
+                                radius: 7,
+                                color: '#a855f7',
+                                fillColor: '#c084fc',
+                                fillOpacity: 0.9,
+                                weight: 2
+                            }).addTo(map);
+
+                            subMarker.bindTooltip(`🔌 <b>${sub.name}</b>`, { direction: 'right' });
+                            mapLayers.push(subMarker);
+                        });
+                    }
+
+                    if (data.locations && data.locations.length > 0) {
+                        const fuelColors = { wind: '#f59e0b', solar: '#eab308', nuclear: '#a855f7' };
+
+                        data.locations.forEach(loc => {
+                            const color = fuelColors[loc.fuel] || '#f59e0b';
+                            const radiusSize = Math.max(18000, loc.wasted_mwh * 4);
+
+                            const marker = L.circle([loc.lat, loc.lon], {
+                                color: color,
+                                fillColor: color,
+                                fillOpacity: 0.6,
+                                radius: radiusSize
+                            }).addTo(map);
+
+                            marker.bindTooltip(`${loc.name} [${loc.fuel.toUpperCase()}]`, {
+                                permanent: true,
+                                direction: 'top',
+                                className: 'custom-label'
+                            });
+
+                            marker.bindPopup(`
+                                <div style="color: #0f172a; font-family: sans-serif; padding: 4px; line-height: 1.4;">
+                                    <b style="font-size: 14px;">${loc.name}</b><br>
+                                    ⚙️ Type: <b style="text-transform: uppercase;">${loc.fuel}</b><br>
+                                    ⚡ Wasted Energy: <b>${loc.wasted_mwh.toLocaleString()} MWh</b><br>
+                                    💷 Constraint Cost: <b>£${loc.cost_gbp.toLocaleString()}</b>
+                                </div>
+                            `);
+
+                            mapLayers.push(marker);
+                        });
+                    }
+                })
+                .catch(error => console.error('Error fetching data:', error));
+        }
+
+        updateDashboard();
+        setInterval(updateDashboard, 30000);
+    </script>
+</body>
+</html>

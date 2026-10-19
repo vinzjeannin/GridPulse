@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-19 08:09:09 UTC",
+  "timestamp": "2026-10-19 09:12:15 UTC",
   "total_generation_gw": 28.4,
   "scot_total_generation_gw": 6.8,
-  "uk_carbon_intensity": 174,
+  "uk_carbon_intensity": 163,
   "scottish_carbon_intensity": 32,
   "total_wind_gw": 4.4,
   "generation_mix": {
@@ -66,8 +66,8 @@
       "homes_powered": 0
     }
   },
-  "whisky_pure_alcohol_litres_total": 1522500,
-  "whisky_litres": 1522500,
+  "whisky_pure_alcohol_litres_total": 31071,
+  "whisky_litres": 31071,
   "fossil_displacement": {
     "gas_burned_m3": 42009.0,
     "co2_tonnes": 77.4
@@ -152,5 +152,5 @@
       "cost_gbp": 12487
     }
   ],
-  "ai_summary": "Scotland\u2019s renewable energy output remains exceptionally strong, with regional wind generation currently delivering 4.4 GW into the transmission system. This robust clean supply suppresses Scottish carbon intensity to a remarkably low 32 gCO2/kWh, positioning the region well ahead of net-zero operational benchmarks. However, the system faces familiar structural friction as transmission bottlenecks inhibit full power off-take, resulting in 221.1 MWh of wasted energy through curtailment.\n\nThis volume of curtailed generation underscores the enduring disparity between northern generation capacity and southern demand centers. While environmental metrics reflect a low-carbon success, the forced shedding of renewable power triggers avoidable constraint payments and operational inefficiencies. The current 4.4 GW baseline demonstrates that Scotland has the generating capacity to lead broader UK decarbonization, yet the 221.1 MWh loss emphasizes the critical need for expanded cross-border interconnection and localized battery energy storage systems (BESS).\n\nIn the near term, grid operators must prioritize flexible load response and dynamic line ratings to mitigate ongoing spillage. Balancing desk operations should capitalize on local price suppression to incentivize flexible industrial demand, ensuring that clean wind power is monetized rather than constrained as long-term grid reinforcement projects progress."
+  "ai_summary": "Scotland\u2019s electrical grid is currently operating under exceptionally clean conditions, driven by robust wind generation output reaching 4.4 GW. This surge in renewable dispatch has compressed regional carbon intensity to a remarkably low 32 gCO2/kWh, underscoring the near-total dominance of zero-carbon generation within the regional energy mix. However, the transmission infrastructure is concurrently experiencing acute export constraints, resulting in 221.1 MWh of wasted energy through economic wind curtailment. This curtailment volume points directly to structural transmission bottlenecks, primarily across the Anglo-Scottish cross-border boundary, where renewable supply significantly outpaces immediate interconnection off-take capacity. While thermal generation displacement is maximizing immediate decarbonization gains, the recurring volume of stranded clean power highlights an urgent operational need for expanded flexibility assets. Accelerating the deployment of co-located utility-scale battery storage, long-duration energy storage, and flexible industrial demand response is vital to absorbing surplus generation locally. Without coordinated commercial dispatch interventions and accelerated grid reinforcement, system operators will continue to incur high constraint balancing costs while shedding valuable low-carbon megawatt-hours. Market participants should proactively position flexible capacity to monetize these recurring high-generation curtailment windows."
 }

@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-19 02:56:21 UTC",
+  "timestamp": "2026-10-19 03:20:59 UTC",
   "total_generation_gw": 28.4,
   "scot_total_generation_gw": 6.8,
-  "uk_carbon_intensity": 95,
+  "uk_carbon_intensity": 102,
   "scottish_carbon_intensity": 32,
   "total_wind_gw": 4.4,
   "generation_mix": {
@@ -152,5 +152,5 @@
       "cost_gbp": 12487
     }
   ],
-  "ai_summary": "Scotland\u2019s energy system is currently operating at near-peak renewable throughput, with wind generation delivering a robust 4.4 GW into the transmission network. This immense volume of zero-marginal-cost generation has driven regional carbon intensity down to an exceptional 32 gCO2/kWh, reinforcing Scotland\u2019s critical role as a primary green power exporter within the wider British electricity market. \n\nHowever, network friction remains a tangible operational challenge. Transmission bottlenecks, particularly across the critical B6 export boundary, have forced 217.5 MWh of generation into curtailment. While this wasted volume reflects a system operating near physical thermal limits, it underscores the persistent structural mismatch between localized bulk generation and cross-border transport capacity. \n\nTo maximize the economic and environmental yield of this 4.4 GW output, system operators must accelerate the integration of flexible assets. Addressing the current 217.5 MWh loss requires prioritizing co-located battery storage, long-duration storage technologies, and dynamic demand-side response in constraint zones. Sustaining these ultra-low emission levels without incurring recurring balancing costs depends entirely on synchronized transmission upgrades alongside localized commercial flexibility."
+  "ai_summary": "Scotland\u2019s transmission network is currently experiencing an exceptional surge in renewable output, with aggregate wind generation reaching 4.4 GW. This clean power influx has driven Scottish carbon intensity down to an impressive 32 gCO2/kWh, firmly positioning the regional grid near full operational decarbonization. However, this production peak exacerbates persistent cross-border transmission constraints along the Anglo-Scottish boundary, directly contributing to 217.5 MWh of accumulated curtailment.\n\nWhile the immediate displacement of thermal generation demonstrates system efficacy, the volume of wasted energy underscores critical structural bottlenecks within the B6 transmission corridor. To mitigate financial balancing mechanisms and maximize the value of stranded zero-marginal-cost generation, system operators must prioritize rapid scaling of high-capacity interconnector infrastructure. Concurrently, localized flexibility assets\u2014specifically battery energy storage systems, pumped hydro, and responsive industrial loads\u2014must be dynamically incentivized within constrained zones. Capturing this trapped energy locally will not only curtail consumer-funded balancing costs but also safeguard investor returns across Scottish renewable portfolios during high-wind intervals."
 }

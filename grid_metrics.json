@@ -1,8 +1,8 @@
 {
-  "timestamp": "2026-10-19 01:07:56 UTC",
+  "timestamp": "2026-10-19 01:56:11 UTC",
   "total_generation_gw": 28.4,
   "scot_total_generation_gw": 6.8,
-  "uk_carbon_intensity": 95,
+  "uk_carbon_intensity": 89,
   "scottish_carbon_intensity": 32,
   "total_wind_gw": 4.4,
   "generation_mix": {
@@ -152,5 +152,5 @@
       "cost_gbp": 12487
     }
   ],
-  "ai_summary": "Scotland\u2019s renewable fleet is exhibiting robust operational performance, driving regional carbon intensity down to an exceptional 32 gCO2/kWh. However, this localized abundance continues to expose Britain\u2019s structural transmission imbalances. Export flows are pressing against thermal and voltage transfer limits across the critical Cheviot boundary (B6). Because physical transmission bottlenecks prevent this low-carbon power from transferring freely into high-demand centers across England, National Grid ESO is actively intervening in the Balancing Mechanism, creating financial friction socialized through BSUoS charges."
+  "ai_summary": "Scotland\u2019s electrical grid is currently operating under exceptional green dispatch conditions, driven by a commanding 4.4 GW of wind generation that anchors regional supply. This massive renewable influx has depressed Scottish carbon intensity to a remarkably clean 32 gCO2/kWh, virtually eliminating fossil-fuel generation across the domestic generation mix and reinforcing the region's role as a primary clean power exporter to the broader British system.\n\nHowever, this generation surplus continues to collide with physical transmission limitations. Total wasted energy currently registers at 217.5 MWh, reflecting active localized curtailment as cross-border interconnectors reach boundary limits. While regional demand is thoroughly covered by clean electrons, structural bottlenecks\u2014notably across the B6 boundary\u2014prevent the seamless evacuation of low-marginal-cost power southward. Consequently, the system is forced into costly constraint actions, shedding high-value green energy rather than displacing carbon-intensive generation elsewhere on the grid.\n\nTo capture this trapped economic and environmental value, priority must be given to accelerating transmission reinforcements, alongside the rapid integration of co-located utility-scale storage and flexible demand mechanisms. Until transmission bandwidth expands in step with offshore and onshore capacity, curtailment figures of this scale will remain an ongoing friction point."
 }

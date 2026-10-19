@@ -25,25 +25,24 @@ jobs:
           python -m pip install --upgrade pip
           pip install requests urllib3 google-genai
 
-      - name: Debug
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: |
-          pwd
-          ls -la
-          python --version
-          test -f Wind.py && echo "Wind.py found" || echo "Wind.py NOT found"
-          test -n "$GEMINI_API_KEY" && echo "API key is set" || echo "API key is EMPTY"
-
       - name: Run GridPulse update script
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python -u Wind.py
+        run: |
+          python -u Wind.py
+          grep '"timestamp"' grid_metrics.json
 
       - name: Commit and push updated metrics
         run: |
+          set -x
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add grid_metrics.json
-          git status
-      
+          if git diff --cached --quiet; then
+            echo "NO CHANGES TO COMMIT"
+          else
+            git commit -m "Auto-update live grid metrics and AI summary"
+            git log -1 --stat
+            git push origin HEAD:main
+            echo "PUSH DONE"
+          fi

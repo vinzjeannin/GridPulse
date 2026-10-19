@@ -1,42 +1,40 @@
 {
-  "timestamp": "2026-10-19 11:22:45 UTC",
+  "timestamp": "2026-10-19 11:30:46 UTC",
   "settlement_date": "2026-10-19",
-  "settlement_period": 25,
+  "settlement_period": 26,
   "curtailment_window": "UK settlement day so far (since 00:00 UK time)",
-  "total_generation_gw": 32.3,
+  "total_generation_gw": 32.2,
   "scot_total_generation_gw": 0.4,
   "uk_carbon_intensity": 153,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 7.0,
+  "total_wind_gw": 7.1,
   "generation_mix": {
-    "gas": 31.1,
-    "wind": 20.6,
-    "solar": 13.1,
-    "nuclear": 12.7,
-    "imports": 10.9,
-    "biomass": 8.0,
-    "other": 2.1,
-    "hydro": 1.5
+    "gas": 32.2,
+    "wind": 22.3,
+    "nuclear": 13.9,
+    "solar": 13.8,
+    "imports": 9.4,
+    "biomass": 8.4
   },
   "scottish_generation_mix": {
-    "wind": 79.0,
-    "nuclear": 16.1,
+    "wind": 78.0,
+    "nuclear": 17.1,
     "solar": 4.8
   },
   "wind_country_split": {
-    "Scotland": 3.1,
-    "England & Wales": 96.9
+    "Scotland": 3.3,
+    "England & Wales": 96.7
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 7.0,
+      "gen_gw": 7.1,
       "capacity_gw": 31.8,
       "usage_perc": 22.2
     },
     "scotland": {
       "gen_gw": 0.2,
       "capacity_gw": 1.8,
-      "usage_perc": 12.2
+      "usage_perc": 13.3
     },
     "england_wales": {
       "gen_gw": 6.8,
@@ -147,9 +145,9 @@
     "scottish_total_generation": "live (Scottish wind + other BM units, Physical Notifications)",
     "scottish_demand": "estimate: 9% of GB demand (no live public feed)",
     "curtailment": "live (Elexon accepted bids, Scottish units, UK day so far)",
-    "constraint_cost": "live (Elexon bid cashflows)",
+    "constraint_cost": "fallback: previous values carried forward due to empty settlement return",
     "interconnectors_and_substations": "static reference geography",
     "fossil_displacement_bess_whisky": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Great Britain is currently recording a total wind output of 7.0 GW, with estimated Scottish wind output contributing 0.2 GW to the national network. This represents a subdued period of generation north of the border, accounting for 12.2% of installed Scottish wind capacity. Despite this modest volume of wind generation, Scotland maintains exemplary environmental performance, registering a Scottish carbon intensity of 0 gCO2/kWh. This stands in sharp contrast to the broader GB-wide carbon intensity, which is currently sitting at 153 gCO2/kWh, highlighting Scotland\u2019s continued capability to deliver zero-carbon power. From a system balancing perspective, transmission constraints are entirely absent. Scottish generation curtailed so far today remains at 0.0 MWh, resulting in a constraint cost of about \u00a30. Because no clean generation has been restricted, the grid has avoided secondary fossil-fuel balancing measures, ensuring that the estimated gas burned elsewhere to replace it is 0.0 m3, resulting in 0.0 tonnes CO2 emitted. Overall, while local wind capture is suppressed, the transmission system is operating with maximum efficiency, zero redispatch costs, and no constraint-driven environmental impact."
+  "ai_summary": "Great Britain's electricity network is currently operating with clear regional contrasts in clean energy generation. Total GB wind output has reached 7.1 GW, while estimated Scottish wind output contributes 0.2 GW to the wider grid. This Scottish generation represents 13.3% of installed Scottish wind capacity, indicating subdued local wind speeds across northern generation hubs. Despite this modest output, Scotland maintains an exceptional environmental performance, delivering a Scottish carbon intensity of 0 gCO2/kWh. This performance stands in sharp contrast to the GB-wide carbon intensity of 153 gCO2/kWh, highlighting the cleaner baseline of the northern generation mix relative to thermal dependencies elsewhere on the system. Network balancing remains fully optimized under these prevailing flows. Scottish generation curtailed so far today is precisely 0.0 MWh, incurring an operational constraint cost of about \u00a30. With cross-border transmission interfaces operating unhindered and no clean power restricted, the estimated gas burned elsewhere to replace it is 0.0 m3, preventing any associated thermal fallout of 0.0 tonnes CO2. These figures collectively indicate a well-balanced transmission environment characterized by frictionless energy transfer and zero curtailment liabilities."
 }

@@ -46,7 +46,7 @@
             <p id="last-updated" class="text-xs text-slate-300">Connecting to live feed...</p>
         </header>
 
-        <!-- AI Executive Brief / Data Interpretation Panel (~200 Words, No Button/Caption) -->
+        <!-- AI Executive Brief / Data Interpretation Panel -->
         <div class="bg-slate-600 border border-slate-500 p-5 rounded-xl shadow-lg space-y-2">
             <h3 class="text-sm font-semibold text-emerald-300 uppercase tracking-wide">Live Grid Insights</h3>
             <p id="ai-summary-text" class="text-sm text-slate-100 leading-relaxed font-normal">
@@ -245,22 +245,7 @@
                 <h3 class="text-base font-semibold text-slate-100">High-Voltage Transmission Nodes</h3>
                 <p class="text-xs text-slate-200">Key Scottish-English grid boundary transition substations:</p>
                 <div id="substation-list" class="space-y-2 text-xs">
-                    <div class="flex justify-between bg-slate-500 p-2.5 rounded border border-slate-400">
-                        <span class="text-slate-100 font-medium">Beauly Substation (Highlands)</span>
-                        <span class="text-emerald-300 font-semibold">Operational (132/400kV)</span>
-                    </div>
-                    <div class="flex justify-between bg-slate-500 p-2.5 rounded border border-slate-400">
-                        <span class="text-slate-100 font-medium">Denny North (Central Belt)</span>
-                        <span class="text-amber-300 font-semibold">High Thermal Load</span>
-                    </div>
-                    <div class="flex justify-between bg-slate-500 p-2.5 rounded border border-slate-400">
-                        <span class="text-slate-100 font-medium">Wishaw Substation (Lanarkshire)</span>
-                        <span class="text-emerald-300 font-semibold">Operational</span>
-                    </div>
-                    <div class="flex justify-between bg-slate-500 p-2.5 rounded border border-slate-400">
-                        <span class="text-slate-100 font-medium">Harker (Border / Carlisle)</span>
-                        <span class="text-sky-300 font-semibold">B6 Gateway Node</span>
-                    </div>
+                    <!-- Dynamically populated from live telemetry -->
                 </div>
             </div>
 
@@ -282,7 +267,7 @@
             </div>
         </div>
 
-        <!-- Static BSUoS & Consumer Double Whammy Explanation Box (Bottom of Page, ~200 Words) -->
+        <!-- Explanation Box -->
         <div class="bg-slate-600 border border-slate-500 p-6 rounded-xl shadow-lg space-y-3">
             <h3 class="text-base font-semibold text-emerald-300">How Constraint Costs and BSUoS Charges Impact Your Energy Bill</h3>
             <div class="text-sm text-slate-100 leading-relaxed space-y-3">
@@ -301,7 +286,6 @@
     <script>
         const map = L.map('map').setView([55.8, -3.5], 6);
 
-        // Switched to reliable OpenStreetMap standard tiles for full mobile compatibility
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 18,
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -337,7 +321,6 @@
         }
 
         function updateDashboard() {
-            // Ensure mobile map container renders tiles correctly
             setTimeout(() => { map.invalidateSize(); }, 250);
 
             fetch('grid_metrics.json?v=' + new Date().getTime(), { cache: 'no-store' })
@@ -381,7 +364,6 @@
                         document.getElementById('bess-gwh').innerText = data.bess_storage.total_gwh.toLocaleString() + " GWh";
                     }
                     
-                    // Cross-browser clean local time and date rendering
                     let formattedTime = "Just now";
                     if (data.timestamp) {
                         const iso = data.timestamp.replace(' UTC', 'Z').replace(' ', 'T');
@@ -427,7 +409,6 @@
                         document.getElementById('uk-carbon-tag').innerText = data.uk_carbon_intensity + " gCO2/kWh";
                     }
                     
-                    // Secure Scottish carbon intensity fallback tag (supports 0 gCO2/kWh cleanly)
                     const scotIntensity = (data.scottish_carbon_intensity !== undefined && data.scottish_carbon_intensity !== null) ? data.scottish_carbon_intensity : 0;
                     document.getElementById('scot-carbon-tag').innerText = scotIntensity + " gCO2/kWh";
 
@@ -471,15 +452,22 @@
                         document.getElementById('cap-eng-bar').style.width = cap.england_wales.usage_perc + '%';
                     }
 
-                    // Dynamically render transmission nodes / substations list with live status strings
                     if (data.substations && data.substations.length > 0) {
                         const subContainer = document.getElementById('substation-list');
                         if (subContainer) {
                             subContainer.innerHTML = '';
                             data.substations.forEach(sub => {
+                                const statusText = sub.status || 'Operational';
+                                let colorClass = 'text-emerald-300';
+                                if (statusText.includes('Congested') || statusText.includes('Load') || statusText.includes('High')) {
+                                    colorClass = 'text-amber-300';
+                                } else if (statusText.includes('Gateway') || statusText.includes('Node')) {
+                                    colorClass = 'text-sky-300';
+                                }
+
                                 const subEl = document.createElement('div');
                                 subEl.className = "flex justify-between bg-slate-500 p-2.5 rounded border border-slate-400";
-                                subEl.innerHTML = `<span class="text-slate-100 font-medium">${sub.name}</span><span class="text-amber-300 font-semibold">${sub.status || 'Operational'}</span>`;
+                                subEl.innerHTML = `<span class="text-slate-100 font-medium">${sub.name}</span><span class="${colorClass} font-semibold">${statusText}</span>`;
                                 subContainer.appendChild(subEl);
                             });
                         }

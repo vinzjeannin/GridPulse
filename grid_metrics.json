@@ -1,50 +1,50 @@
 {
-  "timestamp": "2026-10-19 11:59:45 UTC",
+  "timestamp": "2026-10-19 12:33:44 UTC",
   "settlement_date": "2026-10-19",
-  "settlement_period": 26,
-  "total_generation_gw": 32.0,
+  "settlement_period": 28,
+  "total_generation_gw": 30.7,
   "scot_total_generation_gw": 0.4,
-  "uk_carbon_intensity": 149,
+  "uk_carbon_intensity": 153,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 7.1,
+  "total_wind_gw": 7.0,
   "generation_mix": {
-    "gas": 32.2,
-    "wind": 22.3,
-    "nuclear": 13.9,
-    "solar": 13.8,
-    "imports": 9.4,
-    "biomass": 8.4
+    "gas": 29.8,
+    "wind": 22.4,
+    "solar": 14.6,
+    "nuclear": 13.6,
+    "imports": 10.6,
+    "biomass": 9.1
   },
   "scottish_generation_mix": {
-    "wind": 78.0,
-    "nuclear": 17.1,
-    "solar": 4.8
+    "wind": 78.3,
+    "nuclear": 16.8,
+    "solar": 4.9
   },
   "wind_country_split": {
-    "Scotland": 3.3,
-    "England & Wales": 96.7
+    "Scotland": 3.6,
+    "England & Wales": 96.4
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 7.1,
+      "gen_gw": 7.0,
       "capacity_gw": 31.8,
-      "usage_perc": 22.3
+      "usage_perc": 21.9
     },
     "scotland": {
       "gen_gw": 0.2,
       "capacity_gw": 1.8,
-      "usage_perc": 13.3
+      "usage_perc": 13.9
     },
     "england_wales": {
-      "gen_gw": 6.8,
+      "gen_gw": 6.7,
       "capacity_gw": 30.0,
-      "usage_perc": 22.8
+      "usage_perc": 22.4
     }
   },
   "scottish_balance": {
-    "demand_gw": 2.9,
+    "demand_gw": 2.8,
     "generation_gw": 0.4,
-    "net_export_gw": 2.5,
+    "net_export_gw": 2.4,
     "is_exporter": false
   },
   "total_wasted_mwh": 0.0,
@@ -150,5 +150,5 @@
     "scottish_total_generation": "live (Physical Notifications)",
     "curtailment": "live (Elexon accepted bids)"
   },
-  "ai_summary": "Great Britain's electricity system is currently recording a total GB wind output of 7.1 GW, providing a steady baseline of renewable energy across the wider national transmission network. Within this operational picture, estimated Scottish wind output stands at 0.2 GW, representing 13.3% of installed Scottish wind capacity. Despite this low utilization of local wind assets, Scotland maintains an exceptional environmental profile, registering a Scottish carbon intensity of 0 gCO2/kWh. This clean local performance stands in stark contrast to the GB-wide carbon intensity, which is currently measured at 149 gCO2/kWh. Grid management and cross-border transfer channels are operating under optimal, unconstrained conditions. Transmission operators have recorded Scottish generation curtailed so far today at 0.0 MWh, ensuring that the total constraint cost remains at about \u00a30. With zero renewable generation forced offline behind internal export bottlenecks, there has been no operational deficit requiring out-of-merit dispatch from thermal stations elsewhere on the grid. Consequently, the estimated gas burned elsewhere to replace it is precisely 0.0 m3, preventing any displacement penalties and generating 0.0 tonnes CO2 in replacement emissions. Overall, the system reflects stable, frictionless operations with zero curtailment impact."
+  "ai_summary": "Scotland's electricity network is currently demonstrating exceptional environmental performance, registering a Scottish carbon intensity of 0 gCO2/kWh versus 153 gCO2/kWh GB-wide. This clean regional footprint occurs during a period of moderate renewable generation across the system as a whole, where total GB wind output stands at 7.0 GW. Contributing to this national total, estimated Scottish wind output is currently delivering 0.2 GW, which corresponds to 13.9% of installed Scottish wind capacity. Although local output reflects subdued resource conditions, transmission balance and network throughput remain fully optimized across borders. Specifically, Scottish generation curtailed so far today is recorded at 0.0 MWh, meaning system balancing actions have incurred a constraint cost of about \u00a30. Because clean Scottish generation has not been trapped behind export boundaries, conventional thermal generators elsewhere on the network have not been called upon to compensate for lost volumes. As a direct consequence, the estimated gas burned elsewhere to replace it remains at 0.0 m3, alongside 0.0 tonnes CO2 of associated carbon emissions. Overall, the data illustrates an unobstructed transmission environment operating without economic friction, system redispatch penalties, or replacement emissions."
 }

@@ -1,45 +1,47 @@
 {
-  "timestamp": "2026-10-19 10:01:38 UTC",
+  "timestamp": "2026-10-19 10:57:18 UTC",
   "settlement_date": "2026-10-19",
-  "settlement_period": 23,
+  "settlement_period": 24,
   "curtailment_window": "UK settlement day so far (since 00:00 UK time)",
   "total_generation_gw": 31.5,
   "scot_total_generation_gw": 0.4,
-  "uk_carbon_intensity": 167,
+  "uk_carbon_intensity": 156,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 7.1,
+  "total_wind_gw": 7.0,
   "generation_mix": {
-    "gas": 38.0,
-    "wind": 23.4,
-    "nuclear": 14.0,
-    "biomass": 8.6,
-    "solar": 8.3,
-    "imports": 7.7
+    "gas": 32.4,
+    "wind": 21.6,
+    "nuclear": 13.2,
+    "solar": 12.5,
+    "imports": 8.7,
+    "biomass": 8.3,
+    "other": 1.6,
+    "hydro": 1.6
   },
   "scottish_generation_mix": {
-    "wind": 80.2,
-    "nuclear": 16.6,
-    "solar": 3.1
+    "wind": 80.6,
+    "nuclear": 15.5,
+    "solar": 3.9
   },
   "wind_country_split": {
-    "Scotland": 3.2,
-    "England & Wales": 96.8
+    "Scotland": 3.1,
+    "England & Wales": 96.9
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 7.1,
+      "gen_gw": 7.0,
       "capacity_gw": 31.8,
-      "usage_perc": 22.4
+      "usage_perc": 22.2
     },
     "scotland": {
       "gen_gw": 0.2,
       "capacity_gw": 1.8,
-      "usage_perc": 12.8
+      "usage_perc": 12.2
     },
     "england_wales": {
-      "gen_gw": 6.9,
+      "gen_gw": 6.8,
       "capacity_gw": 30.0,
-      "usage_perc": 23.0
+      "usage_perc": 22.8
     }
   },
   "scottish_balance": {
@@ -149,5 +151,5 @@
     "interconnectors_and_substations": "static reference geography",
     "fossil_displacement_bess_whisky": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Great Britain's broader electricity system is currently operating with a total GB wind output of 7.1 GW, contributing to a national carbon intensity of 167 gCO2/kWh GB-wide. In stark contrast, Scotland demonstrates an exceptionally clean generation profile, achieving a Scottish carbon intensity of 0 gCO2/kWh versus 167 gCO2/kWh GB-wide. This zero-emissions benchmark is sustained despite relatively muted local resource yields, with estimated Scottish wind output currently delivering 0.2 GW, which corresponds to 12.8% of installed Scottish wind capacity.\n\nBecause these modest generation levels place negligible pressure on cross-border transmission corridors, the system has avoided internal bottlenecks entirely. Operational records show Scottish generation curtailed so far today sits at 0.0 MWh at a constraint cost of about \u00a30. With no requirement to constrain renewable volumes in the north or redispatch fossil-fuel assets elsewhere on the network, the estimated gas burned elsewhere to replace it is 0.0 m3 and 0.0 tonnes CO2. System balancing remains seamless, allowing Scotland to maintain pristine carbon metrics while avoiding any economic curtailment charges or replacement-driven carbon penalties across the broader grid infrastructure."
+  "ai_summary": "Scotland is currently demonstrating exceptional environmental performance, achieving a carbon intensity of 0 gCO2/kWh, which stands in stark contrast to the significantly higher 156 gCO2/kWh recorded GB-wide. This regional decarbonisation success is maintained even against the backdrop of relatively subdued local wind conditions. Scottish wind output is currently estimated at 0.2 GW, representing 12.2% of installed Scottish wind capacity, while broader GB wind output stands at 7.0 GW. Despite this modest output from local turbines, transmission operations remain remarkably stable and economically optimal across the region. Network records show Scottish generation curtailed so far today at 0.0 MWh, resulting in a constraint cost of about \u00a30. Because no clean generation has been restricted by network bottlenecks, the system has avoided carbon-intensive compensatory actions elsewhere. Consequently, the estimated gas burned elsewhere to replace it stands at 0.0 m3, yielding 0.0 tonnes CO2 in replacement emissions. This complete absence of curtailment and associated replacement burn confirms that current power flows are operating without transmission friction, preserving Scotland's zero-carbon intensity while entirely eliminating constraint-driven balancing expenditures for consumers today."
 }

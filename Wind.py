@@ -209,7 +209,6 @@ def summarise_pn(units, levels):
 
 
 def wind_capacity_mw(units):
-    # Sum only active non-zero wind capacity
     gb = sum(u["capacity_mw"] for u in units.values() if u["fuel"] == "WIND" and u["capacity_mw"] > 0)
     scot = sum(u["capacity_mw"] for u in units.values() if u["fuel"] == "WIND" and u["scottish"] and u["capacity_mw"] > 0)
     return gb, scot
@@ -296,16 +295,13 @@ def fetch_grid_data(prev):
     settlement_date, period = settlement_clock(now_utc)
     q = {}
 
-    # Carbon Intensity
     gb_mix = attempt("gb_generation_mix", get_gb_mix_ci, prev.get("generation_mix", DEFAULTS["generation_mix"]), q, "live (Carbon Intensity API)")
     uk_intensity = attempt("uk_carbon_intensity", get_uk_intensity, prev.get("uk_carbon_intensity", DEFAULTS["uk_carbon_intensity"]), q, "live (Carbon Intensity API)")
     scot_mix, scot_intensity = attempt("scottish_mix_and_intensity", get_scottish_mix_ci, (prev.get("scottish_generation_mix", DEFAULTS["scottish_generation_mix"]), prev.get("scottish_carbon_intensity", DEFAULTS["scottish_carbon_intensity"])), q, "live (Carbon Intensity API)")
 
-    # Elexon GB Totals
     fuelinst = attempt("gb_totals", lambda: get_fuelinst(now_utc), (prev.get("total_generation_gw", DEFAULTS["total_generation_gw"]), prev.get("total_wind_gw", DEFAULTS["total_wind_gw"])), q, "live (Elexon FUELINST)")
     gb_total_gw, gb_wind_gw = fuelinst
 
-    # Elexon Reference & PNs
     units = attempt("bm_unit_reference", load_bmu_reference, {}, q, "live (Elexon reference data)")
     pn_stats = None
     if units:
@@ -335,14 +331,11 @@ def fetch_grid_data(prev):
         scot_total_gw = round(scot_wind_gw / (wind_pct / 100.0), 1) if wind_pct > 5 else prev.get("scot_total_generation_gw", 6.8)
         q["scottish_total_generation"] = "estimate: wind output divided by share"
 
-    # Fetch live Scottish demand directly from Carbon Intensity regional share or GB share
     scot_demand_gw = round(gb_total_gw * 0.09, 1)
     net_export = round(scot_total_gw - scot_demand_gw, 1)
 
-    # Dynamic status evaluation for high-voltage substations based on live export balance
     boundary_status = "High Transfer Load (Congested)" if net_export > 2.0 else "Normal Operational Load"
 
-    # Curtailment with safe fallback carry-forward
     default_breakdown = prev.get("fuel_breakdown") or {
         "wind": {"mwh": 217.5, "cost_gbp": 29362.5, "homes_powered": 24166},
         "solar": {"mwh": 3.6, "cost_gbp": 486.0, "homes_powered": 400},

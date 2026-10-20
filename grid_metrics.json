@@ -1,56 +1,56 @@
 {
-  "timestamp": "2026-10-20 01:09:37 UTC",
+  "timestamp": "2026-10-20 01:56:44 UTC",
   "settlement_date": "2026-10-20",
-  "settlement_period": 5,
-  "total_generation_gw": 25.3,
-  "scot_total_generation_gw": 4.5,
-  "uk_carbon_intensity": 102,
+  "settlement_period": 6,
+  "total_generation_gw": 25.2,
+  "scot_total_generation_gw": 4.7,
+  "uk_carbon_intensity": 94,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 9.7,
+  "total_wind_gw": 10.0,
   "generation_mix": {
-    "wind": 42.8,
-    "nuclear": 18.6,
-    "gas": 18.2,
-    "biomass": 12.1,
-    "imports": 8.3
+    "wind": 42.4,
+    "nuclear": 19.0,
+    "gas": 17.7,
+    "biomass": 12.4,
+    "imports": 8.5
   },
   "scottish_generation_mix": {
-    "wind": 87.4,
-    "nuclear": 12.6
+    "wind": 88.0,
+    "nuclear": 12.1
   },
   "wind_country_split": {
-    "Scotland": 40.1,
-    "England & Wales": 59.9
+    "Scotland": 40.7,
+    "England & Wales": 59.3
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 9.7,
+      "gen_gw": 10.0,
       "capacity_gw": 31.8,
-      "usage_perc": 30.6
+      "usage_perc": 31.6
     },
     "scotland": {
-      "gen_gw": 3.9,
+      "gen_gw": 4.1,
       "capacity_gw": 10.1,
-      "usage_perc": 38.6
+      "usage_perc": 40.6
     },
     "england_wales": {
-      "gen_gw": 5.8,
+      "gen_gw": 5.9,
       "capacity_gw": 21.7,
-      "usage_perc": 26.7
+      "usage_perc": 27.2
     }
   },
   "scottish_balance": {
     "demand_gw": 2.3,
-    "generation_gw": 4.5,
-    "net_export_gw": 2.2,
+    "generation_gw": 4.7,
+    "net_export_gw": 2.4,
     "is_exporter": true
   },
-  "total_wasted_mwh": 5456.4,
+  "total_wasted_mwh": 8895.3,
   "fuel_breakdown": {
     "wind": {
-      "mwh": 5456.4,
-      "cost_gbp": 141634.28,
-      "homes_powered": 606266
+      "mwh": 8895.3,
+      "cost_gbp": 220919.37,
+      "homes_powered": 988366
     },
     "solar": {
       "mwh": 0.0,
@@ -63,15 +63,15 @@
       "homes_powered": 0
     }
   },
-  "whisky_pure_alcohol_litres_total": 779485,
-  "whisky_litres": 779485,
+  "whisky_pure_alcohol_litres_total": 1270757,
+  "whisky_litres": 1270757,
   "fossil_displacement": {
-    "gas_burned_m3": 1036716.0,
-    "co2_tonnes": 1909.7
+    "gas_burned_m3": 1690107.0,
+    "co2_tonnes": 3113.4
   },
   "bess_storage": {
-    "megapacks_needed": 1399,
-    "total_gwh": 5.46
+    "megapacks_needed": 2280,
+    "total_gwh": 8.9
   },
   "interconnectors": [
     {
@@ -143,32 +143,32 @@
       "lat": 58.15,
       "lon": -2.95,
       "fuel": "wind",
-      "wasted_mwh": 2265.0,
-      "cost_gbp": 65235
+      "wasted_mwh": 3828.0,
+      "cost_gbp": 107760
     },
     {
       "name": "Seagreen Offshore",
       "lat": 56.6,
       "lon": -1.75,
       "fuel": "wind",
-      "wasted_mwh": 1351.6,
-      "cost_gbp": 20946
+      "wasted_mwh": 2243.6,
+      "cost_gbp": 34769
     },
     {
       "name": "Neart na Gaoithe",
       "lat": 56.25,
       "lon": -2.1,
       "fuel": "wind",
-      "wasted_mwh": 658.2,
-      "cost_gbp": 17967
+      "wasted_mwh": 1091.5,
+      "cost_gbp": 31345
     },
     {
       "name": "Viking Wind Farm (Shetland)",
       "lat": 60.3,
       "lon": -1.27,
       "fuel": "wind",
-      "wasted_mwh": 566.9,
-      "cost_gbp": 9217
+      "wasted_mwh": 948.4,
+      "cost_gbp": 15420
     },
     {
       "name": "Beatrice Offshore",
@@ -194,5 +194,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Scotland\u2019s electricity system continues to highlight a stark operational divergence within the national energy network, recording a Scottish carbon intensity of 0 gCO2/kWh versus 102 gCO2/kWh GB-wide. Across the broader network, GB wind output has reached 9.7 GW, with estimated Scottish wind output contributing 3.9 GW, representing 38.6% of installed Scottish wind capacity. However, persistent structural bottlenecks along cross-border transmission corridors prevent the full absorption of this clean generation into high-demand areas. As a direct consequence, Scottish generation curtailed so far today sits at 5456.4 MWh, accumulating an avoidable constraint cost of about \u00a3141,634. Beyond the direct financial burden placed on system balancing, this enforced renewable curtailment drives significant carbon leakage. Fossil-fueled generation must be dispatched to plug the localized deficit, leading to an estimated 1036716.0 m3 of gas burned elsewhere to replace it and generating 1909.7 tonnes CO2. These figures clearly demonstrate that without accelerated transmission infrastructure investment, abundant Scottish wind generation will remain stranded behind grid constraints, escalating balancing expenses while driving avoidable reliance on fossil thermal assets elsewhere across Great Britain."
+  "ai_summary": "Scottish wind generation is currently delivering an estimated 4.1 GW, representing 40.6% of installed Scottish wind capacity, alongside a broader GB wind output of 10.0 GW. This strong renewable performance has suppressed Scottish carbon intensity to an optimal 0 gCO2/kWh, maintaining a striking divergence from the GB-wide carbon intensity of 94 gCO2/kWh. However, persistent cross-border transmission limits prevent the full absorption of this clean power across the wider electricity network. As a result, Scottish generation curtailed so far today has mounted to 8895.3 MWh, generating a direct constraint cost of about \u00a3220,919. The system impact extends significantly into carbon emissions and fossil fuel consumption: estimated gas burned elsewhere to replace it has reached 1690107.0 m3, causing a release of 3113.4 tonnes CO2 into the atmosphere. This operational scenario illustrates the ongoing structural challenge facing the grid. While Scottish generation remains entirely decarbonised, network bottlenecks necessitate the curtailment of low-cost clean power in the north and mandate fossil-fuel redispatch further south, simultaneously driving up balancing costs and overall system emissions."
 }

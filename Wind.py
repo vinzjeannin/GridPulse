@@ -512,7 +512,7 @@ def fallback_summary(m):
     return (
         f"Scottish wind is currently supplying an estimated {m['wind_capacity']['scotland']['gen_gw']} GW "
         f"into the grid, with Scottish carbon intensity at {m['scottish_carbon_intensity']} gCO2/kWh. "
-        f"So far today {m['total_wasted_mwh']} MWh of Scottish generation has been turned down through "
+        f"So far today {m['total_wasted_mwh']:,.0f} MWh of Scottish generation has been turned down through "
         f"Balancing Mechanism bids, at a constraint cost of about £{cost:,.0f}. Transmission limits across "
         "the B6 boundary stop this low-carbon power reaching English demand centres, so gas plant further "
         "south must replace it, and the cost is recovered from bill payers through BSUoS charges."

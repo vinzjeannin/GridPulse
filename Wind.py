@@ -539,6 +539,8 @@ def generate_ai_insights(m):
         f"and {m['fossil_displacement']['co2_tonnes']} tonnes CO2. "
         "STRICT RULES: no markdown headers, no titles or labels, no bullet points. "
         "Start directly with the narrative analysis from the first word."
+        "If you quote the wasted energy curtailed so far today, round it to to the nearest MWh, use coma as separator for thousands. If it's greater than 10000 MWh, change unit to GWh by dividing by 1000, one decimal".   
+        "If you quote the volume of gas burned elsewhere, round it th the nearest cubic meter, use coma as separator for thousands. The additional carbon should be rounded to the nearst tonne and use coma as separator for thousands."
     )
     client = genai.Client(api_key=api_key)
     for model in [c for c in (os.environ.get("GEMINI_MODEL"), "gemini-flash-latest", "gemini-2.5-flash") if c]:

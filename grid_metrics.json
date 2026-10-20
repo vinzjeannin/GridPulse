@@ -1,37 +1,35 @@
 {
-  "timestamp": "2026-10-20 11:20:31 UTC",
+  "timestamp": "2026-10-20 11:56:12 UTC",
   "settlement_date": "2026-10-20",
-  "settlement_period": 25,
-  "total_generation_gw": 34.6,
+  "settlement_period": 26,
+  "total_generation_gw": 34.8,
   "scot_total_generation_gw": 5.6,
-  "uk_carbon_intensity": 123,
+  "uk_carbon_intensity": 121,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 13.7,
+  "total_wind_gw": 13.6,
   "generation_mix": {
-    "wind": 39.5,
-    "gas": 24.6,
-    "nuclear": 12.5,
+    "wind": 39.9,
+    "gas": 27.0,
+    "nuclear": 12.6,
     "biomass": 8.1,
-    "solar": 6.5,
-    "imports": 6.0,
-    "other": 1.7,
-    "hydro": 1.0
+    "imports": 6.3,
+    "solar": 6.1
   },
   "scottish_generation_mix": {
-    "wind": 89.2,
+    "wind": 89.0,
     "nuclear": 9.8,
-    "solar": 1.0,
+    "solar": 1.1,
     "imports": 0.1
   },
   "wind_country_split": {
-    "Scotland": 36.2,
-    "England & Wales": 63.8
+    "Scotland": 36.4,
+    "England & Wales": 63.6
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 13.7,
+      "gen_gw": 13.6,
       "capacity_gw": 31.8,
-      "usage_perc": 43.1
+      "usage_perc": 42.8
     },
     "scotland": {
       "gen_gw": 5.0,
@@ -39,9 +37,9 @@
       "usage_perc": 49.5
     },
     "england_wales": {
-      "gen_gw": 8.7,
+      "gen_gw": 8.6,
       "capacity_gw": 21.7,
-      "usage_perc": 40.1
+      "usage_perc": 39.6
     }
   },
   "scottish_balance": {
@@ -50,12 +48,12 @@
     "net_export_gw": 2.5,
     "is_exporter": true
   },
-  "total_wasted_mwh": 42586.6,
+  "total_wasted_mwh": 44690.3,
   "fuel_breakdown": {
     "wind": {
-      "mwh": 42586.6,
-      "cost_gbp": 1078157.85,
-      "homes_powered": 4731844
+      "mwh": 44690.3,
+      "cost_gbp": 1135763.33,
+      "homes_powered": 4965588
     },
     "solar": {
       "mwh": 0.0,
@@ -68,15 +66,15 @@
       "homes_powered": 0
     }
   },
-  "whisky_pure_alcohol_litres_total": 6083800,
-  "whisky_litres": 6083800,
+  "whisky_pure_alcohol_litres_total": 6384328,
+  "whisky_litres": 6384328,
   "fossil_displacement": {
-    "gas_burned_m3": 8091454.0,
-    "co2_tonnes": 14905.3
+    "gas_burned_m3": 8491157.0,
+    "co2_tonnes": 15641.6
   },
   "bess_storage": {
-    "megapacks_needed": 10919,
-    "total_gwh": 42.59
+    "megapacks_needed": 11459,
+    "total_gwh": 44.69
   },
   "interconnectors": [
     {
@@ -148,40 +146,40 @@
       "lat": 58.15,
       "lon": -2.95,
       "fuel": "wind",
-      "wasted_mwh": 17251.2,
-      "cost_gbp": 581019
+      "wasted_mwh": 18055.2,
+      "cost_gbp": 607476
     },
     {
       "name": "Seagreen Offshore",
       "lat": 56.6,
       "lon": -1.75,
       "fuel": "wind",
-      "wasted_mwh": 11554.0,
-      "cost_gbp": 179052
+      "wasted_mwh": 12076.6,
+      "cost_gbp": 187150
     },
     {
       "name": "Neart na Gaoithe",
       "lat": 56.25,
       "lon": -2.1,
       "fuel": "wind",
-      "wasted_mwh": 4745.1,
-      "cost_gbp": 79367
+      "wasted_mwh": 4967.6,
+      "cost_gbp": 83747
     },
     {
       "name": "Viking Wind Farm (Shetland)",
       "lat": 60.3,
       "lon": -1.27,
       "fuel": "wind",
-      "wasted_mwh": 4721.3,
-      "cost_gbp": 76763
+      "wasted_mwh": 4939.1,
+      "cost_gbp": 80305
     },
     {
       "name": "Beatrice Offshore",
       "lat": 58.12,
       "lon": -3.08,
       "fuel": "wind",
-      "wasted_mwh": 2204.3,
-      "cost_gbp": 101822
+      "wasted_mwh": 2429.8,
+      "cost_gbp": 113907
     }
   ],
   "data_quality": {
@@ -199,5 +197,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Today's system metrics illustrate a stark operational disparity across the national network, shaped by high renewable availability in the north alongside acute transmission export limitations. Total GB wind output currently reaches 13.7 GW, underpinned by an estimated Scottish wind output of 5.0 GW, which represents 49.5% of installed Scottish wind capacity. This strong renewable volume has driven Scottish carbon intensity down to 0 gCO2/kWh, contrasting sharply with the GB-wide carbon intensity of 123 gCO2/kWh.\n\nHowever, structural grid bottlenecks prevent this clean power from flowing smoothly to primary demand centres. As a consequence, Scottish generation curtailed so far today has mounted to 42586.6 MWh, generating a substantial constraint cost of about \u00a31,078,158 paid to balance the network. To compensate for this stranded clean electricity, flexible thermal assets were dispatched elsewhere, resulting in an estimated gas burned elsewhere to replace it of 8091454.0 m3. This intervention released an additional 14905.3 tonnes CO2 into the atmosphere. The resulting figures emphasize the simultaneous financial and environmental costs of current grid congestion, highlighting how transmission barriers undermine zero-carbon generation and enforce fossil reliance."
+  "ai_summary": "Great Britain is currently generating 13.6 GW of wind power, with estimated Scottish wind output reaching 5.0 GW, representing 49.5% of installed Scottish wind capacity. This robust clean generation drives Scottish carbon intensity down to 0 gCO2/kWh, contrasting sharply with the GB-wide level of 121 gCO2/kWh. However, transmission bottlenecks prevent this surplus renewable power from flowing southward to major demand centers, creating substantial operational friction. Consequently, Scottish generation curtailed so far today stands at 44690.3 MWh, accruing a constraint cost of about \u00a31,135,763. Because this clean power could not be exported, balancing mechanisms required fossil generation to ramp up elsewhere on the network. It is estimated that 8491157.0 m3 of gas was burned elsewhere to replace it, adding 15641.6 tonnes CO2 into the atmosphere. This ongoing dynamic demonstrates the dual financial and environmental penalties caused by existing transmission limits. Until cross-border network capacity is reinforced, high-potential zero-carbon generation will continue to be restricted, shifting balancing costs onto consumers while forcing reliance on carbon-intensive thermal assets to meet system demand."
 }

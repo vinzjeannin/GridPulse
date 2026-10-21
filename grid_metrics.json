@@ -1,57 +1,58 @@
 {
-  "timestamp": "2026-10-21 07:15:05 UTC",
+  "timestamp": "2026-10-21 08:03:58 UTC",
   "settlement_date": "2026-10-21",
-  "settlement_period": 17,
-  "total_generation_gw": 33.4,
-  "scot_total_generation_gw": 3.8,
-  "uk_carbon_intensity": 138,
-  "scottish_carbon_intensity": 4,
+  "settlement_period": 19,
+  "total_generation_gw": 33.7,
+  "scot_total_generation_gw": 3.5,
+  "uk_carbon_intensity": 142,
+  "scottish_carbon_intensity": 1,
   "total_wind_gw": 9.1,
   "generation_mix": {
-    "wind": 40.4,
-    "gas": 26.1,
-    "nuclear": 16.6,
+    "wind": 34.7,
+    "gas": 29.7,
+    "nuclear": 15.4,
     "biomass": 10.1,
-    "imports": 6.7
+    "imports": 9.1,
+    "solar": 1.0
   },
   "scottish_generation_mix": {
-    "wind": 85.1,
-    "nuclear": 13.9,
-    "imports": 1.0
+    "wind": 83.5,
+    "nuclear": 16.3,
+    "imports": 0.2
   },
   "wind_country_split": {
-    "Scotland": 35.3,
-    "England & Wales": 64.7
+    "Scotland": 31.6,
+    "England & Wales": 68.4
   },
   "wind_capacity": {
     "gb_total": {
       "gen_gw": 9.1,
       "capacity_gw": 31.8,
-      "usage_perc": 28.7
+      "usage_perc": 28.6
     },
     "scotland": {
-      "gen_gw": 3.2,
+      "gen_gw": 2.9,
       "capacity_gw": 10.1,
-      "usage_perc": 31.7
+      "usage_perc": 28.7
     },
     "england_wales": {
-      "gen_gw": 5.9,
+      "gen_gw": 6.2,
       "capacity_gw": 21.7,
-      "usage_perc": 27.2
+      "usage_perc": 28.6
     }
   },
   "scottish_balance": {
     "demand_gw": 3.0,
-    "generation_gw": 3.8,
-    "net_export_gw": 0.8,
+    "generation_gw": 3.5,
+    "net_export_gw": 0.5,
     "is_exporter": true
   },
-  "total_wasted_mwh": 21629.4,
+  "total_wasted_mwh": 24587.8,
   "fuel_breakdown": {
     "wind": {
-      "mwh": 21629.4,
-      "cost_gbp": 545546.57,
-      "homes_powered": 2403266
+      "mwh": 24587.8,
+      "cost_gbp": 642820.73,
+      "homes_powered": 2731977
     },
     "solar": {
       "mwh": 0.0,
@@ -64,15 +65,15 @@
       "homes_powered": 0
     }
   },
-  "whisky_pure_alcohol_litres_total": 3089914,
-  "whisky_litres": 3089914,
+  "whisky_pure_alcohol_litres_total": 3512542,
+  "whisky_litres": 3512542,
   "fossil_displacement": {
-    "gas_burned_m3": 4109586.0,
-    "co2_tonnes": 7570.3
+    "gas_burned_m3": 4671682.0,
+    "co2_tonnes": 8605.7
   },
   "bess_storage": {
-    "megapacks_needed": 5546,
-    "total_gwh": 21.63
+    "megapacks_needed": 6304,
+    "total_gwh": 24.59
   },
   "interconnectors": [
     {
@@ -144,40 +145,40 @@
       "lat": 58.15,
       "lon": -2.95,
       "fuel": "wind",
-      "wasted_mwh": 9843.3,
-      "cost_gbp": 308685
+      "wasted_mwh": 11129.4,
+      "cost_gbp": 381523
     },
     {
       "name": "Seagreen Offshore",
       "lat": 56.6,
       "lon": -1.75,
       "fuel": "wind",
-      "wasted_mwh": 6080.8,
-      "cost_gbp": 94234
+      "wasted_mwh": 6729.7,
+      "cost_gbp": 104289
     },
     {
       "name": "Viking Wind Farm (Shetland)",
       "lat": 60.3,
       "lon": -1.27,
       "fuel": "wind",
-      "wasted_mwh": 3267.0,
-      "cost_gbp": 53118
+      "wasted_mwh": 3702.5,
+      "cost_gbp": 60199
     },
     {
       "name": "Neart na Gaoithe",
       "lat": 56.25,
       "lon": -2.1,
       "fuel": "wind",
-      "wasted_mwh": 1219.1,
-      "cost_gbp": 12064
+      "wasted_mwh": 1423.8,
+      "cost_gbp": 7566
     },
     {
       "name": "Beatrice Offshore",
       "lat": 58.12,
       "lon": -3.08,
       "fuel": "wind",
-      "wasted_mwh": 1098.1,
-      "cost_gbp": 69462
+      "wasted_mwh": 1366.1,
+      "cost_gbp": 72908
     },
     {
       "name": "Stronelairg",
@@ -203,5 +204,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Great Britain's wind generation currently stands at 9.1 GW, with Scottish wind assets contributing an estimated 3.2 GW, representing 31.7% of installed Scottish wind capacity. This strong renewable output drives Scottish carbon intensity down to just 4 gCO2/kWh, contrasting sharply with the 138 gCO2/kWh GB-wide figure. However, ongoing transmission bottlenecks prevent this abundant power from reaching southern demand centres. Consequently, Scottish generation curtailed so far today has climbed to 21.6 GWh, accumulating a constraint cost of about \u00a3545,547. Replacing this lost clean volume has required an estimated 4,109,586 m3 of gas burned elsewhere, generating an avoidable 7,570 tonnes of CO2. Annualising today's curtailment rate yields an estimated total yearly cost of \u00a3199 million, which increases everybody's invoice in the UK by an estimated \u00a31/MWh. Until grid infrastructure expands to alleviate cross-border export limits, consumers will continue to shoulder high balancing costs while fossil generation substitutes for curtailed clean Scottish wind."
+  "ai_summary": "Great Britain's total wind output currently stands at 9.1 GW, with estimated Scottish wind output contributing 2.9 GW, representing 28.7% of installed Scottish wind capacity. Driven by this regional renewable output, Scottish carbon intensity has plummeted to just 1 gCO2/kWh, compared against 142 gCO2/kWh GB-wide. However, severe cross-border transmission export limitations continue to leave vast volumes of clean power stranded north of the border. Consequently, Scottish generation curtailed so far today has climbed to 24.6 GWh, racking up Balancing Mechanism constraint costs of about \u00a3642,821. To replace this dispatched wind power closer to southern demand centres, an estimated 4,671,682 m3 of gas has been burned elsewhere, releasing an avoidable 8,606 tonnes of CO2 into the atmosphere. \n\nExtrapolating today's constraint burden suggests an estimated total yearly cost of \u00a3235 million. Distributed across national electricity consumption, this ongoing transmission bottleneck increases everybody's invoice in the UK by an estimated \u00a30.80/MWh to \u00a31/MWh, demonstrating the heavy environmental and financial penalties of deferred grid investment."
 }

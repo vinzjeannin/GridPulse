@@ -1,58 +1,58 @@
 {
-  "timestamp": "2026-10-22 01:58:14 UTC",
+  "timestamp": "2026-10-22 02:23:22 UTC",
   "settlement_date": "2026-10-22",
-  "settlement_period": 6,
-  "total_generation_gw": 25.3,
-  "scot_total_generation_gw": 4.0,
-  "uk_carbon_intensity": 53,
+  "settlement_period": 7,
+  "total_generation_gw": 25.1,
+  "scot_total_generation_gw": 4.4,
+  "uk_carbon_intensity": 55,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 13.2,
+  "total_wind_gw": 13.3,
   "generation_mix": {
-    "wind": 54.4,
-    "nuclear": 17.1,
+    "wind": 54.0,
+    "nuclear": 17.2,
     "imports": 16.1,
-    "gas": 5.7,
-    "biomass": 4.1,
-    "other": 1.3,
+    "gas": 5.8,
+    "biomass": 4.2,
+    "other": 1.4,
     "hydro": 1.3
   },
   "scottish_generation_mix": {
-    "wind": 87.5,
-    "nuclear": 12.5
+    "wind": 88.1,
+    "nuclear": 11.9
   },
   "wind_country_split": {
-    "Scotland": 26.4,
-    "England & Wales": 73.6
+    "Scotland": 29.2,
+    "England & Wales": 70.8
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 13.2,
+      "gen_gw": 13.3,
       "capacity_gw": 31.8,
-      "usage_perc": 41.4
+      "usage_perc": 41.8
     },
     "scotland": {
-      "gen_gw": 3.5,
+      "gen_gw": 3.9,
       "capacity_gw": 10.1,
-      "usage_perc": 34.7
+      "usage_perc": 38.6
     },
     "england_wales": {
-      "gen_gw": 9.7,
+      "gen_gw": 9.4,
       "capacity_gw": 21.7,
-      "usage_perc": 44.7
+      "usage_perc": 43.3
     }
   },
   "scottish_balance": {
     "demand_gw": 2.3,
-    "generation_gw": 4.0,
-    "net_export_gw": 1.7,
+    "generation_gw": 4.4,
+    "net_export_gw": 2.1,
     "is_exporter": true
   },
-  "total_wasted_mwh": 975.6,
+  "total_wasted_mwh": 1732.1,
   "fuel_breakdown": {
     "wind": {
-      "mwh": 975.6,
-      "cost_gbp": 54019.61,
-      "homes_powered": 108400
+      "mwh": 1732.1,
+      "cost_gbp": 77843.61,
+      "homes_powered": 192455
     },
     "solar": {
       "mwh": 0.0,
@@ -65,15 +65,15 @@
       "homes_powered": 0
     }
   },
-  "whisky_pure_alcohol_litres_total": 139371,
-  "whisky_litres": 139371,
+  "whisky_pure_alcohol_litres_total": 247442,
+  "whisky_litres": 247442,
   "fossil_displacement": {
-    "gas_burned_m3": 185364.0,
-    "co2_tonnes": 341.5
+    "gas_burned_m3": 329099.0,
+    "co2_tonnes": 606.2
   },
   "bess_storage": {
-    "megapacks_needed": 250,
-    "total_gwh": 0.98
+    "megapacks_needed": 444,
+    "total_gwh": 1.73
   },
   "interconnectors": [
     {
@@ -145,32 +145,32 @@
       "lat": 56.25,
       "lon": -2.1,
       "fuel": "wind",
-      "wasted_mwh": 560.7,
-      "cost_gbp": 43913
+      "wasted_mwh": 664.7,
+      "cost_gbp": 53117
     },
     {
       "name": "Seagreen Offshore",
       "lat": 56.6,
       "lon": -1.75,
       "fuel": "wind",
-      "wasted_mwh": 236.4,
-      "cost_gbp": 3663
-    },
-    {
-      "name": "Viking Wind Farm (Shetland)",
-      "lat": 60.3,
-      "lon": -1.27,
-      "fuel": "wind",
-      "wasted_mwh": 67.4,
-      "cost_gbp": 1096
+      "wasted_mwh": 582.4,
+      "cost_gbp": 9026
     },
     {
       "name": "Moray Firth Offshore",
       "lat": 58.15,
       "lon": -2.95,
       "fuel": "wind",
-      "wasted_mwh": 54.2,
-      "cost_gbp": 1064
+      "wasted_mwh": 239.9,
+      "cost_gbp": 5481
+    },
+    {
+      "name": "Viking Wind Farm (Shetland)",
+      "lat": 60.3,
+      "lon": -1.27,
+      "fuel": "wind",
+      "wasted_mwh": 135.3,
+      "cost_gbp": 2200
     }
   ],
   "data_quality": {
@@ -188,5 +188,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Scottish wind is currently supplying an estimated 3.5 GW into the grid, with Scottish carbon intensity at 0 gCO2/kWh. So far today 976 MWh of Scottish generation has been turned down through Balancing Mechanism bids, at a constraint cost of about \u00a354,020. Transmission limits across the B6 boundary stop this low-carbon power reaching English demand centres, so gas plant further south must replace it, and the cost is recovered from bill payers through BSUoS charges."
+  "ai_summary": "Great Britain\u2019s power system is currently recording 13.3 GW of wind output, with estimated Scottish wind output reaching 3.9 GW, which represents 38.6% of installed Scottish wind capacity. Driven by this abundance of renewable generation, Scottish carbon intensity sits at 0 gCO2/kWh, compared to 55 gCO2/kWh GB-wide. However, transmission bottlenecks prevent this clean power from flowing south, forcing grid operators to curtail Scottish wind. So far today, 1,732 MWh of Scottish generation has been turned down through Balancing Mechanism bids at a constraint cost of about \u00a377,844. To replace this stranded clean volume closer to demand centres, an estimated 329,099 m3 of gas has been burned elsewhere, releasing an avoidable 606 tonnes CO2 into the atmosphere. Annualising today's run rate yields an estimated total yearly cost of curtailment of \u00a328 million. Spreading this constraint expenditure across typical UK power consumption adds an estimated \u00a30.10/MWh to everybody's electricity invoice in the UK, highlighting the persistent economic and environmental price paid for structural grid congestion."
 }

@@ -1,58 +1,58 @@
 {
-  "timestamp": "2026-10-22 02:23:22 UTC",
+  "timestamp": "2026-10-22 02:58:22 UTC",
   "settlement_date": "2026-10-22",
-  "settlement_period": 7,
-  "total_generation_gw": 25.1,
-  "scot_total_generation_gw": 4.4,
-  "uk_carbon_intensity": 55,
+  "settlement_period": 8,
+  "total_generation_gw": 25.3,
+  "scot_total_generation_gw": 4.7,
+  "uk_carbon_intensity": 56,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 13.3,
+  "total_wind_gw": 13.4,
   "generation_mix": {
-    "wind": 54.0,
-    "nuclear": 17.2,
-    "imports": 16.1,
-    "gas": 5.8,
-    "biomass": 4.2,
-    "other": 1.4,
+    "wind": 54.3,
+    "nuclear": 16.9,
+    "imports": 15.6,
+    "gas": 5.6,
+    "biomass": 4.1,
+    "other": 2.2,
     "hydro": 1.3
   },
   "scottish_generation_mix": {
-    "wind": 88.1,
-    "nuclear": 11.9
+    "wind": 88.8,
+    "nuclear": 11.2
   },
   "wind_country_split": {
-    "Scotland": 29.2,
-    "England & Wales": 70.8
+    "Scotland": 31.2,
+    "England & Wales": 68.8
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 13.3,
+      "gen_gw": 13.4,
       "capacity_gw": 31.8,
-      "usage_perc": 41.8
+      "usage_perc": 42.0
     },
     "scotland": {
-      "gen_gw": 3.9,
+      "gen_gw": 4.2,
       "capacity_gw": 10.1,
-      "usage_perc": 38.6
+      "usage_perc": 41.6
     },
     "england_wales": {
-      "gen_gw": 9.4,
+      "gen_gw": 9.2,
       "capacity_gw": 21.7,
-      "usage_perc": 43.3
+      "usage_perc": 42.4
     }
   },
   "scottish_balance": {
     "demand_gw": 2.3,
-    "generation_gw": 4.4,
-    "net_export_gw": 2.1,
+    "generation_gw": 4.7,
+    "net_export_gw": 2.4,
     "is_exporter": true
   },
-  "total_wasted_mwh": 1732.1,
+  "total_wasted_mwh": 2814.0,
   "fuel_breakdown": {
     "wind": {
-      "mwh": 1732.1,
-      "cost_gbp": 77843.61,
-      "homes_powered": 192455
+      "mwh": 2814.0,
+      "cost_gbp": 107647.02,
+      "homes_powered": 312666
     },
     "solar": {
       "mwh": 0.0,
@@ -65,15 +65,15 @@
       "homes_powered": 0
     }
   },
-  "whisky_pure_alcohol_litres_total": 247442,
-  "whisky_litres": 247442,
+  "whisky_pure_alcohol_litres_total": 402000,
+  "whisky_litres": 402000,
   "fossil_displacement": {
-    "gas_burned_m3": 329099.0,
-    "co2_tonnes": 606.2
+    "gas_burned_m3": 534660.0,
+    "co2_tonnes": 984.9
   },
   "bess_storage": {
-    "megapacks_needed": 444,
-    "total_gwh": 1.73
+    "megapacks_needed": 721,
+    "total_gwh": 2.81
   },
   "interconnectors": [
     {
@@ -141,36 +141,36 @@
   ],
   "locations": [
     {
-      "name": "Neart na Gaoithe",
-      "lat": 56.25,
-      "lon": -2.1,
-      "fuel": "wind",
-      "wasted_mwh": 664.7,
-      "cost_gbp": 53117
-    },
-    {
       "name": "Seagreen Offshore",
       "lat": 56.6,
       "lon": -1.75,
       "fuel": "wind",
-      "wasted_mwh": 582.4,
-      "cost_gbp": 9026
+      "wasted_mwh": 1042.0,
+      "cost_gbp": 16147
+    },
+    {
+      "name": "Neart na Gaoithe",
+      "lat": 56.25,
+      "lon": -2.1,
+      "fuel": "wind",
+      "wasted_mwh": 747.5,
+      "cost_gbp": 60441
     },
     {
       "name": "Moray Firth Offshore",
       "lat": 58.15,
       "lon": -2.95,
       "fuel": "wind",
-      "wasted_mwh": 239.9,
-      "cost_gbp": 5481
+      "wasted_mwh": 634.4,
+      "cost_gbp": 14705
     },
     {
       "name": "Viking Wind Farm (Shetland)",
       "lat": 60.3,
       "lon": -1.27,
       "fuel": "wind",
-      "wasted_mwh": 135.3,
-      "cost_gbp": 2200
+      "wasted_mwh": 196.7,
+      "cost_gbp": 3198
     }
   ],
   "data_quality": {
@@ -188,5 +188,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Great Britain\u2019s power system is currently recording 13.3 GW of wind output, with estimated Scottish wind output reaching 3.9 GW, which represents 38.6% of installed Scottish wind capacity. Driven by this abundance of renewable generation, Scottish carbon intensity sits at 0 gCO2/kWh, compared to 55 gCO2/kWh GB-wide. However, transmission bottlenecks prevent this clean power from flowing south, forcing grid operators to curtail Scottish wind. So far today, 1,732 MWh of Scottish generation has been turned down through Balancing Mechanism bids at a constraint cost of about \u00a377,844. To replace this stranded clean volume closer to demand centres, an estimated 329,099 m3 of gas has been burned elsewhere, releasing an avoidable 606 tonnes CO2 into the atmosphere. Annualising today's run rate yields an estimated total yearly cost of curtailment of \u00a328 million. Spreading this constraint expenditure across typical UK power consumption adds an estimated \u00a30.10/MWh to everybody's electricity invoice in the UK, highlighting the persistent economic and environmental price paid for structural grid congestion."
+  "ai_summary": "Great Britain's wind generation currently stands at 13.4 GW, with Scotland contributing an estimated 4.2 GW, representing 41.6% of installed Scottish wind capacity. Underpinned by this strong renewable generation, Scottish carbon intensity has dropped to 0 gCO2/kWh, compared to 56 gCO2/kWh across the GB-wide system. However, grid transmission bottlenecks continue to limit the transfer of this zero-carbon power southward. So far today, 2,814 MWh of Scottish generation has been curtailed through the Balancing Mechanism, incurring constraint costs of about \u00a3107,647. Annualizing today's figures indicates an estimated total yearly curtailment cost of \u00a339 million, which increases consumer electricity invoices across the UK by an estimated \u00a30.14/MWh. To replace this trapped output, fossil-fuel plants elsewhere on the network have burned an estimated 534,660 cubic meters of gas, releasing an additional 985 tonnes CO2 into the atmosphere. This ongoing dynamic illustrates the financial and environmental penalties of transmission constraints, where zero-emission generation is paid to turn down while carbon-intensive generation is paid to fire up elsewhere."
 }

@@ -1,34 +1,34 @@
 {
-  "timestamp": "2026-10-22 22:19:03 UTC",
+  "timestamp": "2026-10-22 22:54:38 UTC",
   "settlement_date": "2026-10-22",
-  "settlement_period": 47,
-  "total_generation_gw": 25.7,
+  "settlement_period": 48,
+  "total_generation_gw": 25.8,
   "scot_total_generation_gw": 1.7,
-  "uk_carbon_intensity": 86,
+  "uk_carbon_intensity": 75,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 7.1,
+  "total_wind_gw": 8.2,
   "generation_mix": {
-    "wind": 31.8,
+    "wind": 35.8,
     "imports": 23.2,
     "nuclear": 18.2,
-    "biomass": 11.6,
-    "gas": 10.1,
-    "hydro": 3.2,
-    "other": 1.8
+    "biomass": 11.7,
+    "gas": 8.0,
+    "hydro": 2.5,
+    "other": 0.7
   },
   "scottish_generation_mix": {
-    "wind": 80.8,
-    "nuclear": 19.1
+    "wind": 80.0,
+    "nuclear": 20.0
   },
   "wind_country_split": {
-    "Scotland": 19.7,
-    "England & Wales": 80.3
+    "Scotland": 17.0,
+    "England & Wales": 83.0
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 7.1,
+      "gen_gw": 8.2,
       "capacity_gw": 31.8,
-      "usage_perc": 22.4
+      "usage_perc": 25.9
     },
     "scotland": {
       "gen_gw": 1.4,
@@ -36,9 +36,9 @@
       "usage_perc": 13.9
     },
     "england_wales": {
-      "gen_gw": 5.7,
+      "gen_gw": 6.8,
       "capacity_gw": 21.7,
-      "usage_perc": 26.3
+      "usage_perc": 31.3
     }
   },
   "scottish_balance": {
@@ -47,12 +47,12 @@
     "net_export_gw": 0.6,
     "is_exporter": false
   },
-  "total_wasted_mwh": 53112.0,
+  "total_wasted_mwh": 53596.4,
   "fuel_breakdown": {
     "wind": {
-      "mwh": 53112.0,
-      "cost_gbp": 1736895.98,
-      "homes_powered": 5901333
+      "mwh": 53596.4,
+      "cost_gbp": 1753955.29,
+      "homes_powered": 5955155
     },
     "solar": {
       "mwh": 0.0,
@@ -65,15 +65,15 @@
       "homes_powered": 0
     }
   },
-  "whisky_pure_alcohol_litres_total": 7587428,
-  "whisky_litres": 7587428,
+  "whisky_pure_alcohol_litres_total": 7656628,
+  "whisky_litres": 7656628,
   "fossil_displacement": {
-    "gas_burned_m3": 10091280.0,
-    "co2_tonnes": 18589.2
+    "gas_burned_m3": 10183316.0,
+    "co2_tonnes": 18758.7
   },
   "bess_storage": {
-    "megapacks_needed": 13618,
-    "total_gwh": 53.11
+    "megapacks_needed": 13742,
+    "total_gwh": 53.6
   },
   "interconnectors": [
     {
@@ -145,8 +145,8 @@
       "lat": 58.15,
       "lon": -2.95,
       "fuel": "wind",
-      "wasted_mwh": 24004.3,
-      "cost_gbp": 799542
+      "wasted_mwh": 24437.3,
+      "cost_gbp": 815543
     },
     {
       "name": "Seagreen Offshore",
@@ -177,8 +177,8 @@
       "lat": 60.3,
       "lon": -1.27,
       "fuel": "wind",
-      "wasted_mwh": 1758.6,
-      "cost_gbp": 28593
+      "wasted_mwh": 1799.3,
+      "cost_gbp": 29254
     },
     {
       "name": "Stronelairg",
@@ -204,5 +204,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Scottish wind is currently supplying an estimated 1.4 GW into the grid, with Scottish carbon intensity at 0 gCO2/kWh. So far today 53,112 MWh of Scottish generation has been turned down through Balancing Mechanism bids, at a constraint cost of about \u00a31,736,896. Transmission limits across the B6 boundary stop this low-carbon power reaching English demand centres, so gas plant further south must replace it, and the cost is recovered from bill payers through BSUoS charges."
+  "ai_summary": "Great Britain\u2019s wind output is currently delivering 8.2 GW, with estimated Scottish wind output standing at 1.4 GW, representing 13.9% of installed Scottish wind capacity. Scotland\u2019s local carbon intensity remains outstanding at 0 gCO2/kWh versus 75 gCO2/kWh GB-wide, yet cross-border transmission limits continue to choke clean power flows. So far today, 53.6 GWh of Scottish generation has been curtailed via the Balancing Mechanism at a constraint cost of about \u00a31,753,955. To replace this trapped zero-carbon electricity, an estimated 10,183,316 m3 of gas was burned elsewhere across the system, adding 18,759 tonnes CO2 to the atmosphere. Extrapolating today\u2019s constraint spend indicates an estimated total yearly cost of \u00a3640 million. Across the nation\u2019s annual electricity demand, this chronic network congestion effectively increases everybody's invoice in the UK by an estimated \u00a32/MWh, highlighting the heavy financial and environmental penalties of delaying vital grid reinforcements between Scotland and southern load centres."
 }

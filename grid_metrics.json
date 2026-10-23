@@ -1,50 +1,50 @@
 {
-  "timestamp": "2026-10-23 21:55:09 UTC",
+  "timestamp": "2026-10-23 22:18:02 UTC",
   "settlement_date": "2026-10-23",
-  "settlement_period": 46,
-  "total_generation_gw": 27.7,
-  "scot_total_generation_gw": 4.0,
-  "uk_carbon_intensity": 52,
+  "settlement_period": 47,
+  "total_generation_gw": 25.5,
+  "scot_total_generation_gw": 3.9,
+  "uk_carbon_intensity": 59,
   "scottish_carbon_intensity": 0,
   "total_wind_gw": 14.2,
   "generation_mix": {
-    "wind": 57.9,
-    "nuclear": 15.6,
-    "imports": 13.4,
-    "gas": 8.0,
-    "biomass": 2.8,
-    "hydro": 1.8,
-    "other": 0.5
+    "wind": 60.9,
+    "nuclear": 16.6,
+    "gas": 8.6,
+    "imports": 6.6,
+    "biomass": 3.0,
+    "other": 2.7,
+    "hydro": 1.7
   },
   "scottish_generation_mix": {
-    "wind": 89.7,
-    "nuclear": 10.3
+    "wind": 89.2,
+    "nuclear": 10.8
   },
   "wind_country_split": {
-    "Scotland": 25.4,
-    "England & Wales": 74.6
+    "Scotland": 24.9,
+    "England & Wales": 75.1
   },
   "wind_capacity": {
     "gb_total": {
       "gen_gw": 14.2,
       "capacity_gw": 31.8,
-      "usage_perc": 44.7
+      "usage_perc": 44.8
     },
     "scotland": {
-      "gen_gw": 3.6,
+      "gen_gw": 3.5,
       "capacity_gw": 10.1,
-      "usage_perc": 35.6
+      "usage_perc": 34.7
     },
     "england_wales": {
-      "gen_gw": 10.6,
+      "gen_gw": 10.7,
       "capacity_gw": 21.7,
-      "usage_perc": 48.8
+      "usage_perc": 49.3
     }
   },
   "scottish_balance": {
-    "demand_gw": 2.5,
-    "generation_gw": 4.0,
-    "net_export_gw": 1.5,
+    "demand_gw": 2.3,
+    "generation_gw": 3.9,
+    "net_export_gw": 1.6,
     "is_exporter": true
   },
   "total_wasted_mwh": 19099.4,
@@ -204,5 +204,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Great Britain is currently generating 14.2 GW of wind power, with estimated Scottish wind output contributing 3.6 GW, which accounts for 35.6% of installed Scottish wind capacity. This clean power has driven Scottish carbon intensity down to an impressive 0 gCO2/kWh, in stark contrast to the 52 gCO2/kWh recorded GB-wide. However, severe cross-border transmission constraints continue to prevent this zero-carbon energy from freely flowing south to major demand centers. As a direct result, 19.1 GWh of Scottish generation has been curtailed so far today through Balancing Mechanism bids, incurring a constraint cost of about \u00a3392,541. To replace this discarded renewable power, fossil-fuel plants elsewhere on the network were forced to burn an estimated 3,628,886 m3 of natural gas, releasing 6,685 tonnes of CO2 into the atmosphere. Annualised at current levels, the total yearly cost of Scottish curtailment is estimated at \u00a3143 million. Recovered through system balancing charges, this constraint burden adds an estimated \u00a30.5/MWh to everybody's electricity invoice in the UK, underscoring the compounding economic and environmental price paid for delayed transmission upgrades."
+  "ai_summary": "Great Britain is currently generating 14.2 GW of wind power, with Scotland delivering an estimated Scottish wind output of 3.5 GW, representing 34.7% of installed Scottish wind capacity. This strong renewable performance has driven Scottish carbon intensity down to 0 gCO2/kWh versus 59 gCO2/kWh GB-wide. Despite this green milestone, transmission boundary limits prevent clean energy from flowing south to major demand centers. As a result, Scottish generation curtailed so far today has reached 19.1 GWh, incurring an immediate constraint cost of about \u00a3392,541. To replace this lost clean volume, fossil generation was dispatched down south, resulting in an estimated 3,628,886 m3 of gas burned elsewhere and producing an additional 6,685 tonnes of CO2. Annualizing this daily balancing expense indicates an estimated total yearly cost of curtailment of \u00a3143 million. Socialized across national electricity consumption through system balancing mechanisms, this reflects an estimated increase of roughly \u00a30.5/MWh on everybody's invoice in the UK. Upgrading cross-border network capacity remains essential to preventing carbon leakage, easing consumer balancing surcharges, and fully utilizing Scotland's clean power potential."
 }

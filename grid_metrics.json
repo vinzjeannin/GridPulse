@@ -1,34 +1,34 @@
 {
-  "timestamp": "2026-10-23 02:59:02 UTC",
+  "timestamp": "2026-10-23 03:25:29 UTC",
   "settlement_date": "2026-10-23",
-  "settlement_period": 8,
-  "total_generation_gw": 24.0,
+  "settlement_period": 9,
+  "total_generation_gw": 23.7,
   "scot_total_generation_gw": 1.3,
-  "uk_carbon_intensity": 58,
+  "uk_carbon_intensity": 61,
   "scottish_carbon_intensity": 0,
   "total_wind_gw": 12.0,
   "generation_mix": {
-    "wind": 49.7,
-    "nuclear": 17.2,
-    "imports": 15.3,
-    "gas": 8.8,
-    "biomass": 6.2,
-    "hydro": 1.7,
-    "other": 1.0
+    "wind": 49.5,
+    "nuclear": 17.5,
+    "imports": 14.4,
+    "gas": 9.0,
+    "biomass": 6.0,
+    "other": 1.9,
+    "hydro": 1.8
   },
   "scottish_generation_mix": {
-    "wind": 79.7,
-    "nuclear": 20.4
+    "wind": 79.1,
+    "nuclear": 20.9
   },
   "wind_country_split": {
-    "Scotland": 8.3,
-    "England & Wales": 91.7
+    "Scotland": 8.6,
+    "England & Wales": 91.4
   },
   "wind_capacity": {
     "gb_total": {
       "gen_gw": 12.0,
       "capacity_gw": 31.8,
-      "usage_perc": 37.8
+      "usage_perc": 37.9
     },
     "scotland": {
       "gen_gw": 1.0,
@@ -42,9 +42,9 @@
     }
   },
   "scottish_balance": {
-    "demand_gw": 2.2,
+    "demand_gw": 2.1,
     "generation_gw": 1.3,
-    "net_export_gw": 0.9,
+    "net_export_gw": 0.8,
     "is_exporter": false
   },
   "total_wasted_mwh": 203.9,
@@ -164,5 +164,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Great Britain is currently recording an aggregate wind output of 12.0 GW, with estimated Scottish wind output contributing 1.0 GW, representing 9.9% of installed Scottish wind capacity. Scotland\u2019s generation mix demonstrates exceptional regional performance, maintaining a Scottish carbon intensity of 0 gCO2/kWh versus 58 gCO2/kWh GB-wide. However, grid transmission bottlenecks continue to limit the full delivery of low-carbon electricity across borders. So far today, 204 MWh of Scottish generation has been curtailed through Balancing Mechanism bids, incurring a constraint cost of about \u00a36,641. To replace this trapped renewable volume closer to demand centres, an estimated 38,741 m3 of gas was burned elsewhere on the system, resulting in an additional 71 tonnes of CO2 emissions. Extrapolating today\u2019s constraint spend indicates an estimated total yearly cost of curtailment of approximately \u00a32 million. Spread across national demand, this constraint burden increases everybody's invoice in the UK by approximately \u00a30.01/MWh. These metrics underline the persistent environmental and operational costs of network congestion, where zero-emission Scottish generation is restricted and replaced by fossil fuels while adding balancing expenses to consumer bills."
+  "ai_summary": "Scotland continues to demonstrate an exemplary low-emission power profile today, maintaining a Scottish carbon intensity of 0 gCO2/kWh compared to 61 gCO2/kWh GB-wide. Across Great Britain as a whole, wind output has reached 12.0 GW, with estimated Scottish wind output contributing 1.0 GW, representing 9.9% of installed Scottish wind capacity. Despite this clean baseline, structural transmission bottlenecks between Scotland and major southern demand centres continue to force renewable energy off the system. Scottish generation curtailed so far today has reached 204 MWh through Balancing Mechanism bids, incurring an immediate constraint cost of about \u00a36,641. Because this zero-carbon generation could not be transported across constrained grid boundaries, thermal generation was dispatched to compensate, resulting in an estimated 38,741 m3 of gas burned elsewhere and releasing an additional 71 tonnes of CO2. Extrapolating today's constraint expenditures indicates an estimated total yearly cost of curtailment of \u00a32 million. Distributed across national electricity demand, this financial constraint burden translates to an estimated increase of less than \u00a30.01/MWh on everybody's invoice in the UK, underscoring the urgency of strategic grid reinforcement to eliminate network curtailment and reduce end-consumer costs."
 }

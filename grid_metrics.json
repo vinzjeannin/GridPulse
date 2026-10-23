@@ -1,56 +1,57 @@
 {
-  "timestamp": "2026-10-23 07:13:57 UTC",
+  "timestamp": "2026-10-23 08:02:06 UTC",
   "settlement_date": "2026-10-23",
-  "settlement_period": 17,
-  "total_generation_gw": 33.7,
-  "scot_total_generation_gw": 2.0,
-  "uk_carbon_intensity": 93,
+  "settlement_period": 19,
+  "total_generation_gw": 34.2,
+  "scot_total_generation_gw": 2.2,
+  "uk_carbon_intensity": 97,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 10.9,
+  "total_wind_gw": 10.5,
   "generation_mix": {
-    "wind": 39.1,
-    "imports": 20.2,
-    "nuclear": 15.8,
-    "gas": 14.1,
-    "biomass": 10.7
+    "wind": 37.1,
+    "imports": 21.8,
+    "gas": 15.9,
+    "nuclear": 15.3,
+    "biomass": 9.1,
+    "solar": 0.9
   },
   "scottish_generation_mix": {
-    "wind": 79.2,
-    "nuclear": 20.8
+    "wind": 80.8,
+    "nuclear": 19.1
   },
   "wind_country_split": {
-    "Scotland": 14.4,
-    "England & Wales": 85.6
+    "Scotland": 17.4,
+    "England & Wales": 82.6
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 10.9,
+      "gen_gw": 10.5,
       "capacity_gw": 31.8,
-      "usage_perc": 34.3
+      "usage_perc": 33.1
     },
     "scotland": {
-      "gen_gw": 1.6,
+      "gen_gw": 1.8,
       "capacity_gw": 10.1,
-      "usage_perc": 15.8
+      "usage_perc": 17.8
     },
     "england_wales": {
-      "gen_gw": 9.3,
+      "gen_gw": 8.7,
       "capacity_gw": 21.7,
-      "usage_perc": 42.9
+      "usage_perc": 40.1
     }
   },
   "scottish_balance": {
-    "demand_gw": 3.0,
-    "generation_gw": 2.0,
-    "net_export_gw": 1.0,
+    "demand_gw": 3.1,
+    "generation_gw": 2.2,
+    "net_export_gw": 0.9,
     "is_exporter": false
   },
-  "total_wasted_mwh": 366.7,
+  "total_wasted_mwh": 608.7,
   "fuel_breakdown": {
     "wind": {
-      "mwh": 366.7,
-      "cost_gbp": 14191.25,
-      "homes_powered": 40744
+      "mwh": 608.7,
+      "cost_gbp": 25861.62,
+      "homes_powered": 67633
     },
     "solar": {
       "mwh": 0.0,
@@ -63,15 +64,15 @@
       "homes_powered": 0
     }
   },
-  "whisky_pure_alcohol_litres_total": 52385,
-  "whisky_litres": 52385,
+  "whisky_pure_alcohol_litres_total": 86957,
+  "whisky_litres": 86957,
   "fossil_displacement": {
-    "gas_burned_m3": 69673.0,
-    "co2_tonnes": 128.3
+    "gas_burned_m3": 115653.0,
+    "co2_tonnes": 213.0
   },
   "bess_storage": {
-    "megapacks_needed": 94,
-    "total_gwh": 0.37
+    "megapacks_needed": 156,
+    "total_gwh": 0.61
   },
   "interconnectors": [
     {
@@ -143,16 +144,16 @@
       "lat": 58.15,
       "lon": -2.95,
       "fuel": "wind",
-      "wasted_mwh": 363.5,
-      "cost_gbp": 14156
+      "wasted_mwh": 577.0,
+      "cost_gbp": 25514
     },
     {
       "name": "Neart na Gaoithe",
       "lat": 56.25,
       "lon": -2.1,
       "fuel": "wind",
-      "wasted_mwh": 3.2,
-      "cost_gbp": 36
+      "wasted_mwh": 31.7,
+      "cost_gbp": 347
     }
   ],
   "data_quality": {
@@ -170,5 +171,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Scottish wind is currently supplying an estimated 1.6 GW into the grid, with Scottish carbon intensity at 0 gCO2/kWh. So far today 367 MWh of Scottish generation has been turned down through Balancing Mechanism bids, at a constraint cost of about \u00a314,191. Transmission limits across the B6 boundary stop this low-carbon power reaching English demand centres, so gas plant further south must replace it, and the cost is recovered from bill payers through BSUoS charges."
+  "ai_summary": "Scottish wind is currently supplying an estimated 1.8 GW into the grid, with Scottish carbon intensity at 0 gCO2/kWh. So far today 609 MWh of Scottish generation has been turned down through Balancing Mechanism bids, at a constraint cost of about \u00a325,862. Transmission limits across the B6 boundary stop this low-carbon power reaching English demand centres, so gas plant further south must replace it, and the cost is recovered from bill payers through BSUoS charges."
 }

@@ -1,34 +1,34 @@
 {
-  "timestamp": "2026-10-23 03:25:29 UTC",
+  "timestamp": "2026-10-23 03:59:33 UTC",
   "settlement_date": "2026-10-23",
-  "settlement_period": 9,
-  "total_generation_gw": 23.7,
+  "settlement_period": 10,
+  "total_generation_gw": 23.4,
   "scot_total_generation_gw": 1.3,
-  "uk_carbon_intensity": 61,
+  "uk_carbon_intensity": 59,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 12.0,
+  "total_wind_gw": 11.7,
   "generation_mix": {
-    "wind": 49.5,
-    "nuclear": 17.5,
+    "wind": 49.8,
+    "nuclear": 17.7,
     "imports": 14.4,
     "gas": 9.0,
-    "biomass": 6.0,
-    "other": 1.9,
-    "hydro": 1.8
+    "biomass": 6.2,
+    "hydro": 1.7,
+    "other": 1.2
   },
   "scottish_generation_mix": {
-    "wind": 79.1,
-    "nuclear": 20.9
+    "wind": 78.2,
+    "nuclear": 21.9
   },
   "wind_country_split": {
-    "Scotland": 8.6,
-    "England & Wales": 91.4
+    "Scotland": 8.5,
+    "England & Wales": 91.5
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 12.0,
+      "gen_gw": 11.7,
       "capacity_gw": 31.8,
-      "usage_perc": 37.9
+      "usage_perc": 36.7
     },
     "scotland": {
       "gen_gw": 1.0,
@@ -36,9 +36,9 @@
       "usage_perc": 9.9
     },
     "england_wales": {
-      "gen_gw": 11.0,
+      "gen_gw": 10.7,
       "capacity_gw": 21.7,
-      "usage_perc": 50.7
+      "usage_perc": 49.3
     }
   },
   "scottish_balance": {
@@ -164,5 +164,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Scotland continues to demonstrate an exemplary low-emission power profile today, maintaining a Scottish carbon intensity of 0 gCO2/kWh compared to 61 gCO2/kWh GB-wide. Across Great Britain as a whole, wind output has reached 12.0 GW, with estimated Scottish wind output contributing 1.0 GW, representing 9.9% of installed Scottish wind capacity. Despite this clean baseline, structural transmission bottlenecks between Scotland and major southern demand centres continue to force renewable energy off the system. Scottish generation curtailed so far today has reached 204 MWh through Balancing Mechanism bids, incurring an immediate constraint cost of about \u00a36,641. Because this zero-carbon generation could not be transported across constrained grid boundaries, thermal generation was dispatched to compensate, resulting in an estimated 38,741 m3 of gas burned elsewhere and releasing an additional 71 tonnes of CO2. Extrapolating today's constraint expenditures indicates an estimated total yearly cost of curtailment of \u00a32 million. Distributed across national electricity demand, this financial constraint burden translates to an estimated increase of less than \u00a30.01/MWh on everybody's invoice in the UK, underscoring the urgency of strategic grid reinforcement to eliminate network curtailment and reduce end-consumer costs."
+  "ai_summary": "Great Britain's electricity system is currently operating with 11.7 GW of total wind generation, of which Scottish wind contributes an estimated 1.0 GW, representing 9.9% of installed Scottish wind capacity. Generation mix differences are stark across regions, with Scottish carbon intensity standing at 0 gCO2/kWh compared to 59 gCO2/kWh GB-wide. Despite Scotland producing entirely clean power, transmission boundaries continue to enforce localized bottlenecks. So far today, 204 MWh of Scottish generation has been turned down through Balancing Mechanism bids, incurring a constraint cost of about \u00a36,641. To replace this curtailed low-carbon volume, thermal generation elsewhere in the network burned an estimated 38,741 m3 of natural gas, resulting in an additional 71 tonnes of carbon emissions. Extrapolating today\u2019s curtailment rate gives an estimated total yearly constraint cost of approximately \u00a32 million to the nearest million. When spread across aggregate national electricity demand, this adds an estimated increase of less than \u00a30.01/MWh to UK electricity invoices, demonstrating that while the broader consumer bill impact from today's specific actions remains small, the cumulative emissions and system balancing inefficiencies persist."
 }

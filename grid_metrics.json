@@ -1,53 +1,51 @@
 {
-  "timestamp": "2026-10-24 10:53:07 UTC",
+  "timestamp": "2026-10-24 11:13:59 UTC",
   "settlement_date": "2026-10-24",
-  "settlement_period": 24,
-  "total_generation_gw": 30.6,
-  "scot_total_generation_gw": 5.3,
-  "uk_carbon_intensity": 73,
-  "scottish_carbon_intensity": 0,
-  "total_wind_gw": 15.1,
+  "settlement_period": 25,
+  "total_generation_gw": 31.1,
+  "scot_total_generation_gw": 5.8,
+  "uk_carbon_intensity": 70,
+  "scottish_carbon_intensity": 2,
+  "total_wind_gw": 15.8,
   "generation_mix": {
-    "wind": 50.8,
-    "nuclear": 14.0,
-    "imports": 12.1,
-    "gas": 8.6,
-    "other": 5.7,
-    "solar": 5.0,
-    "biomass": 1.9,
-    "hydro": 1.9
+    "wind": 57.5,
+    "nuclear": 14.9,
+    "imports": 10.6,
+    "gas": 9.2,
+    "solar": 6.0,
+    "biomass": 1.8
   },
   "scottish_generation_mix": {
-    "wind": 90.3,
-    "nuclear": 8.6,
-    "solar": 1.0,
-    "imports": 0.1
+    "wind": 91.0,
+    "nuclear": 7.8,
+    "solar": 0.9,
+    "imports": 0.3
   },
   "wind_country_split": {
-    "Scotland": 31.5,
-    "England & Wales": 68.5
+    "Scotland": 33.5,
+    "England & Wales": 66.5
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 15.1,
+      "gen_gw": 15.8,
       "capacity_gw": 31.8,
-      "usage_perc": 47.5
+      "usage_perc": 49.7
     },
     "scotland": {
-      "gen_gw": 4.8,
+      "gen_gw": 5.3,
       "capacity_gw": 10.1,
-      "usage_perc": 47.5
+      "usage_perc": 52.5
     },
     "england_wales": {
-      "gen_gw": 10.3,
+      "gen_gw": 10.5,
       "capacity_gw": 21.7,
-      "usage_perc": 47.5
+      "usage_perc": 48.4
     }
   },
   "scottish_balance": {
     "demand_gw": 2.8,
-    "generation_gw": 5.3,
-    "net_export_gw": 2.5,
+    "generation_gw": 5.8,
+    "net_export_gw": 3.0,
     "is_exporter": true
   },
   "total_wasted_mwh": 10617.6,
@@ -207,5 +205,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Great Britain is currently generating 15.1 GW of wind power, with Scotland delivering an estimated 4.8 GW, representing 47.5% of installed Scottish wind capacity. Driven by this robust renewable output, Scottish carbon intensity stands at an optimal 0 gCO2/kWh, in stark contrast to the 73 gCO2/kWh recorded GB-wide. However, persistent cross-border transmission bottlenecks prevent this surplus low-carbon power from reaching southern demand centres. As a direct consequence, 10.6 GWh of Scottish generation has been curtailed so far today through Balancing Mechanism bids, generating a direct constraint cost of about \u00a3587,621. To replace this blocked zero-carbon electricity, thermal plants downstream were forced to intervene, requiring an estimated 2,017,344 m3 of gas to be burned elsewhere and adding 3,716 tonnes of CO2 to the atmosphere. Extrapolating today's constraint expenditure suggests an estimated total yearly cost of \u00a3214 million. Shared across consumers, this ongoing grid balancing friction increases everybody's invoice in the UK by an estimated \u00a31/MWh, underlining how physical transmission bottlenecks transform abundant green energy into elevated household bills and preventable system emissions."
+  "ai_summary": "Great Britain\u2019s wind fleet is currently delivering 15.8 GW across the transmission system, with estimated Scottish wind output contributing 5.3 GW, representing 52.5% of installed Scottish wind capacity. Driven by this strong regional renewable output, Scottish carbon intensity has plunged to a clean 2 gCO2/kWh, standing in sharp contrast to 70 gCO2/kWh GB-wide. However, cross-border transmission bottlenecks continue to limit power transfers to southern demand centers. As a result, Scottish generation curtailed so far today has reached 10.6 GWh through Balancing Mechanism actions, incurring a constraint cost of about \u00a3587,621. To compensate for this constrained clean electricity, thermal plant dispatched elsewhere has consumed an estimated 2,017,344 cubic meters of gas, releasing an unnecessary 3,716 tonnes of CO2 into the atmosphere. Annualizing today's constraint expenditure implies a total yearly cost of approximately \u00a3214 million. Recovered via nationwide balancing charges, this constraint burden adds an estimated \u00a30.80/MWh to everybody's invoice in the UK. Accelerated transmission reinforcement across the Anglo-Scottish boundary remains urgently needed to curb these counterproductive emissions, unlock trapped zero-carbon power, and reduce system costs for consumers."
 }

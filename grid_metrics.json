@@ -1,49 +1,49 @@
 {
-  "timestamp": "2026-10-24 05:54:31 UTC",
+  "timestamp": "2026-10-24 06:16:28 UTC",
   "settlement_date": "2026-10-24",
-  "settlement_period": 14,
-  "total_generation_gw": 23.8,
-  "scot_total_generation_gw": 1.7,
-  "uk_carbon_intensity": 63,
+  "settlement_period": 15,
+  "total_generation_gw": 26.1,
+  "scot_total_generation_gw": 1.9,
+  "uk_carbon_intensity": 61,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 11.5,
+  "total_wind_gw": 12.2,
   "generation_mix": {
-    "wind": 54.2,
-    "nuclear": 20.5,
-    "gas": 8.1,
-    "imports": 8.0,
-    "other": 3.2,
-    "biomass": 3.1,
-    "hydro": 2.9
+    "wind": 52.3,
+    "nuclear": 19.2,
+    "imports": 11.8,
+    "gas": 7.6,
+    "hydro": 3.7,
+    "biomass": 2.9,
+    "other": 2.4
   },
   "scottish_generation_mix": {
     "wind": 80.2,
-    "nuclear": 19.8
+    "nuclear": 19.9
   },
   "wind_country_split": {
-    "Scotland": 12.2,
-    "England & Wales": 87.8
+    "Scotland": 12.3,
+    "England & Wales": 87.7
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 11.5,
+      "gen_gw": 12.2,
       "capacity_gw": 31.8,
-      "usage_perc": 36.3
+      "usage_perc": 38.3
     },
     "scotland": {
-      "gen_gw": 1.4,
+      "gen_gw": 1.5,
       "capacity_gw": 10.1,
-      "usage_perc": 13.9
+      "usage_perc": 14.9
     },
     "england_wales": {
-      "gen_gw": 10.1,
+      "gen_gw": 10.7,
       "capacity_gw": 21.7,
-      "usage_perc": 46.5
+      "usage_perc": 49.3
     }
   },
   "scottish_balance": {
-    "demand_gw": 2.1,
-    "generation_gw": 1.7,
+    "demand_gw": 2.3,
+    "generation_gw": 1.9,
     "net_export_gw": 0.4,
     "is_exporter": false
   },
@@ -196,5 +196,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Great Britain is currently recording a robust wind output of 11.5 GW, yet persistent structural transmission constraints continue to bottleneck clean northern generation. Estimated Scottish wind output stands at 1.4 GW, representing only 13.9% of installed Scottish wind capacity as grid export limits take effect. This congestion highlights a stark regional divergence in decarbonisation, with Scottish carbon intensity sitting at 0 gCO2/kWh versus 63 gCO2/kWh GB-wide.\n\nTo maintain system balance, Scottish generation curtailed so far today has reached 6,735 MWh via Balancing Mechanism actions, accumulating a constraint cost of about \u00a3395,226. Because this abundant renewable power cannot reach southern demand centres, an estimated 1,279,707 m3 of gas has been burned elsewhere to replace it, releasing an additional 2,357 tonnes CO2 into the atmosphere.\n\nExtrapolating today\u2019s curtailment expenses over a full year indicates an estimated total yearly cost of \u00a3144 million. When distributed across national electricity consumption, these ongoing network constraints add an estimated \u00a30.50/MWh to consumer invoices across the UK, underlining the immediate economic and environmental necessity of accelerating cross-border grid reinforcement."
+  "ai_summary": "Great Britain is currently generating 12.2 GW of wind power, with Scotland contributing an estimated 1.5 GW, representing 14.9% of its installed wind capacity. This clean dispatch underscores a stark regional contrast in grid decarbonisation, with Scottish carbon intensity sitting at 0 gCO2/kWh compared to 61 gCO2/kWh GB-wide. However, severe cross-border transmission limits continue to strand zero-carbon power north of the border. So far today, 6,735 MWh of Scottish generation has been curtailed through the Balancing Mechanism at a direct constraint cost of about \u00a3395,226. To plug this localized deficit, thermal plant output had to be procured downstream, resulting in an estimated 1,279,707 m3 of gas burned elsewhere and adding 2,357 tonnes of CO2 to the atmosphere. Extrapolating today\u2019s constraint spend yields an estimated yearly curtailment cost of \u00a3144 million. When socialised through policy and balancing charges across total national demand, this ongoing constraint expense adds an estimated \u00a30.5/MWh to electricity invoices across the UK, underscoring the urgent economic and environmental imperative to reinforce grid infrastructure."
 }

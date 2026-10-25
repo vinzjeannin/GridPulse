@@ -1,52 +1,50 @@
 {
-  "timestamp": "2026-10-25 10:53:05 UTC",
+  "timestamp": "2026-10-25 11:14:11 UTC",
   "settlement_date": "2026-10-25",
-  "settlement_period": 24,
-  "total_generation_gw": 23.5,
-  "scot_total_generation_gw": 4.4,
+  "settlement_period": 25,
+  "total_generation_gw": 23.4,
+  "scot_total_generation_gw": 4.1,
   "uk_carbon_intensity": 53,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 10.8,
+  "total_wind_gw": 10.6,
   "generation_mix": {
-    "wind": 46.3,
-    "solar": 16.5,
-    "nuclear": 15.1,
-    "imports": 9.6,
-    "gas": 7.7,
-    "biomass": 2.0,
-    "hydro": 1.5,
-    "other": 1.3
+    "wind": 48.3,
+    "solar": 16.8,
+    "nuclear": 15.9,
+    "imports": 9.2,
+    "gas": 7.6,
+    "biomass": 2.2
   },
   "scottish_generation_mix": {
-    "wind": 85.9,
-    "nuclear": 12.1,
-    "solar": 2.0
+    "wind": 85.5,
+    "nuclear": 11.8,
+    "solar": 2.7
   },
   "wind_country_split": {
-    "Scotland": 34.8,
-    "England & Wales": 65.2
+    "Scotland": 33.6,
+    "England & Wales": 66.4
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 10.8,
+      "gen_gw": 10.6,
       "capacity_gw": 31.8,
-      "usage_perc": 34.1
+      "usage_perc": 33.2
     },
     "scotland": {
-      "gen_gw": 3.8,
+      "gen_gw": 3.5,
       "capacity_gw": 10.1,
-      "usage_perc": 37.6
+      "usage_perc": 34.7
     },
     "england_wales": {
-      "gen_gw": 7.0,
+      "gen_gw": 7.1,
       "capacity_gw": 21.7,
-      "usage_perc": 32.3
+      "usage_perc": 32.7
     }
   },
   "scottish_balance": {
     "demand_gw": 2.1,
-    "generation_gw": 4.4,
-    "net_export_gw": 2.3,
+    "generation_gw": 4.1,
+    "net_export_gw": 2.0,
     "is_exporter": true
   },
   "total_wasted_mwh": 43723.1,
@@ -206,5 +204,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Great Britain\u2019s electricity system is currently operating with a total wind output of 10.8 GW, supported by an estimated Scottish wind output of 3.8 GW, which represents 37.6% of installed Scottish wind capacity. Driven by this high volume of renewable generation, Scottish carbon intensity sits at a clean 0 gCO2/kWh, standing in stark contrast to the GB-wide carbon intensity of 53 gCO2/kWh. \n\nHowever, ongoing transmission boundaries prevent this green power from flowing freely to southern demand centers. Consequently, 43.7 GWh of Scottish generation has been curtailed so far today through Balancing Mechanism bids, creating an immediate constraint cost of about \u00a32,772,559. To bridge the resulting deficit, flexible thermal plants have ramped up, requiring an estimated 8,307,389 m3 of gas burned elsewhere and emitting an additional 15,303 tonnes of CO2.\n\nExtrapolating today\u2019s figures across a full year suggests an estimated total yearly cost of curtailment of \u00a31,012 million. When recovered across national network charges over typical annual demand, this financial constraint increases everybody's invoice in the UK by an estimated \u00a33.60/MWh, emphasizing the dual economic and environmental toll of transmission bottlenecks."
+  "ai_summary": "Great Britain's electricity system is currently seeing a total wind output of 10.6 GW, with Scotland generating an estimated 3.5 GW, representing 34.7% of installed Scottish wind capacity. This robust renewable generation brings Scottish carbon intensity down to 0 gCO2/kWh, contrasting with the GB-wide carbon intensity of 53 gCO2/kWh. However, severe cross-border transmission bottlenecks prevent this surplus green power from flowing freely to southern demand centres. Consequently, Scottish generation curtailed so far today has reached 43.7 GWh via Balancing Mechanism actions, incurring a daily constraint cost of about \u00a32,772,559. \n\nTo replace this stranded clean volume, fossil generators fired up elsewhere on the network have burned an estimated 8,307,389 m3 of gas, releasing an unnecessary 15,303 tonnes of CO2 into the atmosphere. Extrapolated across an entire operational year, the total yearly cost of curtailment reaches an estimated \u00a31,012 million. Recovered through balancing mechanism charges, this ongoing structural inefficiency increases everybody's invoice in the UK by an estimated \u00a33 to \u00a34/MWh. These metrics demonstrate the severe financial and decarbonisation penalties imposed by network constraints, highlighting the critical necessity of expanding grid transmission capacity to relieve consumers and fully utilise renewable generation."
 }

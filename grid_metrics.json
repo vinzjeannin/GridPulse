@@ -1,24 +1,24 @@
 {
-  "timestamp": "2026-10-28 10:12:50 UTC",
+  "timestamp": "2026-10-28 11:07:43 UTC",
   "settlement_date": "2026-10-28",
-  "settlement_period": 21,
-  "total_generation_gw": 30.0,
+  "settlement_period": 23,
+  "total_generation_gw": 31.4,
   "scot_total_generation_gw": 5.3,
-  "uk_carbon_intensity": 73,
+  "uk_carbon_intensity": 70,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 13.0,
+  "total_wind_gw": 13.2,
   "generation_mix": {
-    "wind": 46.4,
-    "gas": 18.4,
-    "nuclear": 14.8,
-    "biomass": 9.1,
-    "solar": 6.5,
+    "wind": 45.8,
+    "gas": 15.3,
+    "nuclear": 14.7,
+    "solar": 9.8,
+    "biomass": 9.6,
     "imports": 4.7
   },
   "scottish_generation_mix": {
-    "wind": 89.5,
-    "nuclear": 9.4,
-    "solar": 1.1
+    "wind": 89.2,
+    "nuclear": 9.2,
+    "solar": 1.5
   },
   "wind_country_split": {
     "Scotland": 35.9,
@@ -26,9 +26,9 @@
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 13.0,
+      "gen_gw": 13.2,
       "capacity_gw": 31.9,
-      "usage_perc": 40.8
+      "usage_perc": 41.2
     },
     "scotland": {
       "gen_gw": 4.7,
@@ -36,23 +36,23 @@
       "usage_perc": 46.5
     },
     "england_wales": {
-      "gen_gw": 8.3,
+      "gen_gw": 8.4,
       "capacity_gw": 21.8,
-      "usage_perc": 38.1
+      "usage_perc": 38.5
     }
   },
   "scottish_balance": {
-    "demand_gw": 2.7,
+    "demand_gw": 2.8,
     "generation_gw": 5.3,
-    "net_export_gw": 2.6,
+    "net_export_gw": 2.5,
     "is_exporter": true
   },
-  "total_wasted_mwh": 48647.4,
+  "total_wasted_mwh": 52512.5,
   "fuel_breakdown": {
     "wind": {
-      "mwh": 48647.4,
-      "cost_gbp": 1993671.66,
-      "homes_powered": 5405266
+      "mwh": 52512.5,
+      "cost_gbp": 2093608.16,
+      "homes_powered": 5834722
     },
     "solar": {
       "mwh": 0.0,
@@ -65,15 +65,15 @@
       "homes_powered": 0
     }
   },
-  "whisky_pure_alcohol_litres_total": 6949628,
-  "whisky_litres": 6949628,
+  "whisky_pure_alcohol_litres_total": 7501785,
+  "whisky_litres": 7501785,
   "fossil_displacement": {
-    "gas_burned_m3": 9243006.0,
-    "co2_tonnes": 17026.6
+    "gas_burned_m3": 9977375.0,
+    "co2_tonnes": 18379.4
   },
   "bess_storage": {
-    "megapacks_needed": 12473,
-    "total_gwh": 48.65
+    "megapacks_needed": 13464,
+    "total_gwh": 52.51
   },
   "interconnectors": [
     {
@@ -145,40 +145,40 @@
       "lat": 58.15,
       "lon": -2.95,
       "fuel": "wind",
-      "wasted_mwh": 11822.8,
-      "cost_gbp": 325973
+      "wasted_mwh": 13315.8,
+      "cost_gbp": 373866
     },
     {
       "name": "Seagreen Offshore",
       "lat": 56.6,
       "lon": -1.75,
       "fuel": "wind",
-      "wasted_mwh": 9529.7,
-      "cost_gbp": 141690
+      "wasted_mwh": 10447.4,
+      "cost_gbp": 155335
     },
     {
       "name": "Beatrice Offshore",
       "lat": 58.12,
       "lon": -3.08,
       "fuel": "wind",
-      "wasted_mwh": 4182.9,
-      "cost_gbp": 264169
+      "wasted_mwh": 4626.6,
+      "cost_gbp": 286910
     },
     {
       "name": "Neart na Gaoithe",
       "lat": 56.25,
       "lon": -2.1,
       "fuel": "wind",
-      "wasted_mwh": 3915.6,
-      "cost_gbp": 87928
+      "wasted_mwh": 4319.1,
+      "cost_gbp": 92563
     },
     {
       "name": "Viking Wind Farm (Shetland)",
       "lat": 60.3,
       "lon": -1.27,
       "fuel": "wind",
-      "wasted_mwh": 3729.7,
-      "cost_gbp": 60605
+      "wasted_mwh": 4112.1,
+      "cost_gbp": 66819
     },
     {
       "name": "Clyde Wind Farm",
@@ -204,5 +204,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Scottish wind generation is demonstrating strong clean energy performance, with an estimated 4.7 GW currently produced, representing 46.5% of installed Scottish wind capacity and contributing significantly to total GB wind output of 13.0 GW. This abundant renewable generation drives Scottish carbon intensity down to 0 gCO2/kWh, standing in sharp contrast to the GB-wide intensity of 73 gCO2/kWh. However, structural cross-border transmission limits prevent this green power from reaching consumers further south. Through Balancing Mechanism turn-down bids, Scottish generation curtailed so far today has reached 48.6 GWh, incurring a direct constraint cost of about \u00a31,993,672. To replace this discarded zero-carbon electricity, thermal plants elsewhere burned an estimated 9,243,006 m\u00b3 of gas, needlessly emitting an additional 17,027 tonnes of CO2. Annualising today's constraint expenditure yields an estimated yearly curtailment cost of \u00a3728 million. Distributed across national electricity consumption, this network bottleneck adds an estimated \u00a32 to \u00a33/MWh to every electricity invoice in the UK, highlighting the urgent financial and environmental necessity of expanding grid export capacity."
+  "ai_summary": "Great Britain is currently generating 13.2 GW of wind power, with Scottish wind output estimated at 4.7 GW, representing 46.5% of installed Scottish wind capacity. Driven by this strong renewable generation, Scottish carbon intensity has dropped to 0 gCO2/kWh, outperforming the GB-wide intensity of 70 gCO2/kWh. However, transmission bottlenecks between Scotland and major southern demand centres continue to throttle output, resulting in 52.5 GWh of Scottish generation curtailed so far today at a constraint cost of about \u00a32,093,608. Because this clean power could not be transported, fossil thermal plants were forced to compensate down south, leading to an estimated 9,977,375 m3 of gas burned elsewhere and adding 18,379 tonnes CO2 into the atmosphere. Extrapolating today\u2019s constraint expenditure yields an estimated total yearly cost of curtailment of \u00a3764 million. Spread across Great Britain's total electricity demand through grid balancing charges, this recurring bottleneck adds an estimated \u00a32.50 to \u00a33.00/MWh to everybody's invoice in the UK, underscoring the urgent operational and financial case for accelerating transmission network reinforcements."
 }

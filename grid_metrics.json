@@ -1,50 +1,48 @@
 {
-  "timestamp": "2026-10-28 23:28:57 UTC",
-  "settlement_date": "2026-10-28",
-  "settlement_period": 47,
-  "total_generation_gw": 27.1,
-  "scot_total_generation_gw": 2.9,
-  "uk_carbon_intensity": 200,
+  "timestamp": "2026-10-29 00:01:41 UTC",
+  "settlement_date": "2026-10-29",
+  "settlement_period": 1,
+  "total_generation_gw": 26.8,
+  "scot_total_generation_gw": 2.8,
+  "uk_carbon_intensity": 202,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 4.7,
+  "total_wind_gw": 4.2,
   "generation_mix": {
-    "gas": 46.6,
-    "wind": 18.6,
-    "nuclear": 16.0,
-    "biomass": 9.8,
-    "imports": 4.4,
-    "hydro": 2.9,
-    "other": 1.7
+    "gas": 48.2,
+    "wind": 19.3,
+    "nuclear": 17.0,
+    "biomass": 10.7,
+    "imports": 4.8
   },
   "scottish_generation_mix": {
-    "wind": 83.9,
-    "nuclear": 16.1
+    "wind": 83.5,
+    "nuclear": 16.6
   },
   "wind_country_split": {
-    "Scotland": 51.8,
-    "England & Wales": 48.2
+    "Scotland": 54.6,
+    "England & Wales": 45.4
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 4.7,
+      "gen_gw": 4.2,
       "capacity_gw": 31.9,
-      "usage_perc": 14.6
+      "usage_perc": 13.3
     },
     "scotland": {
-      "gen_gw": 2.4,
+      "gen_gw": 2.3,
       "capacity_gw": 10.1,
-      "usage_perc": 23.8
+      "usage_perc": 22.8
     },
     "england_wales": {
-      "gen_gw": 2.3,
+      "gen_gw": 2.0,
       "capacity_gw": 21.8,
-      "usage_perc": 10.6
+      "usage_perc": 9.2
     }
   },
   "scottish_balance": {
     "demand_gw": 2.4,
-    "generation_gw": 2.9,
-    "net_export_gw": 0.5,
+    "generation_gw": 2.8,
+    "net_export_gw": 0.4,
     "is_exporter": true
   },
   "total_wasted_mwh": 89356.8,
@@ -199,10 +197,9 @@
     "wind_capacity": "live (BM unit register, BM-registered wind only)",
     "scottish_total_generation": "derived: Scottish wind output divided by wind % of regional mix",
     "scottish_demand": "ESTIMATE: 9% of GB demand (no live feed)",
-    "curtailment": "live (Elexon accepted bids, Scottish units, UK day so far)",
-    "constraint_cost": "live (Elexon bid cashflows)",
+    "curtailment": "fallback: previous value carried forward",
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Great Britain's electricity grid is experiencing significant transmission congestion today, revealing stark regional disparities in generation and emissions. Total GB wind output stands at 4.7 GW, with estimated Scottish wind output reaching 2.4 GW, representing 23.8% of installed Scottish wind capacity. This localized surge of clean power keeps Scottish carbon intensity at 0 gCO2/kWh, standing in sharp contrast to the 200 gCO2/kWh recorded GB-wide. However, inadequate cross-border transmission capacity prevents this power from reaching southern demand centres. As a consequence, 89.4 GWh of Scottish generation has been curtailed so far today, accumulating a constraint cost of about \u00a32,996,076 through the Balancing Mechanism. To replace this rejected zero-carbon energy, an estimated 16,977,792 m3 of gas has been burned elsewhere on the network, discharging 31,275 tonnes of avoidable CO2. If these conditions persist, the total yearly cost of curtailment is estimated at \u00a31,094 million. When distributed across national electricity consumption through system balancing charges, this adds an estimated \u00a34/MWh to everybody's invoice in the UK, highlighting the substantial financial and environmental toll of electrical transmission constraints."
+  "ai_summary": "Scottish wind is currently supplying an estimated 2.3 GW into the grid, with Scottish carbon intensity at 0 gCO2/kWh. So far today 89,357 MWh of Scottish generation has been turned down through Balancing Mechanism bids, at a constraint cost of about \u00a32,996,076. Transmission limits across the B6 boundary stop this low-carbon power reaching English demand centres, so gas plant further south must replace it, and the cost is recovered from bill payers through BSUoS charges."
 }

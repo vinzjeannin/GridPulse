@@ -1,58 +1,56 @@
 {
-  "timestamp": "2026-10-30 22:27:59 UTC",
+  "timestamp": "2026-10-30 23:02:17 UTC",
   "settlement_date": "2026-10-30",
-  "settlement_period": 45,
-  "total_generation_gw": 28.3,
-  "scot_total_generation_gw": 2.6,
-  "uk_carbon_intensity": 206,
+  "settlement_period": 47,
+  "total_generation_gw": 26.3,
+  "scot_total_generation_gw": 2.5,
+  "uk_carbon_intensity": 201,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 5.2,
+  "total_wind_gw": 4.9,
   "generation_mix": {
     "gas": 47.5,
-    "wind": 18.8,
-    "nuclear": 15.1,
-    "biomass": 9.9,
-    "imports": 4.1,
-    "other": 2.5,
-    "hydro": 2.1
+    "wind": 20.3,
+    "nuclear": 17.0,
+    "biomass": 10.6,
+    "imports": 4.5
   },
   "scottish_generation_mix": {
-    "wind": 84.9,
-    "nuclear": 15.1
+    "wind": 84.0,
+    "nuclear": 15.9
   },
   "wind_country_split": {
-    "Scotland": 42.3,
-    "England & Wales": 57.7
+    "Scotland": 42.1,
+    "England & Wales": 57.9
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 5.2,
+      "gen_gw": 4.9,
       "capacity_gw": 31.9,
-      "usage_perc": 16.5
+      "usage_perc": 15.4
     },
     "scotland": {
-      "gen_gw": 2.2,
+      "gen_gw": 2.1,
       "capacity_gw": 10.1,
-      "usage_perc": 21.8
+      "usage_perc": 20.8
     },
     "england_wales": {
-      "gen_gw": 3.0,
+      "gen_gw": 2.8,
       "capacity_gw": 21.8,
-      "usage_perc": 13.8
+      "usage_perc": 12.8
     }
   },
   "scottish_balance": {
-    "demand_gw": 2.5,
-    "generation_gw": 2.6,
+    "demand_gw": 2.4,
+    "generation_gw": 2.5,
     "net_export_gw": 0.1,
     "is_exporter": true
   },
-  "total_wasted_mwh": 41088.6,
+  "total_wasted_mwh": 41683.3,
   "fuel_breakdown": {
     "wind": {
-      "mwh": 41088.6,
-      "cost_gbp": 1427690.14,
-      "homes_powered": 4565400
+      "mwh": 41683.3,
+      "cost_gbp": 1447804.7,
+      "homes_powered": 4631477
     },
     "solar": {
       "mwh": 0.0,
@@ -65,15 +63,15 @@
       "homes_powered": 0
     }
   },
-  "whisky_pure_alcohol_litres_total": 5869800,
-  "whisky_litres": 5869800,
+  "whisky_pure_alcohol_litres_total": 5954757,
+  "whisky_litres": 5954757,
   "fossil_displacement": {
-    "gas_burned_m3": 7806834.0,
-    "co2_tonnes": 14381.0
+    "gas_burned_m3": 7919827.0,
+    "co2_tonnes": 14589.2
   },
   "bess_storage": {
-    "megapacks_needed": 10535,
-    "total_gwh": 41.09
+    "megapacks_needed": 10688,
+    "total_gwh": 41.68
   },
   "interconnectors": [
     {
@@ -145,32 +143,32 @@
       "lat": 58.15,
       "lon": -2.95,
       "fuel": "wind",
-      "wasted_mwh": 15184.2,
-      "cost_gbp": 885020
+      "wasted_mwh": 15421.2,
+      "cost_gbp": 896828
     },
     {
       "name": "Seagreen Offshore",
       "lat": 56.6,
       "lon": -1.75,
       "fuel": "wind",
-      "wasted_mwh": 12198.2,
-      "cost_gbp": 181367
+      "wasted_mwh": 12439.1,
+      "cost_gbp": 184948
     },
     {
       "name": "Viking Wind Farm (Shetland)",
       "lat": 60.3,
       "lon": -1.27,
       "fuel": "wind",
-      "wasted_mwh": 3977.8,
-      "cost_gbp": 64638
+      "wasted_mwh": 3981.9,
+      "cost_gbp": 64704
     },
     {
       "name": "Beatrice Offshore",
       "lat": 58.12,
       "lon": -3.08,
       "fuel": "wind",
-      "wasted_mwh": 3852.9,
-      "cost_gbp": 42771
+      "wasted_mwh": 3908.7,
+      "cost_gbp": 43602
     },
     {
       "name": "Neart na Gaoithe",
@@ -204,5 +202,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Great Britain\u2019s wind generation currently stands at 5.2 GW, with estimated Scottish wind output contributing 2.2 GW, which represents 21.8% of installed Scottish wind capacity. A stark regional divergence is visible in grid decarbonisation: Scottish carbon intensity sits at 0 gCO2/kWh versus 206 gCO2/kWh GB-wide. However, persistent cross-border transmission bottlenecks prevent this abundant green electricity from reaching southern demand centres. Consequently, Scottish generation curtailed so far today has already reached 41.1 GWh through Balancing Mechanism turn-down bids, incurring an immediate constraint cost of about \u00a31,427,690. To compensate for this stranded green energy, an estimated 7,806,834 m3 of gas was burned elsewhere on the system, injecting 14,381 tonnes of CO2 into the atmosphere. Annualising today's expenditure reveals an estimated total yearly cost of \u00a3521 million for curtailment. This grid friction places an unnecessary financial load on end-users, delivering an estimated increase of roughly \u00a31.80/MWh on everybody's invoice in the UK. Without expedited transmission investments, consumers will continue paying twice: first to curtail clean Scottish generation, and again to burn fossil fuels in its place."
+  "ai_summary": "Great Britain currently records a total wind output of 4.9 GW, with Scottish wind generation contributing an estimated 2.1 GW, representing 20.8% of installed Scottish wind capacity. While Scotland maintains an exemplary carbon intensity of 0 gCO2/kWh, the wider GB grid stands significantly higher at 201 gCO2/kWh. Transmission bottlenecks between Scotland and southern demand centres continue to undermine this clean generation profile. Through the Balancing Mechanism, 41.7 GWh of Scottish generation has been curtailed so far today, incurring a direct constraint cost of about \u00a31,447,805. Because this displaced zero-carbon power must be substituted by fossil generation elsewhere, an estimated 7,919,827 m\u00b3 of natural gas has been burned in its place, releasing an avoidable 14,589 tonnes of CO2 into the atmosphere. Annualising today's expenditure reveals an estimated total yearly curtailment cost of approximately \u00a3528 million, which increases electricity invoices across the UK by an estimated \u00a32/MWh. This stark operational divergence highlights the mounting costs of grid friction, where consumers shoulder substantial financial and environmental penalties for renewable power that is generated but cannot be transmitted."
 }

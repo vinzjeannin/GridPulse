@@ -1,34 +1,32 @@
 {
-  "timestamp": "2026-10-30 23:56:52 UTC",
-  "settlement_date": "2026-10-30",
-  "settlement_period": 48,
-  "total_generation_gw": 24.9,
+  "timestamp": "2026-10-31 00:34:32 UTC",
+  "settlement_date": "2026-10-31",
+  "settlement_period": 2,
+  "total_generation_gw": 26.1,
   "scot_total_generation_gw": 2.4,
-  "uk_carbon_intensity": 180,
+  "uk_carbon_intensity": 172,
   "scottish_carbon_intensity": 0,
   "total_wind_gw": 4.7,
   "generation_mix": {
-    "gas": 40.6,
-    "wind": 20.5,
-    "nuclear": 17.7,
-    "biomass": 11.5,
-    "imports": 4.8,
-    "hydro": 2.7,
-    "other": 2.1
+    "gas": 41.9,
+    "wind": 21.2,
+    "nuclear": 18.9,
+    "biomass": 12.6,
+    "imports": 5.3
   },
   "scottish_generation_mix": {
-    "wind": 82.5,
-    "nuclear": 17.5
+    "wind": 82.7,
+    "nuclear": 17.3
   },
   "wind_country_split": {
-    "Scotland": 42.2,
-    "England & Wales": 57.8
+    "Scotland": 42.8,
+    "England & Wales": 57.2
   },
   "wind_capacity": {
     "gb_total": {
       "gen_gw": 4.7,
       "capacity_gw": 31.9,
-      "usage_perc": 14.9
+      "usage_perc": 14.6
     },
     "scotland": {
       "gen_gw": 2.0,
@@ -42,9 +40,9 @@
     }
   },
   "scottish_balance": {
-    "demand_gw": 2.2,
+    "demand_gw": 2.3,
     "generation_gw": 2.4,
-    "net_export_gw": 0.2,
+    "net_export_gw": 0.1,
     "is_exporter": true
   },
   "total_wasted_mwh": 42606.6,
@@ -199,10 +197,9 @@
     "wind_capacity": "live (BM unit register, BM-registered wind only)",
     "scottish_total_generation": "derived: Scottish wind output divided by wind % of regional mix",
     "scottish_demand": "ESTIMATE: 9% of GB demand (no live feed)",
-    "curtailment": "live (Elexon accepted bids, Scottish units, UK day so far)",
-    "constraint_cost": "live (Elexon bid cashflows)",
+    "curtailment": "fallback: previous value carried forward",
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Scottish wind generation currently stands at an estimated 2.0 GW, representing 19.8% of installed Scottish wind capacity, while total GB wind output reaches 4.7 GW across the broader network. Transmission bottlenecks continue to create a stark geographical divide in emissions, with Scottish carbon intensity maintaining 0 gCO2/kWh versus 180 gCO2/kWh GB-wide. Because cross-border export boundaries cannot accommodate all available clean electricity, Scottish generation curtailed so far today has reached 42.6 GWh through Balancing Mechanism bids, incurring an immediate constraint cost of about \u00a31,483,291. To compensate for this displaced zero-carbon power closer to southern demand centres, an estimated 8,095,254 m3 of gas has been burned elsewhere, releasing an additional 14,912 tonnes CO2 into the atmosphere. Annualising today's expenditure yields an estimated total yearly cost of curtailment of \u00a3541 million. When socialised across standard annual UK electricity demand, these network constraints add an estimated \u00a32/MWh to everybody's invoice in the UK, highlighting the severe environmental and financial penalties resulting from insufficient transmission infrastructure."
+  "ai_summary": "Scottish wind is currently supplying an estimated 2.0 GW into the grid, with Scottish carbon intensity at 0 gCO2/kWh. So far today 42,607 MWh of Scottish generation has been turned down through Balancing Mechanism bids, at a constraint cost of about \u00a31,483,291. Transmission limits across the B6 boundary stop this low-carbon power reaching English demand centres, so gas plant further south must replace it, and the cost is recovered from bill payers through BSUoS charges."
 }

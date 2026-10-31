@@ -1,34 +1,34 @@
 {
-  "timestamp": "2026-10-31 17:54:34 UTC",
+  "timestamp": "2026-10-31 18:24:29 UTC",
   "settlement_date": "2026-10-31",
-  "settlement_period": 36,
-  "total_generation_gw": 34.2,
+  "settlement_period": 37,
+  "total_generation_gw": 33.4,
   "scot_total_generation_gw": 1.8,
-  "uk_carbon_intensity": 227,
+  "uk_carbon_intensity": 225,
   "scottish_carbon_intensity": 0,
   "total_wind_gw": 2.5,
   "generation_mix": {
-    "gas": 45.5,
-    "nuclear": 14.5,
-    "other": 10.2,
-    "biomass": 9.4,
-    "imports": 8.9,
-    "wind": 8.1,
-    "hydro": 3.3
+    "gas": 45.4,
+    "nuclear": 14.8,
+    "imports": 9.9,
+    "biomass": 9.6,
+    "wind": 8.6,
+    "other": 8.3,
+    "hydro": 3.4
   },
   "scottish_generation_mix": {
-    "wind": 78.1,
-    "nuclear": 21.9
+    "wind": 79.7,
+    "nuclear": 20.4
   },
   "wind_country_split": {
-    "Scotland": 55.1,
-    "England & Wales": 44.9
+    "Scotland": 56.6,
+    "England & Wales": 43.4
   },
   "wind_capacity": {
     "gb_total": {
       "gen_gw": 2.5,
       "capacity_gw": 31.9,
-      "usage_perc": 7.7
+      "usage_perc": 8.0
     },
     "scotland": {
       "gen_gw": 1.4,
@@ -42,9 +42,9 @@
     }
   },
   "scottish_balance": {
-    "demand_gw": 3.1,
+    "demand_gw": 3.0,
     "generation_gw": 1.8,
-    "net_export_gw": 1.3,
+    "net_export_gw": 1.2,
     "is_exporter": false
   },
   "total_wasted_mwh": 849.1,
@@ -180,5 +180,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Great Britain's total wind generation currently stands at 2.5 GW, with estimated Scottish wind output contributing 1.4 GW, representing only 13.9% of installed Scottish wind capacity. Even at this subdued operational level, grid bottlenecks across the transmission boundary have forced the curtailment of 849 MWh of Scottish generation so far today through Balancing Mechanism bids. Managing these network constraints has accumulated a direct cost of about \u00a347,969 today alone. From an environmental perspective, Scotland is generating electricity at a clean carbon intensity of 0 gCO2/kWh, contrasting sharply with the GB-wide intensity of 227 gCO2/kWh. Because zero-carbon Scottish electricity cannot be exported south, an estimated 161,329 m3 of gas has been burned elsewhere on the network to replace it, adding 297 tonnes of CO2 to the atmosphere. Extrapolating today's constraint expenditure indicates an estimated total yearly cost of \u00a318 million. When distributed across national electricity consumption, this constraint action is estimated to increase consumer invoices by approximately \u00a30.06/MWh, illustrating how infrastructure limitations impose both unnecessary financial expenses and carbon emissions on the wider energy system."
+  "ai_summary": "Scottish wind generation is currently delivering an estimated 1.4 GW, which accounts for 13.9% of installed Scottish wind capacity, amidst a wider GB wind output of 2.5 GW. Supported by this renewable output, Scottish carbon intensity has achieved 0 gCO2/kWh, standing in stark contrast to the GB-wide carbon intensity of 225 gCO2/kWh. Despite this abundance of clean power, structural cross-border transmission bottlenecks prevent surplus energy from flowing freely southward. Consequently, Scottish generation curtailed so far today has reached 849 MWh, turned down through Balancing Mechanism bids at a constraint cost of about \u00a347,969. To bridge the resulting supply deficit and maintain grid stability, thermal generation was dispatched south of the border, resulting in an estimated 161,329 m3 of gas burned elsewhere to replace it and emitting an avoidable 297 tonnes of CO2. Annualising today's figures highlights the recurring financial burden of network constraints, yielding an estimated total yearly cost of \u00a318 million for curtailment. Shared across national consumption, this balancing friction increases everybody's invoice in the UK by an estimated \u00a30.06/MWh, demonstrating the dual economic and environmental cost of delayed transmission reinforcement."
 }

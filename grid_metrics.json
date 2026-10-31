@@ -1,39 +1,37 @@
 {
-  "timestamp": "2026-10-31 18:24:29 UTC",
+  "timestamp": "2026-10-31 19:12:26 UTC",
   "settlement_date": "2026-10-31",
-  "settlement_period": 37,
-  "total_generation_gw": 33.4,
-  "scot_total_generation_gw": 1.8,
-  "uk_carbon_intensity": 225,
+  "settlement_period": 39,
+  "total_generation_gw": 32.5,
+  "scot_total_generation_gw": 2.1,
+  "uk_carbon_intensity": 223,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 2.5,
+  "total_wind_gw": 2.8,
   "generation_mix": {
-    "gas": 45.4,
-    "nuclear": 14.8,
-    "imports": 9.9,
-    "biomass": 9.6,
-    "wind": 8.6,
-    "other": 8.3,
-    "hydro": 3.4
+    "gas": 51.0,
+    "nuclear": 17.9,
+    "biomass": 10.9,
+    "wind": 10.5,
+    "imports": 9.7
   },
   "scottish_generation_mix": {
-    "wind": 79.7,
-    "nuclear": 20.4
+    "wind": 81.3,
+    "nuclear": 18.6
   },
   "wind_country_split": {
-    "Scotland": 56.6,
-    "England & Wales": 43.4
+    "Scotland": 59.1,
+    "England & Wales": 40.9
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 2.5,
+      "gen_gw": 2.8,
       "capacity_gw": 31.9,
-      "usage_perc": 8.0
+      "usage_perc": 8.8
     },
     "scotland": {
-      "gen_gw": 1.4,
+      "gen_gw": 1.7,
       "capacity_gw": 10.1,
-      "usage_perc": 13.9
+      "usage_perc": 16.8
     },
     "england_wales": {
       "gen_gw": 1.1,
@@ -42,9 +40,9 @@
     }
   },
   "scottish_balance": {
-    "demand_gw": 3.0,
-    "generation_gw": 1.8,
-    "net_export_gw": 1.2,
+    "demand_gw": 2.9,
+    "generation_gw": 2.1,
+    "net_export_gw": 0.8,
     "is_exporter": false
   },
   "total_wasted_mwh": 849.1,
@@ -180,5 +178,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Scottish wind generation is currently delivering an estimated 1.4 GW, which accounts for 13.9% of installed Scottish wind capacity, amidst a wider GB wind output of 2.5 GW. Supported by this renewable output, Scottish carbon intensity has achieved 0 gCO2/kWh, standing in stark contrast to the GB-wide carbon intensity of 225 gCO2/kWh. Despite this abundance of clean power, structural cross-border transmission bottlenecks prevent surplus energy from flowing freely southward. Consequently, Scottish generation curtailed so far today has reached 849 MWh, turned down through Balancing Mechanism bids at a constraint cost of about \u00a347,969. To bridge the resulting supply deficit and maintain grid stability, thermal generation was dispatched south of the border, resulting in an estimated 161,329 m3 of gas burned elsewhere to replace it and emitting an avoidable 297 tonnes of CO2. Annualising today's figures highlights the recurring financial burden of network constraints, yielding an estimated total yearly cost of \u00a318 million for curtailment. Shared across national consumption, this balancing friction increases everybody's invoice in the UK by an estimated \u00a30.06/MWh, demonstrating the dual economic and environmental cost of delayed transmission reinforcement."
+  "ai_summary": "Great Britain's electricity system is currently recording 2.8 GW of total wind output, with estimated Scottish wind output delivering 1.7 GW, operating at 16.8% of installed Scottish wind capacity. Clean local generation has driven Scottish carbon intensity down to an exceptional 0 gCO2/kWh, standing in stark contrast to the GB-wide carbon intensity of 223 gCO2/kWh. However, structural transmission bottlenecks between Scotland and southern demand centers continue to prevent this zero-carbon energy from reaching the wider market. Consequently, 849 MWh of Scottish generation has been curtailed so far today via the Balancing Mechanism, accumulating a constraint cost of about \u00a347,969. To replace this trapped renewable power, an estimated 161,329 m3 of gas was burned elsewhere across the system, releasing an avoidable 297 tonnes of CO2. Annualizing today's figures indicates a yearly curtailment cost of \u00a318 million, which increases everybody's invoice in the UK by an estimated \u00a30.06/MWh when spread across national demand, underscoring the ongoing economic and environmental costs of cross-border grid constraints."
 }

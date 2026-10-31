@@ -1,37 +1,39 @@
 {
-  "timestamp": "2026-10-31 19:12:26 UTC",
+  "timestamp": "2026-10-31 19:56:28 UTC",
   "settlement_date": "2026-10-31",
-  "settlement_period": 39,
-  "total_generation_gw": 32.5,
-  "scot_total_generation_gw": 2.1,
-  "uk_carbon_intensity": 223,
+  "settlement_period": 40,
+  "total_generation_gw": 31.9,
+  "scot_total_generation_gw": 2.2,
+  "uk_carbon_intensity": 216,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 2.8,
+  "total_wind_gw": 2.9,
   "generation_mix": {
-    "gas": 51.0,
-    "nuclear": 17.9,
-    "biomass": 10.9,
-    "wind": 10.5,
-    "imports": 9.7
+    "gas": 47.9,
+    "nuclear": 15.6,
+    "imports": 11.1,
+    "wind": 10.6,
+    "biomass": 10.1,
+    "hydro": 2.8,
+    "other": 2.0
   },
   "scottish_generation_mix": {
-    "wind": 81.3,
-    "nuclear": 18.6
+    "wind": 82.5,
+    "nuclear": 17.6
   },
   "wind_country_split": {
-    "Scotland": 59.1,
-    "England & Wales": 40.9
+    "Scotland": 60.4,
+    "England & Wales": 39.6
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 2.8,
+      "gen_gw": 2.9,
       "capacity_gw": 31.9,
-      "usage_perc": 8.8
+      "usage_perc": 9.2
     },
     "scotland": {
-      "gen_gw": 1.7,
+      "gen_gw": 1.8,
       "capacity_gw": 10.1,
-      "usage_perc": 16.8
+      "usage_perc": 17.8
     },
     "england_wales": {
       "gen_gw": 1.1,
@@ -41,8 +43,8 @@
   },
   "scottish_balance": {
     "demand_gw": 2.9,
-    "generation_gw": 2.1,
-    "net_export_gw": 0.8,
+    "generation_gw": 2.2,
+    "net_export_gw": 0.7,
     "is_exporter": false
   },
   "total_wasted_mwh": 849.1,
@@ -178,5 +180,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Great Britain's electricity system is currently recording 2.8 GW of total wind output, with estimated Scottish wind output delivering 1.7 GW, operating at 16.8% of installed Scottish wind capacity. Clean local generation has driven Scottish carbon intensity down to an exceptional 0 gCO2/kWh, standing in stark contrast to the GB-wide carbon intensity of 223 gCO2/kWh. However, structural transmission bottlenecks between Scotland and southern demand centers continue to prevent this zero-carbon energy from reaching the wider market. Consequently, 849 MWh of Scottish generation has been curtailed so far today via the Balancing Mechanism, accumulating a constraint cost of about \u00a347,969. To replace this trapped renewable power, an estimated 161,329 m3 of gas was burned elsewhere across the system, releasing an avoidable 297 tonnes of CO2. Annualizing today's figures indicates a yearly curtailment cost of \u00a318 million, which increases everybody's invoice in the UK by an estimated \u00a30.06/MWh when spread across national demand, underscoring the ongoing economic and environmental costs of cross-border grid constraints."
+  "ai_summary": "Scotland continues to demonstrate deep decarbonisation, maintaining a Scottish carbon intensity of 0 gCO2/kWh compared to 216 gCO2/kWh GB-wide. Across the wider system, total GB wind output stands at 2.9 GW, with estimated Scottish wind output contributing 1.8 GW, which represents 17.8% of installed Scottish wind capacity. Despite this low-carbon potential, cross-border transmission bottlenecks continue to restrict power flows, forcing valuable renewable energy offline.\n\nSo far today, Scottish generation curtailed has reached 849 MWh through Balancing Mechanism bids, incurring a direct constraint cost of about \u00a347,969. Because this zero-carbon power could not reach demand centres, thermal generation was dispatched to fill the void, resulting in an estimated 161,329 m3 of gas burned elsewhere and releasing 297 tonnes of CO2 into the atmosphere.\n\nExtrapolating today\u2019s figures yields an estimated total yearly cost of curtailment of \u00a318 million. Socialised across national electricity consumption, this constraint activity is estimated to increase consumer invoices by roughly \u00a30.06/MWh across the UK. Ultimately, these structural grid limitations impose an ongoing dual penalty, simultaneously burdening end consumers with millions in balancing fees while actively replacing clean Scottish electrons with fossil-fuel emissions elsewhere on the GB network."
 }

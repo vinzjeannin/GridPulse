@@ -1,39 +1,39 @@
 {
-  "timestamp": "2026-10-31 21:25:34 UTC",
+  "timestamp": "2026-10-31 21:57:00 UTC",
   "settlement_date": "2026-10-31",
-  "settlement_period": 43,
-  "total_generation_gw": 29.2,
-  "scot_total_generation_gw": 2.8,
-  "uk_carbon_intensity": 214,
+  "settlement_period": 44,
+  "total_generation_gw": 28.2,
+  "scot_total_generation_gw": 2.9,
+  "uk_carbon_intensity": 210,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 3.6,
+  "total_wind_gw": 3.7,
   "generation_mix": {
-    "gas": 48.5,
-    "nuclear": 16.7,
-    "wind": 12.9,
-    "biomass": 10.8,
+    "gas": 48.4,
+    "nuclear": 17.1,
+    "wind": 13.7,
+    "biomass": 11.1,
     "imports": 5.9,
-    "other": 2.7,
-    "hydro": 2.5
+    "hydro": 2.5,
+    "other": 1.4
   },
   "scottish_generation_mix": {
-    "wind": 83.5,
-    "nuclear": 16.6
+    "wind": 84.0,
+    "nuclear": 15.9
   },
   "wind_country_split": {
-    "Scotland": 65.0,
-    "England & Wales": 35.0
+    "Scotland": 64.4,
+    "England & Wales": 35.6
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 3.6,
+      "gen_gw": 3.7,
       "capacity_gw": 31.9,
-      "usage_perc": 11.2
+      "usage_perc": 11.5
     },
     "scotland": {
-      "gen_gw": 2.3,
+      "gen_gw": 2.4,
       "capacity_gw": 10.1,
-      "usage_perc": 22.8
+      "usage_perc": 23.8
     },
     "england_wales": {
       "gen_gw": 1.3,
@@ -42,9 +42,9 @@
     }
   },
   "scottish_balance": {
-    "demand_gw": 2.6,
-    "generation_gw": 2.8,
-    "net_export_gw": 0.2,
+    "demand_gw": 2.5,
+    "generation_gw": 2.9,
+    "net_export_gw": 0.4,
     "is_exporter": true
   },
   "total_wasted_mwh": 849.1,
@@ -180,5 +180,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Scottish wind generation currently delivers an estimated 2.3 GW, representing 22.8% of Scotland's installed wind capacity and driving Scottish carbon intensity down to 0 gCO2/kWh. Across Great Britain as a whole, wind output stands at 3.6 GW against a significantly higher GB-wide carbon intensity of 214 gCO2/kWh, illustrating a stark regional clean energy disparity. Cross-border transmission bottlenecks continue to limit the export of this low-carbon power, forcing the system operator to turn down output in the north. So far today, 849 MWh of Scottish generation has been curtailed through Balancing Mechanism bids, incurring constraint costs of about \u00a347,969. To replace this lost clean power, fossil generators elsewhere have burned an estimated 161,329 m3 of gas, releasing an additional 297 tonnes of CO2 into the atmosphere. Annualising today's constraint spending yields an estimated yearly cost of \u00a318 million. Distributed across total UK electricity demand, this adds an estimated \u00a30.06/MWh to consumer invoices nationwide, while reflecting an underlying constraint cost of roughly \u00a356/MWh on the curtailed volume itself. Addressing grid transmission friction remains essential to reducing system costs and unlocking Scotland's full decarbonisation potential."
+  "ai_summary": "Great Britain is currently generating 3.7 GW of wind power, with Scotland delivering an estimated 2.4 GW, which represents 23.8% of installed Scottish wind capacity. Driven by this renewable output, Scottish carbon intensity stands at 0 gCO2/kWh, presenting a stark contrast to the GB-wide carbon intensity of 210 gCO2/kWh. However, structural transmission bottlenecks continue to limit the transfer of clean power southwards. As a consequence, 849 MWh of Scottish generation has been curtailed so far today through Balancing Mechanism bids, incurring a constraint cost of about \u00a347,969. To replace this curtailed renewable volume, an estimated 161,329 m3 of gas was burned elsewhere on the network, releasing 297 tonnes of additional CO2. Extrapolating today\u2019s figures yields an estimated total yearly cost of \u00a318 million for Scottish curtailment. Apportioned across Great Britain's total annual electricity demand, this constraint mechanism is estimated to add approximately \u00a30.06/MWh to UK electricity invoices, underscoring both the economic impact on consumers and the carbon consequences of existing grid limitations."
 }

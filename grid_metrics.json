@@ -1,36 +1,34 @@
 {
-  "timestamp": "2026-11-01 16:28:55 UTC",
+  "timestamp": "2026-11-01 17:02:29 UTC",
   "settlement_date": "2026-11-01",
-  "settlement_period": 33,
-  "total_generation_gw": 34.6,
+  "settlement_period": 35,
+  "total_generation_gw": 36.8,
   "scot_total_generation_gw": 2.4,
   "uk_carbon_intensity": 194,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 5.0,
+  "total_wind_gw": 6.1,
   "generation_mix": {
-    "gas": 42.1,
-    "nuclear": 14.3,
-    "wind": 13.8,
-    "imports": 11.5,
-    "biomass": 9.2,
-    "other": 3.9,
-    "hydro": 3.4,
-    "solar": 1.8
+    "gas": 45.3,
+    "nuclear": 15.4,
+    "wind": 15.2,
+    "imports": 11.9,
+    "biomass": 11.7,
+    "solar": 0.5
   },
   "scottish_generation_mix": {
-    "wind": 75.4,
-    "nuclear": 22.3,
-    "solar": 2.3
+    "wind": 76.5,
+    "nuclear": 23.4,
+    "solar": 0.1
   },
   "wind_country_split": {
-    "Scotland": 35.7,
-    "England & Wales": 64.3
+    "Scotland": 28.8,
+    "England & Wales": 71.2
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 5.0,
+      "gen_gw": 6.1,
       "capacity_gw": 31.9,
-      "usage_perc": 15.5
+      "usage_perc": 19.1
     },
     "scotland": {
       "gen_gw": 1.8,
@@ -38,15 +36,15 @@
       "usage_perc": 17.8
     },
     "england_wales": {
-      "gen_gw": 3.2,
+      "gen_gw": 4.3,
       "capacity_gw": 21.8,
-      "usage_perc": 14.7
+      "usage_perc": 19.7
     }
   },
   "scottish_balance": {
-    "demand_gw": 3.1,
+    "demand_gw": 3.3,
     "generation_gw": 2.4,
-    "net_export_gw": 0.7,
+    "net_export_gw": 0.9,
     "is_exporter": false
   },
   "total_wasted_mwh": 577.9,
@@ -190,5 +188,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Great Britain's wind fleet is currently generating 5.0 GW, with estimated Scottish wind output contributing 1.8 GW, representing 17.8% of installed Scottish wind capacity. Despite this modest operational level, Scotland maintains an optimal carbon intensity of 0 gCO2/kWh, contrasting sharply with the GB-wide figure of 194 gCO2/kWh. Structural transmission bottlenecks continue to limit the transfer of clean northern generation to southern demand centers. Consequently, 578 MWh of Scottish generation has been curtailed so far today, incurring a direct constraint cost of about \u00a338,647. To replace this trapped zero-carbon power, fossil generation was dispatched elsewhere on the system, resulting in an estimated 109,801 m3 of gas burned and adding 202 tonnes of CO2 to the atmosphere. Extrapolating today's figures indicates an estimated total yearly cost of curtailment of roughly \u00a314 million. Across nationwide consumer demand, this level of grid friction is estimated to increase everybody's invoice in the UK by approximately \u00a30.05/MWh, illustrating how localized grid constraints impose both an environmental penalty and an avoidable financial surcharge on all British billpayers."
+  "ai_summary": "Great Britain is currently generating 6.1 GW of wind power, with estimated Scottish wind output reaching 1.8 GW, representing 17.8% of installed Scottish wind capacity. This clean generation maintains a Scottish carbon intensity of 0 gCO2/kWh, standing in sharp contrast to the broader GB-wide carbon intensity of 194 gCO2/kWh. However, transmission bottlenecks continue to enforce severe constraints across the network. Scottish generation curtailed so far today stands at 578 MWh, turned down through Balancing Mechanism bids at a constraint cost of about \u00a338,647. Because this surplus renewable power cannot reach downstream demand centres, thermal plants must compensate elsewhere, resulting in an estimated 109,801 m3 of gas burned elsewhere to replace it and releasing 202 tonnes of additional CO2. Extrapolating today\u2019s constraint run-rate suggests an estimated total yearly cost of curtailment of \u00a314 million. When socialised across national electricity consumption, this recurring system friction increases everybody's invoice in the UK by an estimated \u00a30.05/MWh, highlighting how grid infrastructure deficits impose both a direct financial levy on consumers and an unnecessary carbon penalty on the energy transition."
 }

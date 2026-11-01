@@ -1,52 +1,50 @@
 {
-  "timestamp": "2026-11-01 09:29:27 UTC",
+  "timestamp": "2026-11-01 10:10:39 UTC",
   "settlement_date": "2026-11-01",
-  "settlement_period": 19,
-  "total_generation_gw": 27.8,
+  "settlement_period": 21,
+  "total_generation_gw": 28.5,
   "scot_total_generation_gw": 2.0,
-  "uk_carbon_intensity": 172,
+  "uk_carbon_intensity": 168,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 2.6,
+  "total_wind_gw": 2.4,
   "generation_mix": {
-    "gas": 34.5,
-    "imports": 18.1,
-    "nuclear": 16.8,
-    "biomass": 10.9,
-    "wind": 10.7,
-    "solar": 5.7,
-    "hydro": 2.3,
-    "other": 1.0
+    "gas": 35.9,
+    "nuclear": 17.6,
+    "imports": 16.5,
+    "biomass": 11.5,
+    "wind": 10.8,
+    "solar": 7.7
   },
   "scottish_generation_mix": {
-    "wind": 79.7,
-    "nuclear": 19.8,
-    "solar": 0.6
+    "wind": 76.4,
+    "nuclear": 21.1,
+    "solar": 2.5
   },
   "wind_country_split": {
-    "Scotland": 62.8,
-    "England & Wales": 37.2
+    "Scotland": 61.5,
+    "England & Wales": 38.5
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 2.6,
+      "gen_gw": 2.4,
       "capacity_gw": 31.9,
-      "usage_perc": 8.2
+      "usage_perc": 7.4
     },
     "scotland": {
-      "gen_gw": 1.6,
+      "gen_gw": 1.5,
       "capacity_gw": 10.1,
-      "usage_perc": 15.8
+      "usage_perc": 14.9
     },
     "england_wales": {
-      "gen_gw": 1.0,
+      "gen_gw": 0.9,
       "capacity_gw": 21.8,
-      "usage_perc": 4.6
+      "usage_perc": 4.1
     }
   },
   "scottish_balance": {
-    "demand_gw": 2.5,
+    "demand_gw": 2.6,
     "generation_gw": 2.0,
-    "net_export_gw": 0.5,
+    "net_export_gw": 0.6,
     "is_exporter": false
   },
   "total_wasted_mwh": 490.0,
@@ -190,5 +188,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Great Britain's wind generation currently stands at 2.6 GW, with Scottish wind contributing an estimated 1.6 GW, representing 15.8% of installed Scottish wind capacity. This localized clean generation allows Scotland to record a carbon intensity of 0 gCO2/kWh, contrasting sharply with the GB-wide carbon intensity of 172 gCO2/kWh. However, transmission bottlenecks across the boundary continue to restrict export flows, resulting in 490 MWh of Scottish generation curtailed so far today through Balancing Mechanism bids. Managing these network constraints has incurred a direct cost of about \u00a330,168. Annualizing this rate yields an estimated yearly curtailment cost of approximately \u00a311 million, which adds an estimated \u00a30.04/MWh to electricity invoices across the UK. Beyond the direct financial impact, displacing this zero-carbon generation requires fossil-fueled replacement plant elsewhere on the network. An estimated 93,100 m\u00b3 of gas was burned elsewhere to replace the turned-down wind power, releasing 172 tonnes of additional CO2 into the atmosphere. This operational imbalance underscores the ongoing environmental and system balancing costs of grid congestion during periods of regional curtailment."
+  "ai_summary": "Great Britain\u2019s total wind generation currently stands at 2.4 GW, with estimated Scottish wind output contributing 1.5 GW, which represents 14.9% of installed Scottish wind capacity. Thanks to this renewable fleet, Scottish carbon intensity is recorded at an immaculate 0 gCO2/kWh, contrasting sharply with the 168 gCO2/kWh measured GB-wide. Despite this abundance of clean power, severe transmission bottlenecks between Scotland and major southern demand centres force system operators to intervene. Scottish generation curtailed so far today has reached 490 MWh at a constraint cost of about \u00a330,168 paid through Balancing Mechanism bids. Because this clean electricity cannot travel south, thermal power plants are fired up downstream to compensate, resulting in an estimated 93,100 m3 of gas burned elsewhere and emitting 172 tonnes of CO2 into the atmosphere. Annualising today's constraint spend indicates a total yearly cost of curtailment of roughly \u00a311 million. Distributed across national electricity consumption, this constraint inefficiency is estimated to add approximately \u00a30.04/MWh to everybody's invoice in the UK, underscoring the urgent economic and environmental case for expanding cross-border transmission infrastructure."
 }

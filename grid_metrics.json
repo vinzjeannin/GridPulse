@@ -1,51 +1,51 @@
 {
-  "timestamp": "2026-10-31 23:55:14 UTC",
-  "settlement_date": "2026-10-31",
-  "settlement_period": 48,
-  "total_generation_gw": 24.8,
-  "scot_total_generation_gw": 2.4,
-  "uk_carbon_intensity": 191,
+  "timestamp": "2026-11-01 00:26:54 UTC",
+  "settlement_date": "2026-11-01",
+  "settlement_period": 1,
+  "total_generation_gw": 25.2,
+  "scot_total_generation_gw": 2.2,
+  "uk_carbon_intensity": 189,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 3.0,
+  "total_wind_gw": 2.5,
   "generation_mix": {
-    "gas": 43.3,
-    "nuclear": 19.4,
-    "wind": 13.9,
-    "biomass": 12.7,
-    "imports": 7.3,
-    "hydro": 2.5,
-    "other": 0.8
+    "gas": 40.7,
+    "nuclear": 19.3,
+    "wind": 13.0,
+    "biomass": 12.5,
+    "imports": 11.1,
+    "hydro": 2.4,
+    "other": 1.0
   },
   "scottish_generation_mix": {
-    "wind": 84.5,
-    "nuclear": 15.4
+    "wind": 83.3,
+    "nuclear": 16.7
   },
   "wind_country_split": {
-    "Scotland": 67.7,
-    "England & Wales": 32.3
+    "Scotland": 70.4,
+    "England & Wales": 29.6
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 3.0,
+      "gen_gw": 2.5,
       "capacity_gw": 31.9,
-      "usage_perc": 9.3
+      "usage_perc": 7.8
     },
     "scotland": {
-      "gen_gw": 2.0,
+      "gen_gw": 1.8,
       "capacity_gw": 10.1,
-      "usage_perc": 19.8
+      "usage_perc": 17.8
     },
     "england_wales": {
-      "gen_gw": 1.0,
+      "gen_gw": 0.7,
       "capacity_gw": 21.8,
-      "usage_perc": 4.6
+      "usage_perc": 3.2
     }
   },
   "scottish_balance": {
-    "demand_gw": 2.2,
-    "generation_gw": 2.4,
-    "net_export_gw": 0.2,
-    "is_exporter": true
+    "demand_gw": 2.3,
+    "generation_gw": 2.2,
+    "net_export_gw": 0.1,
+    "is_exporter": false
   },
   "total_wasted_mwh": 1279.3,
   "fuel_breakdown": {
@@ -183,10 +183,9 @@
     "wind_capacity": "live (BM unit register, BM-registered wind only)",
     "scottish_total_generation": "derived: Scottish wind output divided by wind % of regional mix",
     "scottish_demand": "ESTIMATE: 9% of GB demand (no live feed)",
-    "curtailment": "live (Elexon accepted bids, Scottish units, UK day so far)",
-    "constraint_cost": "live (Elexon bid cashflows)",
+    "curtailment": "fallback: previous value carried forward",
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Scottish wind is currently supplying an estimated 2.0 GW into the grid, with Scottish carbon intensity at 0 gCO2/kWh. So far today 1,279 MWh of Scottish generation has been turned down through Balancing Mechanism bids, at a constraint cost of about \u00a359,801. Transmission limits across the B6 boundary stop this low-carbon power reaching English demand centres, so gas plant further south must replace it, and the cost is recovered from bill payers through BSUoS charges."
+  "ai_summary": "Scotland\u2019s electricity system exhibits exceptional clean power performance today, registering a Scottish carbon intensity of 0 gCO2/kWh compared to 189 gCO2/kWh GB-wide. Generation remains robust, with estimated Scottish wind output reaching 1.8 GW\u2014accounting for 17.8% of installed Scottish wind capacity and providing the majority of the total GB wind output of 2.5 GW. Despite this abundant renewable supply, structural transmission boundaries between Scotland and England continue to restrict power transfers, forcing grid operators to turn down productive turbines. Scottish generation curtailed so far today has reached 1,279 MWh through Balancing Mechanism bids, creating an avoidable constraint cost of about \u00a359,801. Extrapolating this daily constraint spend indicates an estimated total yearly cost of curtailment of \u00a322 million, which increases everybody's invoice in the UK by an estimated \u00a30.08/MWh via balancing service charges. The operational impact is not solely financial; turning off wind assets necessitated an estimated 243,067 m3 of gas burned elsewhere across the GB network to plug the energy deficit. This fossil substitution generated 448 tonnes of CO2 emissions, illustrating the urgent imperative to upgrade grid infrastructure and eliminate costly, carbon-intensive transmission bottlenecks."
 }

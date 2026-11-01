@@ -1,32 +1,34 @@
 {
-  "timestamp": "2026-11-01 19:12:42 UTC",
+  "timestamp": "2026-11-01 19:57:23 UTC",
   "settlement_date": "2026-11-01",
-  "settlement_period": 39,
-  "total_generation_gw": 35.4,
+  "settlement_period": 40,
+  "total_generation_gw": 34.1,
   "scot_total_generation_gw": 2.2,
-  "uk_carbon_intensity": 178,
+  "uk_carbon_intensity": 172,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 8.1,
+  "total_wind_gw": 8.3,
   "generation_mix": {
-    "gas": 44.5,
-    "wind": 23.4,
-    "nuclear": 15.3,
-    "biomass": 9.7,
-    "imports": 7.0
+    "gas": 39.3,
+    "wind": 25.8,
+    "nuclear": 14.2,
+    "biomass": 9.2,
+    "imports": 6.2,
+    "hydro": 3.6,
+    "other": 1.6
   },
   "scottish_generation_mix": {
-    "wind": 81.0,
-    "nuclear": 19.1
+    "wind": 80.0,
+    "nuclear": 19.9
   },
   "wind_country_split": {
-    "Scotland": 22.5,
-    "England & Wales": 77.5
+    "Scotland": 22.0,
+    "England & Wales": 78.0
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 8.1,
+      "gen_gw": 8.3,
       "capacity_gw": 31.9,
-      "usage_perc": 25.4
+      "usage_perc": 26.0
     },
     "scotland": {
       "gen_gw": 1.8,
@@ -34,15 +36,15 @@
       "usage_perc": 17.8
     },
     "england_wales": {
-      "gen_gw": 6.3,
+      "gen_gw": 6.5,
       "capacity_gw": 21.8,
-      "usage_perc": 28.9
+      "usage_perc": 29.8
     }
   },
   "scottish_balance": {
-    "demand_gw": 3.2,
+    "demand_gw": 3.1,
     "generation_gw": 2.2,
-    "net_export_gw": 1.0,
+    "net_export_gw": 0.9,
     "is_exporter": false
   },
   "total_wasted_mwh": 578.0,
@@ -186,5 +188,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Great Britain's wind fleet is currently generating 8.1 GW, with Scottish wind output estimated at 1.8 GW, representing 17.8% of installed Scottish wind capacity. Scotland's electricity system continues to deliver exceptional clean performance with a carbon intensity of 0 gCO2/kWh, standing in stark contrast to the GB-wide average of 178 gCO2/kWh. However, structural cross-border transmission limits mean zero-carbon power cannot fully flow southward. As a result, 578 MWh of Scottish generation has been curtailed so far today through Balancing Mechanism bids, incurring a constraint cost of about \u00a338,660. To replace this lost clean volume, fossil-fuel thermal plants were dispatched elsewhere on the grid, consuming an estimated 109,820 m3 of gas and emitting an additional 202 tonnes CO2 into the atmosphere. Annualizing today's constraint expenditure yields an estimated total yearly curtailment cost of \u00a314 million. When socialized across standard British electricity consumption, this adds an estimated increase of roughly \u00a30.05/MWh to consumer invoices across the UK. This persistent transmission friction highlights how grid bottlenecks simultaneously elevate system costs for billpayers and force unnecessary carbon emissions onto the broader national network."
+  "ai_summary": "Great Britain\u2019s electricity system is currently operating with total wind output at 8.3 GW, of which Scottish wind contributes an estimated 1.8 GW, representing 17.8% of installed Scottish wind capacity. Generation within Scotland delivers a carbon intensity of 0 gCO2/kWh, contrasting sharply with the GB-wide carbon intensity of 172 gCO2/kWh. Transmission bottlenecks continue to impede the delivery of this clean generation to southern demand centers. Consequently, Scottish generation curtailed so far today stands at 578 MWh through Balancing Mechanism bids, incurring a constraint cost of about \u00a338,660. To balance the system and replace this curtailed zero-carbon volume, fossil generation elsewhere required an estimated 109,820 m3 of gas to be burned, emitting an additional 202 tonnes of CO2. Annualizing today\u2019s constraint expenditure indicates an estimated total yearly cost of \u00a314 million. In terms of consumer impact, while this intervention equates to an immediate system balancing cost of roughly \u00a367 per curtailed MWh, calculating the precise \u00a3/MWh increase across every consumer's invoice in the UK cannot be completed without introducing external total national demand figures, strictly adhering to the provided data constraints."
 }

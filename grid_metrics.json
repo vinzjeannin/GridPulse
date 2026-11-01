@@ -1,32 +1,32 @@
 {
-  "timestamp": "2026-11-01 20:23:59 UTC",
+  "timestamp": "2026-11-01 20:58:20 UTC",
   "settlement_date": "2026-11-01",
-  "settlement_period": 41,
-  "total_generation_gw": 32.8,
+  "settlement_period": 42,
+  "total_generation_gw": 31.9,
   "scot_total_generation_gw": 2.2,
-  "uk_carbon_intensity": 176,
+  "uk_carbon_intensity": 174,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 8.1,
+  "total_wind_gw": 8.6,
   "generation_mix": {
-    "gas": 36.6,
-    "wind": 29.8,
-    "nuclear": 16.4,
-    "biomass": 10.8,
-    "imports": 6.4
+    "gas": 34.9,
+    "wind": 30.5,
+    "nuclear": 16.6,
+    "biomass": 11.1,
+    "imports": 6.8
   },
   "scottish_generation_mix": {
     "wind": 80.5,
-    "nuclear": 19.4
+    "nuclear": 19.5
   },
   "wind_country_split": {
-    "Scotland": 21.7,
-    "England & Wales": 78.3
+    "Scotland": 20.7,
+    "England & Wales": 79.3
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 8.1,
+      "gen_gw": 8.6,
       "capacity_gw": 31.9,
-      "usage_perc": 25.5
+      "usage_perc": 26.8
     },
     "scotland": {
       "gen_gw": 1.8,
@@ -34,15 +34,15 @@
       "usage_perc": 17.8
     },
     "england_wales": {
-      "gen_gw": 6.3,
+      "gen_gw": 6.8,
       "capacity_gw": 21.8,
-      "usage_perc": 28.9
+      "usage_perc": 31.2
     }
   },
   "scottish_balance": {
-    "demand_gw": 3.0,
+    "demand_gw": 2.9,
     "generation_gw": 2.2,
-    "net_export_gw": 0.8,
+    "net_export_gw": 0.7,
     "is_exporter": false
   },
   "total_wasted_mwh": 578.0,
@@ -186,5 +186,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Great Britain\u2019s power system is currently recording 8.1 GW of total wind output, with estimated Scottish wind output delivering 1.8 GW, representing 17.8% of installed Scottish wind capacity. Thanks to this abundance of clean power, Scottish carbon intensity sits at 0 gCO2/kWh, standing in stark contrast to the 176 gCO2/kWh registered GB-wide. However, grid transmission bottlenecks continue to limit cross-border transfer. Consequently, Scottish generation curtailed so far today has reached 578 MWh through Balancing Mechanism bids, incurring a constraint cost of about \u00a338,660. Compensating for this stranded renewable electricity required an estimated 109,820 cubic meters of gas burned elsewhere on the network, which released an unnecessary 202 tonnes of CO2 into the atmosphere. Extrapolating today\u2019s constraint expenditure yields an estimated total yearly cost of curtailment of \u00a314 million. When distributed across Great Britain's typical annual demand of roughly 280 million MWh, these balancing actions add an estimated \u00a30.05/MWh to everybody\u2019s invoice in the UK, clearly demonstrating the financial and environmental penalties imposed by regional transmission infrastructure constraints."
+  "ai_summary": "Scottish wind generation currently stands at an estimated 1.8 GW, operating at 17.8% of installed Scottish wind capacity while total GB wind output reaches 8.6 GW. Scotland\u2019s clean power abundance is demonstrated by a regional carbon intensity of 0 gCO2/kWh, compared against 174 gCO2/kWh GB-wide. However, transmission bottlenecks continue to restrict energy transfer south, resulting in 578 MWh of Scottish generation curtailed so far today. Managing these local network constraints has driven Balancing Mechanism costs of about \u00a338,660 today. To replace this lost clean power, an estimated 109,820 m3 of gas was burned elsewhere, discharging 202 tonnes of additional CO2. \n\nExtrapolating today's constraint costs produces an estimated total yearly curtailment cost of \u00a314 million to the nearest million. While calculating the precise \u00a3/MWh increase across all UK consumer invoices would require total national demand figures excluded under strict reporting rules, today's constraint expenditure directly imposes an overhead of roughly \u00a367/MWh on the curtailed energy itself. This ongoing friction illustrates how structural transmission deficits simultaneously elevate consumer energy bills and force fossil fuel reliance despite zero-carbon generation potential."
 }

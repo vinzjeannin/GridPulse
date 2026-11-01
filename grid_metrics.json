@@ -1,35 +1,35 @@
 {
-  "timestamp": "2026-11-01 13:23:03 UTC",
+  "timestamp": "2026-11-01 14:05:09 UTC",
   "settlement_date": "2026-11-01",
-  "settlement_period": 27,
-  "total_generation_gw": 30.8,
+  "settlement_period": 29,
+  "total_generation_gw": 30.6,
   "scot_total_generation_gw": 2.0,
-  "uk_carbon_intensity": 162,
+  "uk_carbon_intensity": 165,
   "scottish_carbon_intensity": 1,
-  "total_wind_gw": 3.2,
+  "total_wind_gw": 3.4,
   "generation_mix": {
-    "gas": 33.2,
-    "nuclear": 15.7,
-    "imports": 15.1,
-    "solar": 13.4,
-    "wind": 13.0,
-    "biomass": 9.6
+    "gas": 35.5,
+    "nuclear": 16.5,
+    "imports": 13.6,
+    "wind": 12.5,
+    "solar": 11.6,
+    "biomass": 10.3
   },
   "scottish_generation_mix": {
-    "wind": 75.8,
-    "nuclear": 18.7,
-    "solar": 5.4,
+    "wind": 75.0,
+    "nuclear": 19.8,
+    "solar": 5.1,
     "imports": 0.2
   },
   "wind_country_split": {
-    "Scotland": 47.0,
-    "England & Wales": 53.0
+    "Scotland": 44.6,
+    "England & Wales": 55.4
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 3.2,
+      "gen_gw": 3.4,
       "capacity_gw": 31.9,
-      "usage_perc": 10.1
+      "usage_perc": 10.5
     },
     "scotland": {
       "gen_gw": 1.5,
@@ -37,9 +37,9 @@
       "usage_perc": 14.9
     },
     "england_wales": {
-      "gen_gw": 1.7,
+      "gen_gw": 1.9,
       "capacity_gw": 21.8,
-      "usage_perc": 7.8
+      "usage_perc": 8.7
     }
   },
   "scottish_balance": {
@@ -189,5 +189,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Great Britain\u2019s wind output currently sits at 3.2 GW, with Scotland delivering an estimated 1.5 GW, representing 14.9% of installed Scottish wind capacity. This clean production underscores an extraordinary geographical contrast in emissions: Scottish carbon intensity registers at an ultra-low 1 gCO2/kWh, compared to 162 gCO2/kWh GB-wide. Despite this regional surplus of zero-carbon power, transmission bottlenecks continue to choke north-to-south electricity transfers. Consequently, Scottish generation curtailed so far today has reached 490 MWh through Balancing Mechanism bids, resulting in a direct constraint cost of about \u00a330,168. Because this renewable volume could not be transported to southern demand centers, an estimated 93,100 m3 of gas was burned elsewhere on the network to replace it, releasing an avoidable 172 tonnes of CO2. Extrapolating today\u2019s constraint spend over a full year indicates an estimated total yearly cost of \u00a311 million. When distributed across nationwide electricity demand, this grid friction increases consumer invoices across the UK by an estimated \u00a30.04/MWh. Accelerating cross-border transmission reinforcement remains essential to stop consumer-funded constraint waste and fully capitalize on Scottish renewable potential."
+  "ai_summary": "Scotland's electricity network currently highlights a striking regional disparity in generation and carbon performance, with Scottish carbon intensity standing at an ultra-clean 1 gCO2/kWh compared to 165 gCO2/kWh GB-wide. Across Great Britain, GB wind output is delivering 3.4 GW, with estimated Scottish wind output contributing 1.5 GW, representing 14.9% of installed Scottish wind capacity. Despite this abundant renewable supply, internal transmission bottlenecks restrict full export to southern demand centres. Consequently, 490 MWh of Scottish generation has been curtailed so far today through the Balancing Mechanism, incurring a constraint cost of about \u00a330,168. To replace this blocked green energy, fossil generation was ramped up down south, with an estimated 93,100 m3 of gas burned elsewhere, needlessly adding 172 tonnes of CO2 to the atmosphere. Extrapolating today\u2019s constraint figures indicates an estimated total yearly cost of curtailment of approximately \u00a311 million. When socialised across total national electricity demand, this adds an estimated \u00a30.04/MWh to everybody's invoice in the UK, reinforcing the urgent operational need for accelerated transmission infrastructure reinforcement to capture low-cost, zero-carbon Scottish power."
 }

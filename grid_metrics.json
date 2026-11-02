@@ -1,48 +1,48 @@
 {
-  "timestamp": "2026-11-02 02:38:32 UTC",
+  "timestamp": "2026-11-02 03:39:59 UTC",
   "settlement_date": "2026-11-02",
-  "settlement_period": 6,
+  "settlement_period": 8,
   "total_generation_gw": 24.8,
-  "scot_total_generation_gw": 1.4,
-  "uk_carbon_intensity": 117,
+  "scot_total_generation_gw": 1.5,
+  "uk_carbon_intensity": 106,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 8.5,
+  "total_wind_gw": 9.5,
   "generation_mix": {
-    "wind": 36.7,
-    "gas": 23.8,
-    "nuclear": 19.5,
-    "biomass": 11.7,
-    "imports": 8.2
+    "wind": 38.3,
+    "gas": 20.3,
+    "nuclear": 19.4,
+    "biomass": 13.1,
+    "imports": 8.8
   },
   "scottish_generation_mix": {
-    "wind": 73.8,
-    "nuclear": 26.2
+    "wind": 74.8,
+    "nuclear": 25.1
   },
   "wind_country_split": {
-    "Scotland": 11.7,
-    "England & Wales": 88.3
+    "Scotland": 11.1,
+    "England & Wales": 88.9
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 8.5,
+      "gen_gw": 9.5,
       "capacity_gw": 31.9,
-      "usage_perc": 26.6
+      "usage_perc": 29.7
     },
     "scotland": {
-      "gen_gw": 1.0,
+      "gen_gw": 1.1,
       "capacity_gw": 10.1,
-      "usage_perc": 9.9
+      "usage_perc": 10.9
     },
     "england_wales": {
-      "gen_gw": 7.5,
+      "gen_gw": 8.4,
       "capacity_gw": 21.8,
-      "usage_perc": 34.4
+      "usage_perc": 38.5
     }
   },
   "scottish_balance": {
     "demand_gw": 2.2,
-    "generation_gw": 1.4,
-    "net_export_gw": 0.8,
+    "generation_gw": 1.5,
+    "net_export_gw": 0.7,
     "is_exporter": false
   },
   "total_wasted_mwh": 0.0,
@@ -153,5 +153,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Great Britain's total wind generation currently stands at 8.5 GW, with estimated Scottish wind output contributing 1.0 GW, which corresponds to 9.9% of installed Scottish wind capacity. This generation profile maintains an exceptionally clean local energy mix, delivering a Scottish carbon intensity of 0 gCO2/kWh compared to the broader GB-wide benchmark of 117 gCO2/kWh. Transmission boundaries are operating with total fluidity today, avoiding any need to constrain localized clean power. Consequently, Scottish generation curtailed so far today is 0 MWh through Balancing Mechanism bids, incurred at a constraint cost of about \u00a30. With zero renewable volume turned down, no secondary thermal generation has been dispatched to bridge a shortfall, resulting in 0 m3 of gas burned elsewhere and 0 tonnes of additional carbon emissions. Extrapolating directly from today's zero-constraint performance, the estimated total yearly cost of curtailment is \u00a30 million, representing an estimated increase of \u00a30/MWh on everybody's invoice in the UK. This scenario demonstrates optimal transmission efficiency, allowing Scottish clean generation to displace higher-carbon assets across the national network without imposing balancing surcharges or replacement fuel costs on British energy consumers."
+  "ai_summary": "Scottish wind output currently stands at an estimated 1.1 GW, representing 10.9% of installed Scottish wind capacity, set against total GB wind output of 9.5 GW. Grid performance in Scotland demonstrates exceptional environmental quality, achieving a Scottish carbon intensity of 0 gCO2/kWh in contrast to 106 gCO2/kWh recorded GB-wide. Transmission boundaries have fully accommodated this renewable generation without friction, leaving Scottish generation curtailed so far today at 0 MWh through the Balancing Mechanism. Because no Scottish generation has been turned down, constraint costs stand at about \u00a30, resulting in an estimated 0 m3 of gas burned elsewhere to replace curtailed volume and 0 tonnes of associated CO2 emissions. Extrapolating these current dispatch conditions, the estimated total yearly cost of curtailment stands at \u00a30 million to the nearest million, which delivers an estimated impact of \u00a30/MWh on everybody's electricity invoice in the UK. This reflects a fully unconstrained operational window where all regional clean energy successfully serves demand without triggering out-of-merit fossil fuel replacement or consumer balancing surcharges."
 }

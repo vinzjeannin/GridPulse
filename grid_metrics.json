@@ -1,48 +1,48 @@
 {
-  "timestamp": "2026-11-05 23:31:58 UTC",
-  "settlement_date": "2026-11-05",
-  "settlement_period": 48,
-  "total_generation_gw": 27.7,
-  "scot_total_generation_gw": 1.7,
-  "uk_carbon_intensity": 217,
+  "timestamp": "2026-11-06 00:33:27 UTC",
+  "settlement_date": "2026-11-06",
+  "settlement_period": 2,
+  "total_generation_gw": 27.3,
+  "scot_total_generation_gw": 1.4,
+  "uk_carbon_intensity": 222,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 5.1,
+  "total_wind_gw": 4.2,
   "generation_mix": {
-    "gas": 51.9,
-    "wind": 18.4,
+    "gas": 53.0,
+    "wind": 16.8,
     "nuclear": 15.6,
-    "biomass": 9.8,
-    "imports": 4.2
+    "biomass": 10.2,
+    "imports": 4.4
   },
   "scottish_generation_mix": {
-    "wind": 78.0,
-    "nuclear": 22.0
+    "wind": 76.7,
+    "nuclear": 23.3
   },
   "wind_country_split": {
-    "Scotland": 25.7,
-    "England & Wales": 74.3
+    "Scotland": 26.2,
+    "England & Wales": 73.8
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 5.1,
+      "gen_gw": 4.2,
       "capacity_gw": 31.9,
-      "usage_perc": 15.9
+      "usage_perc": 13.2
     },
     "scotland": {
-      "gen_gw": 1.3,
+      "gen_gw": 1.1,
       "capacity_gw": 10.1,
-      "usage_perc": 12.9
+      "usage_perc": 10.9
     },
     "england_wales": {
-      "gen_gw": 3.8,
+      "gen_gw": 3.1,
       "capacity_gw": 21.8,
-      "usage_perc": 17.4
+      "usage_perc": 14.2
     }
   },
   "scottish_balance": {
     "demand_gw": 2.5,
-    "generation_gw": 1.7,
-    "net_export_gw": 0.8,
+    "generation_gw": 1.4,
+    "net_export_gw": 1.1,
     "is_exporter": false
   },
   "total_wasted_mwh": 3012.3,
@@ -181,10 +181,9 @@
     "wind_capacity": "live (BM unit register, BM-registered wind only)",
     "scottish_total_generation": "derived: Scottish wind output divided by wind % of regional mix",
     "scottish_demand": "ESTIMATE: 9% of GB demand (no live feed)",
-    "curtailment": "live (Elexon accepted bids, Scottish units, UK day so far)",
-    "constraint_cost": "live (Elexon bid cashflows)",
+    "curtailment": "fallback: previous value carried forward",
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Scottish wind is currently supplying an estimated 1.3 GW into the grid, with Scottish carbon intensity at 0 gCO2/kWh. So far today 3,012 MWh of Scottish generation has been turned down through Balancing Mechanism bids, at a constraint cost of about \u00a3107,730. Transmission limits across the B6 boundary stop this low-carbon power reaching English demand centres, so gas plant further south must replace it, and the cost is recovered from bill payers through BSUoS charges."
+  "ai_summary": "Great Britain\u2019s power network currently records a total wind output of 4.2 GW, with estimated Scottish wind output contributing 1.1 GW, representing just 10.9% of installed Scottish wind capacity. Despite Scotland achieving a pristine carbon intensity of 0 gCO2/kWh, transmission bottlenecks force a sharp contrast with the GB-wide carbon intensity of 222 gCO2/kWh. Because network limits prevent moving clean power southward, Scottish generation curtailed so far today has reached 3,012 MWh, incurring a constraint cost of about \u00a3107,730. To replace this bottled renewable energy, fossil generation elsewhere burned an estimated 572,337 m3 of gas, adding an avoidable 1,054 tonnes of CO2 to the atmosphere. Extrapolating today\u2019s constraint spend over a full calendar year indicates an estimated total yearly cost of \u00a339 million. In terms of direct curtailment pricing, this represents an added cost of approximately \u00a336/MWh on the turned-down power; however, quantifying the diluted \u00a3/MWh increase across every consumer invoice in the UK cannot be completed without baseline annual national demand figures not included in the dataset. This dynamic highlights the financial and environmental penalties of regional grid congestion and reliance on thermal balancing."
 }

@@ -1,29 +1,29 @@
 {
-  "timestamp": "2026-11-09 11:42:49 UTC",
+  "timestamp": "2026-11-09 12:48:15 UTC",
   "settlement_date": "2026-11-09",
-  "settlement_period": 24,
-  "total_generation_gw": 36.7,
+  "settlement_period": 26,
+  "total_generation_gw": 36.2,
   "scot_total_generation_gw": 0.2,
-  "uk_carbon_intensity": 239,
-  "scottish_carbon_intensity": 0,
+  "uk_carbon_intensity": 233,
+  "scottish_carbon_intensity": 4,
   "total_wind_gw": 0.7,
   "generation_mix": {
-    "gas": 58.4,
-    "nuclear": 13.2,
-    "solar": 11.2,
-    "biomass": 8.2,
-    "imports": 5.9,
-    "wind": 3.1
+    "gas": 56.5,
+    "nuclear": 13.1,
+    "solar": 12.4,
+    "biomass": 8.0,
+    "imports": 6.9,
+    "wind": 3.2
   },
   "scottish_generation_mix": {
-    "wind": 44.6,
-    "nuclear": 39.1,
-    "solar": 15.6,
-    "imports": 0.7
+    "wind": 41.7,
+    "nuclear": 38.2,
+    "solar": 19.1,
+    "imports": 1.1
   },
   "wind_country_split": {
-    "Scotland": 18.2,
-    "England & Wales": 81.8
+    "Scotland": 16.0,
+    "England & Wales": 84.0
   },
   "wind_capacity": {
     "gb_total": {
@@ -156,5 +156,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Scottish wind is currently supplying an estimated 0.1 GW into the grid, with Scottish carbon intensity at 0 gCO2/kWh. So far today 0 MWh of Scottish generation has been turned down through Balancing Mechanism bids, at a constraint cost of about \u00a30. Transmission limits across the B6 boundary stop this low-carbon power reaching English demand centres, so gas plant further south must replace it, and the cost is recovered from bill payers through BSUoS charges."
+  "ai_summary": "Scottish wind is currently supplying an estimated 0.1 GW into the grid, with Scottish carbon intensity at 4 gCO2/kWh. So far today 0 MWh of Scottish generation has been turned down through Balancing Mechanism bids, at a constraint cost of about \u00a30. Transmission limits across the B6 boundary stop this low-carbon power reaching English demand centres, so gas plant further south must replace it, and the cost is recovered from bill payers through BSUoS charges."
 }

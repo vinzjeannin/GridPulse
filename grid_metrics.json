@@ -1,35 +1,33 @@
 {
-  "timestamp": "2026-11-08 23:58:28 UTC",
-  "settlement_date": "2026-11-08",
-  "settlement_period": 48,
-  "total_generation_gw": 26.9,
+  "timestamp": "2026-11-09 00:44:19 UTC",
+  "settlement_date": "2026-11-09",
+  "settlement_period": 2,
+  "total_generation_gw": 28.7,
   "scot_total_generation_gw": 0.2,
   "uk_carbon_intensity": 277,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 0.3,
+  "total_wind_gw": 0.4,
   "generation_mix": {
-    "gas": 66.9,
-    "nuclear": 15.6,
-    "biomass": 9.9,
-    "imports": 4.3,
-    "wind": 1.7,
-    "hydro": 1.0,
-    "other": 0.6
+    "gas": 69.7,
+    "nuclear": 15.2,
+    "biomass": 9.3,
+    "imports": 4.0,
+    "wind": 1.7
   },
   "scottish_generation_mix": {
-    "wind": 55.2,
-    "nuclear": 42.9,
-    "imports": 1.9
+    "wind": 55.6,
+    "nuclear": 42.1,
+    "imports": 2.2
   },
   "wind_country_split": {
-    "Scotland": 31.0,
-    "England & Wales": 69.0
+    "Scotland": 26.4,
+    "England & Wales": 73.6
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 0.3,
+      "gen_gw": 0.4,
       "capacity_gw": 31.9,
-      "usage_perc": 1.0
+      "usage_perc": 1.3
     },
     "scotland": {
       "gen_gw": 0.1,
@@ -37,15 +35,15 @@
       "usage_perc": 1.0
     },
     "england_wales": {
-      "gen_gw": 0.2,
+      "gen_gw": 0.3,
       "capacity_gw": 21.8,
-      "usage_perc": 0.9
+      "usage_perc": 1.4
     }
   },
   "scottish_balance": {
-    "demand_gw": 2.4,
+    "demand_gw": 2.6,
     "generation_gw": 0.2,
-    "net_export_gw": 2.2,
+    "net_export_gw": 2.4,
     "is_exporter": false
   },
   "total_wasted_mwh": 0.0,
@@ -151,8 +149,7 @@
     "wind_capacity": "live (BM unit register, BM-registered wind only)",
     "scottish_total_generation": "derived: Scottish wind output divided by wind % of regional mix",
     "scottish_demand": "ESTIMATE: 9% of GB demand (no live feed)",
-    "curtailment": "live (Elexon accepted bids, Scottish units, UK day so far)",
-    "constraint_cost": "live (Elexon bid cashflows)",
+    "curtailment": "fallback: previous value carried forward",
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },

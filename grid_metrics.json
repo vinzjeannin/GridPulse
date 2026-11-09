@@ -1,35 +1,33 @@
 {
-  "timestamp": "2026-11-09 01:56:07 UTC",
+  "timestamp": "2026-11-09 02:42:56 UTC",
   "settlement_date": "2026-11-09",
-  "settlement_period": 4,
-  "total_generation_gw": 28.1,
+  "settlement_period": 6,
+  "total_generation_gw": 28.2,
   "scot_total_generation_gw": 0.2,
-  "uk_carbon_intensity": 276,
+  "uk_carbon_intensity": 275,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 0.3,
+  "total_wind_gw": 0.4,
   "generation_mix": {
     "gas": 66.8,
-    "nuclear": 15.5,
-    "biomass": 9.8,
-    "imports": 4.5,
-    "wind": 1.9,
-    "hydro": 0.9,
-    "other": 0.6
+    "nuclear": 16.5,
+    "biomass": 9.6,
+    "imports": 5.0,
+    "wind": 2.1
   },
   "scottish_generation_mix": {
-    "wind": 55.5,
-    "nuclear": 42.0,
-    "imports": 2.5
+    "wind": 55.2,
+    "nuclear": 43.2,
+    "imports": 1.5
   },
   "wind_country_split": {
-    "Scotland": 20.1,
-    "England & Wales": 79.9
+    "Scotland": 18.6,
+    "England & Wales": 81.4
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 0.3,
+      "gen_gw": 0.4,
       "capacity_gw": 31.9,
-      "usage_perc": 1.1
+      "usage_perc": 1.2
     },
     "scotland": {
       "gen_gw": 0.1,
@@ -37,9 +35,9 @@
       "usage_perc": 1.0
     },
     "england_wales": {
-      "gen_gw": 0.2,
+      "gen_gw": 0.3,
       "capacity_gw": 21.8,
-      "usage_perc": 0.9
+      "usage_perc": 1.4
     }
   },
   "scottish_balance": {

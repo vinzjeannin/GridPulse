@@ -1,32 +1,35 @@
 {
-  "timestamp": "2026-11-10 00:43:36 UTC",
+  "timestamp": "2026-11-10 01:50:43 UTC",
   "settlement_date": "2026-11-10",
-  "settlement_period": 2,
-  "total_generation_gw": 29.2,
+  "settlement_period": 4,
+  "total_generation_gw": 28.3,
   "scot_total_generation_gw": 0.5,
-  "uk_carbon_intensity": 259,
+  "uk_carbon_intensity": 262,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 1.7,
+  "total_wind_gw": 1.8,
   "generation_mix": {
-    "gas": 63.1,
-    "nuclear": 15.3,
-    "biomass": 9.6,
-    "wind": 7.7,
-    "imports": 4.2
+    "gas": 63.0,
+    "nuclear": 14.7,
+    "biomass": 9.3,
+    "wind": 7.5,
+    "imports": 4.0,
+    "other": 0.8,
+    "hydro": 0.6
   },
   "scottish_generation_mix": {
-    "wind": 65.4,
-    "nuclear": 34.6
+    "wind": 64.4,
+    "nuclear": 35.5,
+    "imports": 0.1
   },
   "wind_country_split": {
-    "Scotland": 14.7,
-    "England & Wales": 85.3
+    "Scotland": 15.3,
+    "England & Wales": 84.7
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 1.7,
+      "gen_gw": 1.8,
       "capacity_gw": 31.9,
-      "usage_perc": 5.4
+      "usage_perc": 5.5
     },
     "scotland": {
       "gen_gw": 0.3,
@@ -34,15 +37,15 @@
       "usage_perc": 3.0
     },
     "england_wales": {
-      "gen_gw": 1.4,
+      "gen_gw": 1.5,
       "capacity_gw": 21.8,
-      "usage_perc": 6.4
+      "usage_perc": 6.9
     }
   },
   "scottish_balance": {
-    "demand_gw": 2.6,
+    "demand_gw": 2.5,
     "generation_gw": 0.5,
-    "net_export_gw": 2.1,
+    "net_export_gw": 2.0,
     "is_exporter": false
   },
   "total_wasted_mwh": 0.0,
@@ -148,7 +151,8 @@
     "wind_capacity": "live (BM unit register, BM-registered wind only)",
     "scottish_total_generation": "derived: Scottish wind output divided by wind % of regional mix",
     "scottish_demand": "ESTIMATE: 9% of GB demand (no live feed)",
-    "curtailment": "fallback: previous value carried forward",
+    "curtailment": "live (Elexon accepted bids, Scottish units, UK day so far)",
+    "constraint_cost": "live (Elexon bid cashflows)",
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },

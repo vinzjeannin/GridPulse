@@ -1,58 +1,56 @@
 {
-  "timestamp": "2026-11-11 16:40:56 UTC",
+  "timestamp": "2026-11-11 17:45:01 UTC",
   "settlement_date": "2026-11-11",
-  "settlement_period": 34,
-  "total_generation_gw": 39.5,
+  "settlement_period": 36,
+  "total_generation_gw": 40.8,
   "scot_total_generation_gw": 3.6,
   "uk_carbon_intensity": 223,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 4.6,
+  "total_wind_gw": 4.9,
   "generation_mix": {
-    "gas": 56.9,
-    "nuclear": 13.7,
-    "wind": 13.7,
-    "biomass": 8.4,
-    "imports": 6.3,
-    "solar": 0.9
+    "gas": 55.1,
+    "wind": 14.7,
+    "nuclear": 13.6,
+    "biomass": 8.3,
+    "imports": 8.3
   },
   "scottish_generation_mix": {
-    "wind": 84.5,
-    "nuclear": 15.2,
-    "solar": 0.4
+    "wind": 86.4,
+    "nuclear": 13.6
   },
   "wind_country_split": {
-    "Scotland": 65.1,
-    "England & Wales": 34.9
+    "Scotland": 64.4,
+    "England & Wales": 35.6
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 4.6,
+      "gen_gw": 4.9,
       "capacity_gw": 31.9,
-      "usage_perc": 14.4
+      "usage_perc": 15.3
     },
     "scotland": {
-      "gen_gw": 3.0,
+      "gen_gw": 3.1,
       "capacity_gw": 10.1,
-      "usage_perc": 29.7
+      "usage_perc": 30.7
     },
     "england_wales": {
-      "gen_gw": 1.6,
+      "gen_gw": 1.8,
       "capacity_gw": 21.8,
-      "usage_perc": 7.3
+      "usage_perc": 8.3
     }
   },
   "scottish_balance": {
-    "demand_gw": 3.6,
+    "demand_gw": 3.7,
     "generation_gw": 3.6,
-    "net_export_gw": 0.0,
-    "is_exporter": true
+    "net_export_gw": 0.1,
+    "is_exporter": false
   },
-  "total_wasted_mwh": 8515.4,
+  "total_wasted_mwh": 10522.1,
   "fuel_breakdown": {
     "wind": {
-      "mwh": 8515.4,
-      "cost_gbp": 636016.56,
-      "homes_powered": 946155
+      "mwh": 10522.1,
+      "cost_gbp": 822016.36,
+      "homes_powered": 1169122
     },
     "solar": {
       "mwh": 0.0,
@@ -65,15 +63,15 @@
       "homes_powered": 0
     }
   },
-  "whisky_pure_alcohol_litres_total": 1216485,
-  "whisky_litres": 1216485,
+  "whisky_pure_alcohol_litres_total": 1503157,
+  "whisky_litres": 1503157,
   "fossil_displacement": {
-    "gas_burned_m3": 1617926.0,
-    "co2_tonnes": 2980.4
+    "gas_burned_m3": 1999199.0,
+    "co2_tonnes": 3682.7
   },
   "bess_storage": {
-    "megapacks_needed": 2183,
-    "total_gwh": 8.52
+    "megapacks_needed": 2697,
+    "total_gwh": 10.52
   },
   "interconnectors": [
     {
@@ -145,24 +143,24 @@
       "lat": 58.15,
       "lon": -2.95,
       "fuel": "wind",
-      "wasted_mwh": 5633.6,
-      "cost_gbp": 530910
+      "wasted_mwh": 6979.1,
+      "cost_gbp": 670724
     },
     {
       "name": "Beatrice Offshore",
       "lat": 58.12,
       "lon": -3.08,
       "fuel": "wind",
-      "wasted_mwh": 2371.8,
-      "cost_gbp": 87171
+      "wasted_mwh": 2905.1,
+      "cost_gbp": 120098
     },
     {
       "name": "Viking Wind Farm (Shetland)",
       "lat": 60.3,
       "lon": -1.27,
       "fuel": "wind",
-      "wasted_mwh": 417.7,
-      "cost_gbp": 7416
+      "wasted_mwh": 449.2,
+      "cost_gbp": 7976
     }
   ],
   "data_quality": {
@@ -180,5 +178,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Scottish wind is currently supplying an estimated 3.0 GW into the grid, with Scottish carbon intensity at 0 gCO2/kWh. So far today 8,515 MWh of Scottish generation has been turned down through Balancing Mechanism bids, at a constraint cost of about \u00a3636,017. Transmission limits across the B6 boundary stop this low-carbon power reaching English demand centres, so gas plant further south must replace it, and the cost is recovered from bill payers through BSUoS charges."
+  "ai_summary": "Scottish wind is currently supplying an estimated 3.1 GW into the grid, with Scottish carbon intensity at 0 gCO2/kWh. So far today 10,522 MWh of Scottish generation has been turned down through Balancing Mechanism bids, at a constraint cost of about \u00a3822,016. Transmission limits across the B6 boundary stop this low-carbon power reaching English demand centres, so gas plant further south must replace it, and the cost is recovered from bill payers through BSUoS charges."
 }

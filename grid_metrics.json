@@ -1,39 +1,39 @@
 {
-  "timestamp": "2026-11-11 14:41:09 UTC",
+  "timestamp": "2026-11-11 15:36:14 UTC",
   "settlement_date": "2026-11-11",
-  "settlement_period": 30,
-  "total_generation_gw": 35.5,
-  "scot_total_generation_gw": 3.0,
-  "uk_carbon_intensity": 207,
+  "settlement_period": 32,
+  "total_generation_gw": 36.9,
+  "scot_total_generation_gw": 3.3,
+  "uk_carbon_intensity": 216,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 3.8,
+  "total_wind_gw": 4.1,
   "generation_mix": {
-    "gas": 53.0,
-    "nuclear": 13.3,
-    "wind": 10.9,
-    "biomass": 8.1,
-    "solar": 7.5,
-    "imports": 7.2
+    "gas": 56.2,
+    "nuclear": 13.5,
+    "wind": 12.3,
+    "biomass": 8.3,
+    "imports": 6.9,
+    "solar": 2.8
   },
   "scottish_generation_mix": {
-    "wind": 77.7,
-    "nuclear": 18.6,
-    "solar": 3.7
+    "wind": 78.8,
+    "nuclear": 20.2,
+    "solar": 1.0
   },
   "wind_country_split": {
-    "Scotland": 61.0,
-    "England & Wales": 39.0
+    "Scotland": 63.8,
+    "England & Wales": 36.2
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 3.8,
+      "gen_gw": 4.1,
       "capacity_gw": 31.9,
-      "usage_perc": 11.9
+      "usage_perc": 12.9
     },
     "scotland": {
-      "gen_gw": 2.3,
+      "gen_gw": 2.6,
       "capacity_gw": 10.1,
-      "usage_perc": 22.8
+      "usage_perc": 25.7
     },
     "england_wales": {
       "gen_gw": 1.5,
@@ -42,17 +42,17 @@
     }
   },
   "scottish_balance": {
-    "demand_gw": 3.2,
-    "generation_gw": 3.0,
-    "net_export_gw": 0.2,
-    "is_exporter": false
+    "demand_gw": 3.3,
+    "generation_gw": 3.3,
+    "net_export_gw": 0.0,
+    "is_exporter": true
   },
-  "total_wasted_mwh": 5065.0,
+  "total_wasted_mwh": 6709.8,
   "fuel_breakdown": {
     "wind": {
-      "mwh": 5065.0,
-      "cost_gbp": 359904.93,
-      "homes_powered": 562777
+      "mwh": 6709.8,
+      "cost_gbp": 489142.18,
+      "homes_powered": 745533
     },
     "solar": {
       "mwh": 0.0,
@@ -65,15 +65,15 @@
       "homes_powered": 0
     }
   },
-  "whisky_pure_alcohol_litres_total": 723571,
-  "whisky_litres": 723571,
+  "whisky_pure_alcohol_litres_total": 958542,
+  "whisky_litres": 958542,
   "fossil_displacement": {
-    "gas_burned_m3": 962350.0,
-    "co2_tonnes": 1772.8
+    "gas_burned_m3": 1274862.0,
+    "co2_tonnes": 2348.4
   },
   "bess_storage": {
-    "megapacks_needed": 1298,
-    "total_gwh": 5.07
+    "megapacks_needed": 1720,
+    "total_gwh": 6.71
   },
   "interconnectors": [
     {
@@ -145,16 +145,16 @@
       "lat": 58.15,
       "lon": -2.95,
       "fuel": "wind",
-      "wasted_mwh": 3178.4,
-      "cost_gbp": 303751
+      "wasted_mwh": 4354.5,
+      "cost_gbp": 413051
     },
     {
       "name": "Beatrice Offshore",
       "lat": 58.12,
       "lon": -3.08,
       "fuel": "wind",
-      "wasted_mwh": 1453.4,
-      "cost_gbp": 48028
+      "wasted_mwh": 1899.9,
+      "cost_gbp": 65258
     },
     {
       "name": "Viking Wind Farm (Shetland)",
@@ -180,5 +180,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Scottish wind is currently supplying an estimated 2.3 GW into the grid, with Scottish carbon intensity at 0 gCO2/kWh. So far today 5,065 MWh of Scottish generation has been turned down through Balancing Mechanism bids, at a constraint cost of about \u00a3359,905. Transmission limits across the B6 boundary stop this low-carbon power reaching English demand centres, so gas plant further south must replace it, and the cost is recovered from bill payers through BSUoS charges."
+  "ai_summary": "Scottish wind is currently supplying an estimated 2.6 GW into the grid, with Scottish carbon intensity at 0 gCO2/kWh. So far today 6,710 MWh of Scottish generation has been turned down through Balancing Mechanism bids, at a constraint cost of about \u00a3489,142. Transmission limits across the B6 boundary stop this low-carbon power reaching English demand centres, so gas plant further south must replace it, and the cost is recovered from bill payers through BSUoS charges."
 }

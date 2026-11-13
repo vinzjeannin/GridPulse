@@ -1,24 +1,22 @@
 {
-  "timestamp": "2026-11-12 23:28:49 UTC",
-  "settlement_date": "2026-11-12",
-  "settlement_period": 47,
-  "total_generation_gw": 30.3,
+  "timestamp": "2026-11-13 00:09:31 UTC",
+  "settlement_date": "2026-11-13",
+  "settlement_period": 1,
+  "total_generation_gw": 29.5,
   "scot_total_generation_gw": 4.4,
-  "uk_carbon_intensity": 100,
+  "uk_carbon_intensity": 89,
   "scottish_carbon_intensity": 0,
   "total_wind_gw": 11.4,
   "generation_mix": {
-    "wind": 38.9,
-    "imports": 18.8,
-    "gas": 16.3,
-    "nuclear": 15.3,
-    "biomass": 9.2,
-    "other": 1.0,
-    "hydro": 0.6
+    "wind": 43.2,
+    "nuclear": 17.1,
+    "gas": 15.5,
+    "imports": 14.3,
+    "biomass": 9.9
   },
   "scottish_generation_mix": {
-    "wind": 88.3,
-    "nuclear": 11.7
+    "wind": 87.8,
+    "nuclear": 12.2
   },
   "wind_country_split": {
     "Scotland": 34.4,
@@ -199,8 +197,7 @@
     "wind_capacity": "live (BM unit register, BM-registered wind only)",
     "scottish_total_generation": "derived: Scottish wind output divided by wind % of regional mix",
     "scottish_demand": "ESTIMATE: 9% of GB demand (no live feed)",
-    "curtailment": "live (Elexon accepted bids, Scottish units, UK day so far)",
-    "constraint_cost": "live (Elexon bid cashflows)",
+    "curtailment": "fallback: previous value carried forward",
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },

@@ -1,32 +1,36 @@
 {
-  "timestamp": "2026-11-13 08:07:48 UTC",
+  "timestamp": "2026-11-13 09:23:06 UTC",
   "settlement_date": "2026-11-13",
-  "settlement_period": 17,
-  "total_generation_gw": 38.3,
+  "settlement_period": 19,
+  "total_generation_gw": 37.0,
   "scot_total_generation_gw": 3.4,
-  "uk_carbon_intensity": 147,
+  "uk_carbon_intensity": 148,
   "scottish_carbon_intensity": 0,
-  "total_wind_gw": 9.5,
+  "total_wind_gw": 9.0,
   "generation_mix": {
-    "wind": 32.3,
-    "gas": 32.1,
-    "nuclear": 15.6,
-    "imports": 10.6,
-    "biomass": 9.3
+    "gas": 26.3,
+    "wind": 25.0,
+    "imports": 16.1,
+    "nuclear": 12.9,
+    "biomass": 7.7,
+    "other": 5.5,
+    "solar": 4.3,
+    "hydro": 2.1
   },
   "scottish_generation_mix": {
-    "wind": 85.2,
-    "nuclear": 14.8
+    "wind": 85.0,
+    "nuclear": 14.8,
+    "solar": 0.2
   },
   "wind_country_split": {
-    "Scotland": 30.1,
-    "England & Wales": 69.9
+    "Scotland": 31.8,
+    "England & Wales": 68.2
   },
   "wind_capacity": {
     "gb_total": {
-      "gen_gw": 9.5,
+      "gen_gw": 9.0,
       "capacity_gw": 31.9,
-      "usage_perc": 29.8
+      "usage_perc": 28.2
     },
     "scotland": {
       "gen_gw": 2.9,
@@ -34,23 +38,23 @@
       "usage_perc": 28.7
     },
     "england_wales": {
-      "gen_gw": 6.6,
+      "gen_gw": 6.1,
       "capacity_gw": 21.8,
-      "usage_perc": 30.3
+      "usage_perc": 28.0
     }
   },
   "scottish_balance": {
-    "demand_gw": 3.4,
+    "demand_gw": 3.3,
     "generation_gw": 3.4,
-    "net_export_gw": 0.0,
+    "net_export_gw": 0.1,
     "is_exporter": true
   },
-  "total_wasted_mwh": 11455.8,
+  "total_wasted_mwh": 12841.0,
   "fuel_breakdown": {
     "wind": {
-      "mwh": 11455.8,
-      "cost_gbp": 306220.32,
-      "homes_powered": 1272866
+      "mwh": 12841.0,
+      "cost_gbp": 369081.3,
+      "homes_powered": 1426777
     },
     "solar": {
       "mwh": 0.0,
@@ -63,15 +67,15 @@
       "homes_powered": 0
     }
   },
-  "whisky_pure_alcohol_litres_total": 1636542,
-  "whisky_litres": 1636542,
+  "whisky_pure_alcohol_litres_total": 1834428,
+  "whisky_litres": 1834428,
   "fossil_displacement": {
-    "gas_burned_m3": 2176602.0,
-    "co2_tonnes": 4009.5
+    "gas_burned_m3": 2439790.0,
+    "co2_tonnes": 4494.3
   },
   "bess_storage": {
-    "megapacks_needed": 2937,
-    "total_gwh": 11.46
+    "megapacks_needed": 3292,
+    "total_gwh": 12.84
   },
   "interconnectors": [
     {
@@ -143,16 +147,16 @@
       "lat": 58.15,
       "lon": -2.95,
       "fuel": "wind",
-      "wasted_mwh": 6864.6,
-      "cost_gbp": 234788
+      "wasted_mwh": 7872.1,
+      "cost_gbp": 292070
     },
     {
       "name": "Seagreen Offshore",
       "lat": 56.6,
       "lon": -1.75,
       "fuel": "wind",
-      "wasted_mwh": 3381.3,
-      "cost_gbp": 49952
+      "wasted_mwh": 3759.0,
+      "cost_gbp": 55532
     },
     {
       "name": "Viking Wind Farm (Shetland)",
@@ -178,5 +182,5 @@
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Scottish wind is currently supplying an estimated 2.9 GW into the grid, with Scottish carbon intensity at 0 gCO2/kWh. So far today 11,456 MWh of Scottish generation has been turned down through Balancing Mechanism bids, at a constraint cost of about \u00a3306,220. Transmission limits across the B6 boundary stop this low-carbon power reaching English demand centres, so gas plant further south must replace it, and the cost is recovered from bill payers through BSUoS charges."
+  "ai_summary": "Scottish wind is currently supplying an estimated 2.9 GW into the grid, with Scottish carbon intensity at 0 gCO2/kWh. So far today 12,841 MWh of Scottish generation has been turned down through Balancing Mechanism bids, at a constraint cost of about \u00a3369,081. Transmission limits across the B6 boundary stop this low-carbon power reaching English demand centres, so gas plant further south must replace it, and the cost is recovered from bill payers through BSUoS charges."
 }

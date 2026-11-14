@@ -1,34 +1,32 @@
 {
-  "timestamp": "2026-11-13 23:28:43 UTC",
-  "settlement_date": "2026-11-13",
-  "settlement_period": 47,
-  "total_generation_gw": 30.1,
-  "scot_total_generation_gw": 4.0,
-  "uk_carbon_intensity": 167,
+  "timestamp": "2026-11-14 00:02:04 UTC",
+  "settlement_date": "2026-11-14",
+  "settlement_period": 1,
+  "total_generation_gw": 29.0,
+  "scot_total_generation_gw": 3.9,
+  "uk_carbon_intensity": 153,
   "scottish_carbon_intensity": 0,
   "total_wind_gw": 6.0,
   "generation_mix": {
-    "gas": 34.1,
-    "wind": 22.1,
-    "imports": 18.7,
-    "nuclear": 16.1,
-    "biomass": 7.6,
-    "other": 0.7,
-    "hydro": 0.7
+    "gas": 31.4,
+    "wind": 27.6,
+    "nuclear": 18.5,
+    "imports": 13.3,
+    "biomass": 9.1
   },
   "scottish_generation_mix": {
-    "wind": 88.5,
-    "nuclear": 11.5
+    "wind": 88.8,
+    "nuclear": 11.2
   },
   "wind_country_split": {
-    "Scotland": 58.6,
-    "England & Wales": 41.4
+    "Scotland": 57.9,
+    "England & Wales": 42.1
   },
   "wind_capacity": {
     "gb_total": {
       "gen_gw": 6.0,
       "capacity_gw": 31.9,
-      "usage_perc": 18.7
+      "usage_perc": 18.8
     },
     "scotland": {
       "gen_gw": 3.5,
@@ -42,8 +40,8 @@
     }
   },
   "scottish_balance": {
-    "demand_gw": 2.7,
-    "generation_gw": 4.0,
+    "demand_gw": 2.6,
+    "generation_gw": 3.9,
     "net_export_gw": 1.3,
     "is_exporter": true
   },
@@ -191,8 +189,7 @@
     "wind_capacity": "live (BM unit register, BM-registered wind only)",
     "scottish_total_generation": "derived: Scottish wind output divided by wind % of regional mix",
     "scottish_demand": "ESTIMATE: 9% of GB demand (no live feed)",
-    "curtailment": "live (Elexon accepted bids, Scottish units, UK day so far)",
-    "constraint_cost": "live (Elexon bid cashflows)",
+    "curtailment": "fallback: previous value carried forward",
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },

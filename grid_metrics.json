@@ -1,28 +1,28 @@
 {
-  "timestamp": "2026-11-16 11:06:36 UTC",
+  "timestamp": "2026-11-16 12:38:03 UTC",
   "settlement_date": "2026-11-16",
-  "settlement_period": 23,
+  "settlement_period": 26,
   "total_generation_gw": 36.4,
-  "scot_total_generation_gw": 2.8,
-  "uk_carbon_intensity": 158,
+  "scot_total_generation_gw": 2.9,
+  "uk_carbon_intensity": 163,
   "scottish_carbon_intensity": 0,
   "total_wind_gw": 7.5,
   "generation_mix": {
-    "gas": 36.8,
-    "wind": 21.8,
-    "nuclear": 13.2,
+    "gas": 39.7,
+    "wind": 16.2,
+    "nuclear": 13.9,
     "imports": 12.3,
-    "solar": 9.4,
-    "biomass": 6.4
+    "solar": 11.2,
+    "biomass": 6.6
   },
   "scottish_generation_mix": {
-    "wind": 77.9,
-    "nuclear": 19.4,
-    "solar": 2.6
+    "wind": 72.8,
+    "nuclear": 22.5,
+    "solar": 4.7
   },
   "wind_country_split": {
-    "Scotland": 28.9,
-    "England & Wales": 71.1
+    "Scotland": 27.5,
+    "England & Wales": 72.5
   },
   "wind_capacity": {
     "gb_total": {
@@ -31,27 +31,27 @@
       "usage_perc": 23.5
     },
     "scotland": {
-      "gen_gw": 2.2,
+      "gen_gw": 2.1,
       "capacity_gw": 10.1,
-      "usage_perc": 21.8
+      "usage_perc": 20.8
     },
     "england_wales": {
-      "gen_gw": 5.3,
+      "gen_gw": 5.4,
       "capacity_gw": 21.8,
-      "usage_perc": 24.3
+      "usage_perc": 24.8
     }
   },
   "scottish_balance": {
     "demand_gw": 3.3,
-    "generation_gw": 2.8,
-    "net_export_gw": 0.5,
+    "generation_gw": 2.9,
+    "net_export_gw": 0.4,
     "is_exporter": false
   },
   "total_wasted_mwh": 7649.3,
   "fuel_breakdown": {
     "wind": {
       "mwh": 7649.3,
-      "cost_gbp": 203813.38,
+      "cost_gbp": 1032656.49,
       "homes_powered": 849922
     },
     "solar": {
@@ -146,7 +146,7 @@
       "lon": -2.95,
       "fuel": "wind",
       "wasted_mwh": 4967.2,
-      "cost_gbp": 161378
+      "cost_gbp": 670565
     },
     {
       "name": "Seagreen Offshore",
@@ -154,23 +154,23 @@
       "lon": -1.75,
       "fuel": "wind",
       "wasted_mwh": 2286.8,
-      "cost_gbp": 33783
+      "cost_gbp": 308714
     }
   ],
   "data_quality": {
     "gb_generation_mix": "live (Carbon Intensity API)",
     "uk_carbon_intensity": "live (Carbon Intensity API)",
     "scottish_mix_and_intensity": "live (Carbon Intensity API, avg of regions 1 and 2)",
-    "gb_totals": "live (Elexon FUELINST)",
+    "gb_totals": "fallback: previous value carried forward",
     "bm_unit_reference": "live (Elexon reference data)",
     "scottish_wind_share": "live (Elexon Physical Notifications)",
     "wind_capacity": "live (BM unit register, BM-registered wind only)",
     "scottish_total_generation": "derived: Scottish wind output divided by wind % of regional mix",
     "scottish_demand": "ESTIMATE: 9% of GB demand (no live feed)",
     "curtailment": "live (Elexon accepted bids, Scottish units, UK day so far)",
-    "constraint_cost": "live (Elexon bid cashflows)",
+    "constraint_cost": "ESTIMATE: GBP 135/MWh flat rate",
     "substations_interconnectors_map": "static reference geography and labels",
     "gas_co2_homes_whisky_bess": "derived from curtailed MWh using fixed assumptions"
   },
-  "ai_summary": "Scottish wind is currently supplying an estimated 2.2 GW into the grid, with Scottish carbon intensity at 0 gCO2/kWh. So far today 7,649 MWh of Scottish generation has been turned down through Balancing Mechanism bids, at a constraint cost of about \u00a3203,813. Transmission limits across the B6 boundary stop this low-carbon power reaching English demand centres, so gas plant further south must replace it, and the cost is recovered from bill payers through BSUoS charges."
+  "ai_summary": "Scottish wind is currently supplying an estimated 2.1 GW into the grid, with Scottish carbon intensity at 0 gCO2/kWh. So far today 7,649 MWh of Scottish generation has been turned down through Balancing Mechanism bids, at a constraint cost of about \u00a31,032,656. Transmission limits across the B6 boundary stop this low-carbon power reaching English demand centres, so gas plant further south must replace it, and the cost is recovered from bill payers through BSUoS charges."
 }
